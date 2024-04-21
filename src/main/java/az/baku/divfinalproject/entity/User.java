@@ -5,6 +5,7 @@ import lombok.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -38,4 +39,8 @@ public class User {
     private boolean isActive;
     @OneToOne
     private Subscription subscription;
+    @OneToMany
+    private List<Roles> roles;
+    @OneToMany(cascade = CascadeType.REMOVE , fetch = FetchType.LAZY)
+    private List<Advert> adverts;
 }

@@ -1,4 +1,7 @@
 spring:
+  liquibase:
+    change-log: db/changelog/changelog-master.yml
+    enabled: true
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/postgres
