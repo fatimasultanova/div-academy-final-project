@@ -2,36 +2,37 @@ package az.baku.divfinalproject.security.services;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
+import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import az.baku.divfinalproject.entity.User;
+import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 @Getter
+@Setter
 public class UserDetailsImpl implements UserDetails {
   private static final long serialVersionUID = 1L;
-
   private Long id;
+  private String firstName;
+  private String lastName;
   private String phoneNumber;
-
-  private String username;
-
   private String email;
-
   @JsonIgnore
   private String password;
-
   private Collection<? extends GrantedAuthority> authorities;
 
-  public UserDetailsImpl(Long id,String phoneNumber, String username, String email, String password,
+
+  public UserDetailsImpl(Long id,String firstName ,String lastName,String phoneNumber, String email, String password,
       Collection<? extends GrantedAuthority> authorities) {
     this.id = id;
+    this.firstName = firstName;
+    this.lastName = lastName;
     this.phoneNumber = phoneNumber;
-    this.username = username;
     this.email = email;
     this.password = password;
     this.authorities = authorities;
@@ -43,9 +44,10 @@ public class UserDetailsImpl implements UserDetails {
         .collect(Collectors.toList());
 
     return new UserDetailsImpl(
-        user.getId(), 
+        user.getId(),
+        user.getFirstName(),
+        user.getLastName(),
         user.getPhoneNumber(),
-        user.getUsername(),
         user.getEmail(),
         user.getPassword(), 
         authorities);
@@ -63,7 +65,11 @@ public class UserDetailsImpl implements UserDetails {
 
   @Override
   public String getUsername() {
-    return username;
+    if (email==null){
+      return phoneNumber;
+    }else {
+      return email;
+    }
   }
 
   @Override

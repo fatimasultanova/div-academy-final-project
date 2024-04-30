@@ -1,7 +1,7 @@
 package az.baku.divfinalproject.controller;
 
 import az.baku.divfinalproject.dto.request.LoginRequest;
-import az.baku.divfinalproject.dto.request.SignupRequest;
+import az.baku.divfinalproject.dto.request.RegisterRequest;
 import az.baku.divfinalproject.dto.response.JwtResponse;
 import az.baku.divfinalproject.entity.Role;
 import az.baku.divfinalproject.entity.User;
@@ -10,6 +10,7 @@ import az.baku.divfinalproject.repository.UserRepository;
 import az.baku.divfinalproject.security.jwt.JwtUtils;
 import az.baku.divfinalproject.security.services.UserDetailsImpl;
 import az.baku.divfinalproject.dto.response.MessageResponse;
+import az.baku.divfinalproject.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -28,6 +29,8 @@ import java.util.stream.Collectors;
 @RequestMapping("/api/auth")
 public class AuthController {
     final
+    UserService userService;
+    final
     AuthenticationManager authenticationManager;
 
     final
@@ -42,15 +45,16 @@ public class AuthController {
     final
     JwtUtils jwtUtils;
 
-    public AuthController(AuthenticationManager authenticationManager, UserRepository userRepository, RoleRepository roleRepository, PasswordEncoder encoder, JwtUtils jwtUtils) {
+    public AuthController(AuthenticationManager authenticationManager, UserRepository userRepository, RoleRepository roleRepository, PasswordEncoder encoder, UserService userService, JwtUtils jwtUtils) {
         this.authenticationManager = authenticationManager;
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
         this.encoder = encoder;
+        this.userService = userService;
         this.jwtUtils = jwtUtils;
     }
 
-    @PostMapping("/sign-in/email")
+    @PostMapping("/sign-in")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
 
         Authentication authentication = authenticationManager.authenticate(
@@ -60,42 +64,48 @@ public class AuthController {
         String jwt = jwtUtils.generateJwtToken(authentication);
 
         UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
-        List<String> roles = userDetails.getAuthorities().stream()
+        Set<String> roles = userDetails.getAuthorities().stream()
                 .map(GrantedAuthority::getAuthority)
-                .collect(Collectors.toList());
-
+                .collect(Collectors.toSet());
 
 
         return ResponseEntity.ok(new JwtResponse(jwt,
                 userDetails.getId(),
                 userDetails.getPhoneNumber(),
-                userDetails.getUsername(),
                 userDetails.getEmail(),
                 roles));
-
-
     }
 
-    @PostMapping("/sign-up")
-    public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
-        if (userRepository.existsByUsername(signUpRequest.getUsername())) {
-            return ResponseEntity
-                    .badRequest()
-                    .body(new MessageResponse("Error: Username is already taken!"));
-        }
-
-        if (userRepository.existsByEmail(signUpRequest.getEmail())) {
+    @PostMapping("/register-email")
+    public ResponseEntity<?> registerUser(@Valid @RequestBody RegisterRequest userRequest) {
+        if (userRepository.existsByEmail(userRequest.getEmail())) {
             return ResponseEntity
                     .badRequest()
                     .body(new MessageResponse("Error: Email is already in use!"));
         }
 
+        userService.register(userRequest);
+
+        return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
+    }
+
+    @PostMapping("/register-phoneNumber")
+    public ResponseEntity<?> registerWithPhoneNumber(@Valid @RequestBody RegisterRequest signUpRequest) {
+        if (userRepository.existsByPhoneNumber(signUpRequest.getPhoneNumber())) {
+            return ResponseEntity
+                    .badRequest()
+                    .body(new MessageResponse("Error: PhoneNumber is already taken!"));
+        }
+
+        if (!(signUpRequest.getPhoneNumber().startsWith("+"))) {
+            return ResponseEntity
+                    .badRequest()
+                    .body(new MessageResponse("Error: PhoneNumber isn't true! (Incorrect format) (It must start with [+] and only numeric characters)"));
+        }
+
         // Create new user's account
         User user = new User(signUpRequest.getFirstName(), signUpRequest.getMiddleName(),
                 signUpRequest.getLastName(), signUpRequest.getBirthDate(),
-                signUpRequest.getPhoneNumber(),
-                signUpRequest.getEmail(),
-                signUpRequest.getUsername(),
                 encoder.encode(signUpRequest.getPassword()));
 
 
@@ -105,6 +115,7 @@ public class AuthController {
         roles.add(userRole);
 
         user.setRoles(roles);
+        user.setPhoneNumber(signUpRequest.getPhoneNumber());
         userRepository.save(user);
 
         return ResponseEntity.ok(new MessageResponse("User registered successfully!"));

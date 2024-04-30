@@ -9,6 +9,7 @@ import lombok.*;
 @Getter
 @Setter
 @Builder
+@Table(schema = "public", name = "advert_type")
 public class AdvertType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

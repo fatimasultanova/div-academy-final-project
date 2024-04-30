@@ -9,6 +9,7 @@ import lombok.*;
 @Getter
 @Setter
 @Builder
+@ToString
 @Table(name = "role", schema = "public")
 public class Role {
     @Id

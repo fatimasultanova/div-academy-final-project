@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @Builder
+@Table(schema = "public", name = "user_verify")
 public class UserVerify {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

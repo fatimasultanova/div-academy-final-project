@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: 1714308376821-1
+      id: 1714483060161-1
       author: Fatima (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -49,7 +49,7 @@ databaseChangeLog:
                   type: BIGINT
             tableName: advert
   - changeSet:
-      id: 1714308376821-2
+      id: 1714483060161-2
       author: Fatima (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -60,7 +60,7 @@ databaseChangeLog:
                   constraints:
                     nullable: false
                     primaryKey: true
-                    primaryKeyName: pk_advertdetails
+                    primaryKeyName: pk_advert_details
                   name: id
                   type: BIGINT
               - column:
@@ -83,7 +83,7 @@ databaseChangeLog:
                   type: VARCHAR(255)
             tableName: advert_details
   - changeSet:
-      id: 1714308376821-3
+      id: 1714483060161-3
       author: Fatima (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -94,7 +94,7 @@ databaseChangeLog:
                   constraints:
                     nullable: false
                     primaryKey: true
-                    primaryKeyName: pk_adverttype
+                    primaryKeyName: pk_advert_type
                   name: id
                   type: BIGINT
               - column:
@@ -105,7 +105,7 @@ databaseChangeLog:
                   type: VARCHAR(255)
             tableName: advert_type
   - changeSet:
-      id: 1714308376821-4
+      id: 1714483060161-4
       author: Fatima (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -116,7 +116,7 @@ databaseChangeLog:
                   constraints:
                     nullable: false
                     primaryKey: true
-                    primaryKeyName: pk_buildingtype
+                    primaryKeyName: pk_building_type
                   name: id
                   type: BIGINT
               - column:
@@ -127,7 +127,7 @@ databaseChangeLog:
                   type: VARCHAR(255)
             tableName: building_type
   - changeSet:
-      id: 1714308376821-5
+      id: 1714483060161-5
       author: Fatima (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -138,7 +138,7 @@ databaseChangeLog:
                   constraints:
                     nullable: false
                     primaryKey: true
-                    primaryKeyName: pk_propertydetails
+                    primaryKeyName: pk_property_details
                   name: id
                   type: BIGINT
               - column:
@@ -172,7 +172,7 @@ databaseChangeLog:
                   type: VARCHAR(500)
             tableName: property_details
   - changeSet:
-      id: 1714308376821-6
+      id: 1714483060161-6
       author: Fatima (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -183,7 +183,7 @@ databaseChangeLog:
                   constraints:
                     nullable: false
                     primaryKey: true
-                    primaryKeyName: pk_propertytype
+                    primaryKeyName: pk_property_type
                   name: id
                   type: BIGINT
               - column:
@@ -194,7 +194,26 @@ databaseChangeLog:
                   type: VARCHAR(255)
             tableName: property_type
   - changeSet:
-      id: 1714308376821-7
+      id: 1714483060161-7
+      author: Fatima (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_role
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: name
+                  type: VARCHAR(25)
+            tableName: role
+  - changeSet:
+      id: 1714483060161-8
       author: Fatima (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -226,88 +245,7 @@ databaseChangeLog:
                   type: INT
             tableName: subscription
   - changeSet:
-      id: 1714308376821-8
-      author: Fatima (generated)
-      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
-      changes:
-        - createTable:
-            columns:
-              - column:
-                  autoIncrement: true
-                  constraints:
-                    nullable: false
-                    primaryKey: true
-                    primaryKeyName: pk_userverify
-                  name: id
-                  type: BIGINT
-              - column:
-                  name: create_date
-                  type: DATETIME
-              - column:
-                  name: end_time
-                  type: DATETIME
-              - column:
-                  constraints:
-                    nullable: false
-                  name: success
-                  type: BOOLEAN
-              - column:
-                  constraints:
-                    nullable: false
-                  name: is_active
-                  type: BOOLEAN
-              - column:
-                  name: token
-                  type: VARCHAR(255)
-              - column:
-                  name: user_id
-                  type: BIGINT
-            tableName: user_verify
-  - changeSet:
-      id: 1714308376821-9
-      author: Fatima (generated)
-      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
-      changes:
-        - createTable:
-            columns:
-              - column:
-                  autoIncrement: true
-                  constraints:
-                    nullable: false
-                    primaryKey: true
-                    primaryKeyName: pk_userssubscriptionscounting
-                  name: id
-                  type: BIGINT
-              - column:
-                  name: user_id
-                  type: BIGINT
-              - column:
-                  constraints:
-                    nullable: false
-                  name: count
-                  type: INT
-            tableName: users_subscriptions_counting
-  - changeSet:
-      id: 1714308376821-10
-      author: Fatima (generated)
-      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
-      changes:
-        - createTable:
-            columns:
-              - column:
-                  autoIncrement: true
-                  constraints:
-                    nullable: false
-                    primaryKey: true
-                    primaryKeyName: pk_role
-                  name: id
-                  type: BIGINT
-              - column:
-                  name: name
-                  type: VARCHAR(25)
-            tableName: role
-  - changeSet:
-      id: 1714308376821-11
+      id: 1714483060161-9
       author: Fatima (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -340,14 +278,7 @@ databaseChangeLog:
                   name: birth_date
                   type: DATE
               - column:
-                  constraints:
-                    nullable: false
                   name: email
-                  type: VARCHAR(255)
-              - column:
-                  constraints:
-                    nullable: false
-                  name: username
                   type: VARCHAR(255)
               - column:
                   constraints:
@@ -371,6 +302,11 @@ databaseChangeLog:
               - column:
                   constraints:
                     nullable: false
+                  name: deleted
+                  type: BOOLEAN
+              - column:
+                  constraints:
+                    nullable: false
                   name: is_active
                   type: BOOLEAN
               - column:
@@ -378,7 +314,7 @@ databaseChangeLog:
                   type: BIGINT
             tableName: user
   - changeSet:
-      id: 1714308376821-12
+      id: 1714483060161-10
       author: Fatima (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -396,7 +332,7 @@ databaseChangeLog:
                   type: BIGINT
             tableName: user_adverts
   - changeSet:
-      id: 1714308376821-13
+      id: 1714483060161-11
       author: Fatima (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -418,91 +354,65 @@ databaseChangeLog:
                   type: BIGINT
             tableName: user_roles
   - changeSet:
-      id: 1714308376821-14
+      id: 1714483060161-12
       author: Fatima (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
-        - addForeignKeyConstraint:
-            baseColumnNames: advert_details_id
-            baseTableName: advert
-            constraintName: FK_ADVERT_ON_ADVERTDETAILS
-            referencedColumnNames: id
-            referencedTableName: advert_details
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_user_verify
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: create_date
+                  type: DATETIME
+              - column:
+                  name: end_time
+                  type: DATETIME
+              - column:
+                  constraints:
+                    nullable: false
+                  name: success
+                  type: BOOLEAN
+              - column:
+                  constraints:
+                    nullable: false
+                  name: is_active
+                  type: BOOLEAN
+              - column:
+                  name: token
+                  type: VARCHAR(255)
+              - column:
+                  name: user_id
+                  type: BIGINT
+            tableName: user_verify
   - changeSet:
-      id: 1714308376821-15
+      id: 1714483060161-13
       author: Fatima (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
-        - addForeignKeyConstraint:
-            baseColumnNames: advert_type_id
-            baseTableName: advert
-            constraintName: FK_ADVERT_ON_ADVERTTYPE
-            referencedColumnNames: id
-            referencedTableName: advert_type
-  - changeSet:
-      id: 1714308376821-16
-      author: Fatima (generated)
-      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
-      changes:
-        - addForeignKeyConstraint:
-            baseColumnNames: property_details_id
-            baseTableName: advert
-            constraintName: FK_ADVERT_ON_PROPERTYDETAILS
-            referencedColumnNames: id
-            referencedTableName: property_details
-  - changeSet:
-      id: 1714308376821-17
-      author: Fatima (generated)
-      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
-      changes:
-        - addForeignKeyConstraint:
-            baseColumnNames: user_id
-            baseTableName: advert
-            constraintName: FK_ADVERT_ON_USER
-            referencedColumnNames: id
-            referencedTableName: user
-  - changeSet:
-      id: 1714308376821-18
-      author: Fatima (generated)
-      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
-      changes:
-        - addForeignKeyConstraint:
-            baseColumnNames: building_type_id
-            baseTableName: property_details
-            constraintName: FK_PROPERTYDETAILS_ON_BUILDINGTYPE
-            referencedColumnNames: id
-            referencedTableName: building_type
-  - changeSet:
-      id: 1714308376821-19
-      author: Fatima (generated)
-      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
-      changes:
-        - addForeignKeyConstraint:
-            baseColumnNames: property_type_id
-            baseTableName: property_details
-            constraintName: FK_PROPERTYDETAILS_ON_PROPERTYTYPE
-            referencedColumnNames: id
-            referencedTableName: property_type
-  - changeSet:
-      id: 1714308376821-20
-      author: Fatima (generated)
-      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
-      changes:
-        - addForeignKeyConstraint:
-            baseColumnNames: user_id
-            baseTableName: users_subscriptions_counting
-            constraintName: FK_USERSSUBSCRIPTIONSCOUNTING_ON_USER
-            referencedColumnNames: id
-            referencedTableName: user
-  - changeSet:
-      id: 1714308376821-21
-      author: Fatima (generated)
-      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
-      changes:
-        - addForeignKeyConstraint:
-            baseColumnNames: user_id
-            baseTableName: user_verify
-            constraintName: FK_USERVERIFY_ON_USER
-            referencedColumnNames: id
-            referencedTableName: user
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_users_subscriptions_counting
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: user_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: count
+                  type: INT
+            tableName: users_subscriptions_counting
 

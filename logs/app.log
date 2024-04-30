@@ -1,8 +1,60 @@
-2024-04-29 01:27:40,174 ERROR [http-nio-8080-exec-6] a.b.d.security.jwt.AuthEntryPointJwt  Unauthorized error: Full authentication is required to access this resource
-2024-04-29 01:28:14,290 ERROR [http-nio-8080-exec-8] a.b.d.security.jwt.AuthEntryPointJwt  Unauthorized error: Full authentication is required to access this resource
-2024-04-29 01:30:20,505 ERROR [http-nio-8080-exec-10] a.b.d.security.jwt.AuthEntryPointJwt  Unauthorized error: Full authentication is required to access this resource
-2024-04-29 01:30:50,190 ERROR [http-nio-8080-exec-1] a.b.d.security.jwt.AuthEntryPointJwt  Unauthorized error: Full authentication is required to access this resource
-2024-04-29 01:30:57,371 ERROR [http-nio-8080-exec-2] a.b.d.security.jwt.AuthEntryPointJwt  Unauthorized error: Full authentication is required to access this resource
-2024-04-29 01:31:06,568 ERROR [http-nio-8080-exec-3] a.b.d.security.jwt.AuthEntryPointJwt  Unauthorized error: Bad credentials
-2024-04-29 01:38:58,274 ERROR [http-nio-8080-exec-2] a.b.d.security.jwt.AuthEntryPointJwt  Unauthorized error: Full authentication is required to access this resource
-2024-04-29 01:39:28,275 ERROR [http-nio-8080-exec-3] a.b.d.security.jwt.AuthEntryPointJwt  Unauthorized error: Full authentication is required to access this resource
+2024-05-01 01:50:21,000 ERROR [main] o.s.b.diagnostics.LoggingFailureAnalysisReporter  
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in az.baku.divfinalproject.service.impl.UserServiceImpl required a bean of type 'az.baku.divfinalproject.mapper.UserMapper' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'az.baku.divfinalproject.mapper.UserMapper' in your configuration.
+
+2024-05-01 01:51:44,358 ERROR [main] o.s.b.diagnostics.LoggingFailureAnalysisReporter  
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in az.baku.divfinalproject.service.impl.UserServiceImpl required a bean of type 'az.baku.divfinalproject.mapper.UserMapper' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'az.baku.divfinalproject.mapper.UserMapper' in your configuration.
+
+2024-05-01 01:56:04,498 ERROR [main] o.s.b.diagnostics.LoggingFailureAnalysisReporter  
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in az.baku.divfinalproject.service.impl.UserServiceImpl required a bean of type 'az.baku.divfinalproject.mapper.UserMapper' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'az.baku.divfinalproject.mapper.UserMapper' in your configuration.
+
+2024-05-01 01:57:11,145 ERROR [main] o.s.b.diagnostics.LoggingFailureAnalysisReporter  
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in az.baku.divfinalproject.service.impl.UserServiceImpl required a bean of type 'az.baku.divfinalproject.mapper.UserMapper' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'az.baku.divfinalproject.mapper.UserMapper' in your configuration.
+

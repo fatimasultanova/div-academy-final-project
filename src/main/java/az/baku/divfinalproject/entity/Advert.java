@@ -11,6 +11,8 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @Builder
+@ToString
+@Table(schema = "public", name = "advert")
 public class Advert {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,7 +32,4 @@ public class Advert {
     private AdvertDetails advertDetails;
     @ManyToOne
     private User user;
-
-
-
 }

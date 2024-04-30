@@ -1,14 +1,14 @@
 package az.baku.divfinalproject.dto.response;
 
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.http.HttpStatus;
 
 @Getter
 @Builder
+@Data
 @NoArgsConstructor
+@ToString
 public class ExceptionResponse {
 
     String message;

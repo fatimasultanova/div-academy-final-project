@@ -11,6 +11,7 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @Builder
+@Table(schema = "public", name = "advert_details")
 public class AdvertDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
