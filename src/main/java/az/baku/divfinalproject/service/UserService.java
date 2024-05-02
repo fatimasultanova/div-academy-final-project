@@ -6,7 +6,9 @@ import az.baku.divfinalproject.dto.request.UserRequest;
 import az.baku.divfinalproject.dto.response.UserResponse;
 
 public interface UserService extends CrudService<UserRequest, UserResponse> {
-    UserResponse register(RegisterRequest registerRequest);
+    UserResponse registerWithEmail(RegisterRequest registerRequest);
+    UserResponse registerWithPhoneNumber(RegisterRequest registerRequest);
+
     UserResponse getUserByEmail(String email);
     UserResponse getUserByPhoneNumber(String phoneNumber);
     UserResponse getUserByEmailAndPassword(String email, String password);

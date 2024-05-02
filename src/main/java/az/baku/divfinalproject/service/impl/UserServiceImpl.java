@@ -5,9 +5,11 @@ import az.baku.divfinalproject.dto.request.UserRequest;
 import az.baku.divfinalproject.dto.response.UserResponse;
 import az.baku.divfinalproject.entity.Role;
 import az.baku.divfinalproject.entity.User;
+import az.baku.divfinalproject.entity.UserVerify;
 import az.baku.divfinalproject.mapper.UserMapper;
 import az.baku.divfinalproject.repository.RoleRepository;
 import az.baku.divfinalproject.repository.UserRepository;
+import az.baku.divfinalproject.repository.UserVerifyRepository;
 import az.baku.divfinalproject.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -23,10 +25,35 @@ public class UserServiceImpl implements UserService {
     private final UserMapper userMapper;
     private final RoleRepository roleRepository;
     private final PasswordEncoder encoder;
+    private final EmailService emailService;
+    private final UserVerifyRepository userVerifyRepository;
 
 
+    public UserResponse registerWithEmail(RegisterRequest request) {
+        User user = createdUser(request);
+        user.setEmail(request.getEmail());
 
-    public UserResponse register(RegisterRequest request) {
+        UserVerify userVerify = new UserVerify();
+        userVerify.setUser(user);
+
+        User saved = userRepository.save(user);
+
+        userVerifyRepository.save(userVerify);
+
+        emailService.sendEmail(saved.getEmail(), "localhost:8080/api/user/verify-email/" + userVerify.getToken());
+        return userMapper.toResponse(saved);
+    }
+
+
+    public UserResponse registerWithPhoneNumber(RegisterRequest request) {
+        User user = createdUser(request);
+        user.setPhoneNumber(request.getPhoneNumber());
+
+        User saved = userRepository.save(user);
+        return userMapper.toResponse(saved);
+    }
+
+    public User createdUser(RegisterRequest request) {
         User user = new User(request.getFirstName(),
                 request.getMiddleName(),
                 request.getLastName(),
@@ -39,14 +66,7 @@ public class UserServiceImpl implements UserService {
         roles.add(userRole);
 
         user.setRoles(roles);
-        if (request.getPhoneNumber()==null){
-            user.setEmail(request.getEmail());
-        }else {
-            user.setPhoneNumber(request.getPhoneNumber());
-        }
-
-        User saved = userRepository.save(user);
-        return userMapper.toResponse(saved);
+        return user;
     }
 
 
@@ -59,7 +79,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserResponse update(long id, UserRequest request) {
         User user = userRepository.findById(id).orElseThrow(() -> new RuntimeException("Error: User is not found."));
-        return userMapper.toResponse(userRepository.save(userMapper.partialUpdate(user,request)));
+        return userMapper.toResponse(userRepository.save(userMapper.partialUpdate(user, request)));
     }
 
     @Override
@@ -97,9 +117,9 @@ public class UserServiceImpl implements UserService {
     public UserResponse getUserByEmailAndPassword(String email, String password) {
         User user = userRepository.findByEmail(email).orElseThrow(() -> new RuntimeException("Error: User is not found."));
         boolean equals = user.getPassword().equals(password);
-        if (equals){
+        if (equals) {
             return userMapper.toResponse(user);
-        }else {
+        } else {
             return null;
         }
     }
@@ -114,5 +134,4 @@ public class UserServiceImpl implements UserService {
                 .map(Role::getName)
                 .collect(Collectors.joining(", "));
     }
-
 }

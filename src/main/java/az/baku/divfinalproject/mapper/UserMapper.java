@@ -13,6 +13,7 @@ import java.util.stream.Collectors;
 public interface UserMapper {
     User toEntity(UserRequest userRequest);
 
+
     UserResponse toResponse(User user);
 
     default Set<String> mapRoles(Set<Role> roles) {

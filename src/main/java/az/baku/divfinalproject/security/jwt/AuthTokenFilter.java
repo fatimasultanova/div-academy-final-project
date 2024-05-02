@@ -25,7 +25,7 @@ public class AuthTokenFilter extends OncePerRequestFilter {
 
 
   @Override
-  protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
+  protected void doFilterInternal(@SuppressWarnings("NullableProblems") HttpServletRequest request, @SuppressWarnings("NullableProblems") HttpServletResponse response, @SuppressWarnings("NullableProblems") FilterChain filterChain)
       throws ServletException, IOException {
     try {
       String jwt = parseJwt(request);
