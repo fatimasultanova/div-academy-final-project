@@ -49,6 +49,8 @@ public class User {
     private Set<Role> roles = new HashSet<>();
     @OneToMany(cascade = CascadeType.REMOVE , fetch = FetchType.LAZY)
     private List<Advert> adverts;
+    @OneToMany(cascade = CascadeType.REMOVE , fetch = FetchType.LAZY)
+    private List<Advert> viewedAdverts;
 
     public User(String firstName,String middleName, String lastName,LocalDate birthDate, String password) {
         this.firstName = firstName;

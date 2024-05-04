@@ -14,4 +14,6 @@ public class UserVerifyServiceImpl{
     public Optional<UserVerify> findByToken(String token) {
        return userVerifyRepository.findByToken(token);
     }
+
+
 }

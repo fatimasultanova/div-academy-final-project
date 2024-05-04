@@ -17,7 +17,6 @@ public class Subscription {
     private long id;
     private String type;
     private String description;
-    private double amount;
+    private long amount;
     private int requestCount;
-
 }

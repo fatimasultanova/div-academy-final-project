@@ -2,6 +2,24 @@ spring:
   profiles:
     include:
       - db
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+rabbitmq:
+  queue:
+    email:
+      name: email_queue
+  exchange:
+    email:
+      name: email_exchange
+  binding:
+    email:
+      name: email_routing_key
+stripe:
+  secretKey: sk_test_51PCNofJk0AsjAvZY1SMkzS8PxAGLkP5LeAkou4r046VBhXpLYXd2MtyNmnBcM9siGm1LDAVL02vv110M9f39uEKr00tAiZ9kuL
+
 baku:
   app:
     jwtSecret: ======================DivAcademy=Spring===========================

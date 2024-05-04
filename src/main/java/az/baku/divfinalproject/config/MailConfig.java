@@ -1,6 +1,5 @@
 package az.baku.divfinalproject.config;
 
-import jakarta.mail.MessagingException;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -12,7 +11,7 @@ import java.util.Properties;
 public class MailConfig {
 
     @Bean
-    public JavaMailSender mailSender() throws MessagingException {
+    public JavaMailSender javaMailSender() {
         JavaMailSenderImpl javaMailSender = new JavaMailSenderImpl();
         javaMailSender.setHost("smtp.gmail.com");
         javaMailSender.setPort(587);
@@ -26,6 +25,5 @@ public class MailConfig {
         props.put("mail.debug", "true");
 
         return javaMailSender;
-
     }
 }

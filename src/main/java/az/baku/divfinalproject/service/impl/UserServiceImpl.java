@@ -1,5 +1,6 @@
 package az.baku.divfinalproject.service.impl;
 
+import az.baku.divfinalproject.dto.request.EmailDTO;
 import az.baku.divfinalproject.dto.request.RegisterRequest;
 import az.baku.divfinalproject.dto.request.UserRequest;
 import az.baku.divfinalproject.dto.response.UserResponse;
@@ -12,6 +13,8 @@ import az.baku.divfinalproject.repository.UserRepository;
 import az.baku.divfinalproject.repository.UserVerifyRepository;
 import az.baku.divfinalproject.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -25,8 +28,14 @@ public class UserServiceImpl implements UserService {
     private final UserMapper userMapper;
     private final RoleRepository roleRepository;
     private final PasswordEncoder encoder;
-    private final EmailService emailService;
     private final UserVerifyRepository userVerifyRepository;
+    private final RabbitTemplate rabbitTemplate;
+
+    @Value("${rabbitmq.exchange.email.name}")
+    private String emailExchange;
+
+    @Value("${rabbitmq.binding.email.name}")
+    private String emailRoutingKey;
 
 
     public UserResponse registerWithEmail(RegisterRequest request) {
@@ -40,7 +49,14 @@ public class UserServiceImpl implements UserService {
 
         userVerifyRepository.save(userVerify);
 
-        emailService.sendEmail(saved.getEmail(), "localhost:8080/api/user/verify-email/" + userVerify.getToken());
+        rabbitTemplate.convertAndSend(emailExchange,
+                emailRoutingKey,
+                EmailDTO.builder()
+                        .subject("Verify your email")
+                        .body("localhost:8080/api/user/verify-email/" + userVerify.getToken())
+                        .to(request.getEmail())
+                        .build());
+
         return userMapper.toResponse(saved);
     }
 

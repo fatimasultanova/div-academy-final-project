@@ -1,4 +1,4 @@
-package az.baku.divfinalproject.dto.response;
+package az.baku.divfinalproject.dto.request;
 
 import lombok.*;
 
@@ -9,8 +9,7 @@ import lombok.*;
 @NoArgsConstructor
 @Builder
 @ToString
-public class SubscriptionResponse {
-    private long id;
+public class SubscriptionRequest {
     private String type;
     private String description;
     private long amount;
