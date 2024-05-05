@@ -17,6 +17,7 @@ rabbitmq:
   binding:
     email:
       name: email_routing_key
+
 baku:
   app:
     jwtSecret: ======================DivAcademy=Spring===========================
