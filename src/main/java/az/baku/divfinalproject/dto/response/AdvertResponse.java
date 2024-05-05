@@ -1,7 +1,6 @@
 package az.baku.divfinalproject.dto.response;
 
 import lombok.*;
-
 import java.time.LocalDateTime;
 
 @Getter
@@ -10,7 +9,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Builder
 @Data
-public class AdvertResponse {
+public class AdvertResponse{
     private long id;
     private String description;
     private long advertTypeId;
@@ -20,5 +19,5 @@ public class AdvertResponse {
     private boolean isActive;
     private double amountMonthly;
     private long advertDetailsId;
-    private long userId;
+    private long user;
 }

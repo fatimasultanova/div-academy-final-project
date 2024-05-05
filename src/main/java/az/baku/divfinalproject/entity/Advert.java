@@ -7,7 +7,6 @@ import java.time.LocalDateTime;
 
 @Entity
 @AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @Setter
 @Builder
@@ -19,21 +18,21 @@ public class Advert {
     private long id;
     @Column(length = 500)
     private String description;
-    @OneToOne()
+    @OneToOne(fetch = FetchType.EAGER)
     private AdvertType advertType;
-    @OneToOne(cascade = {CascadeType.ALL})
+    @OneToOne(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
     private PropertyDetails propertyDetails;
     @Column(nullable = false,updatable = false)
     private LocalDateTime createDate;
     private LocalDateTime updateDate;
     private boolean isActive;
     private double amountMonthly;
-    @OneToOne(cascade = {CascadeType.ALL})
+    @OneToOne(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
     private AdvertDetails advertDetails;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private User user;
 
-    public Advert(LocalDateTime createDate,LocalDateTime updateDate) {
+    public Advert() {
         this.createDate = LocalDateTime.now();
         this.updateDate = LocalDateTime.now();
         this.isActive = true;

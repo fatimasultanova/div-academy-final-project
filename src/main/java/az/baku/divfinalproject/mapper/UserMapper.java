@@ -2,10 +2,12 @@ package az.baku.divfinalproject.mapper;
 
 import az.baku.divfinalproject.dto.request.UserRequest;
 import az.baku.divfinalproject.dto.response.UserResponse;
+import az.baku.divfinalproject.entity.Advert;
 import az.baku.divfinalproject.entity.Role;
 import az.baku.divfinalproject.entity.User;
 import org.mapstruct.*;
 
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -19,6 +21,12 @@ public interface UserMapper {
         return roles.stream()
                 .map(Role::getName)
                 .collect(Collectors.toSet());
+    }
+
+    default List<Long> viewedAdverts(List<Advert> adverts) {
+        return adverts.stream()
+                .map(Advert::getId)
+                .collect(Collectors.toList());
     }
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE , nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS)

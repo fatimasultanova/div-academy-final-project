@@ -7,6 +7,7 @@ import az.baku.divfinalproject.entity.AdvertType;
 import az.baku.divfinalproject.mapper.AdvertMapper;
 import az.baku.divfinalproject.repository.AdvertRepository;
 import az.baku.divfinalproject.repository.AdvertTypeRepository;
+import az.baku.divfinalproject.repository.UserRepository;
 import az.baku.divfinalproject.service.AdvertService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -21,7 +22,7 @@ public class AdvertServiceImpl implements AdvertService {
     private final AdvertRepository advertRepository;
     private final AdvertMapper advertMapper;
     private final AdvertTypeRepository advertTypeRepository;
-
+    private final UserRepository repository;
 
     @Override
     public AdvertResponse create(AdvertRequest request) {
@@ -30,6 +31,9 @@ public class AdvertServiceImpl implements AdvertService {
         advert.setAdvertType(advertType);
         advert.setDescription(request.getDescription());
         advert.setAmountMonthly(request.getAmountMonthly());
+        if (repository.findById(request.getUserId()).isPresent()) {
+            advert.setUser(repository.findById(request.getUserId()).get());
+        }
         Advert saved = advertRepository.save(advert);
         return advertMapper.toResponse(saved);
     }

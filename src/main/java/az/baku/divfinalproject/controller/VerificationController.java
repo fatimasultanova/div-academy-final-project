@@ -47,6 +47,7 @@ public class VerificationController {
         }else {
             return "Token not found";
         }
+        byToken.get().setActive(false);
         return "Verified Successfully";
     }
 
@@ -68,6 +69,7 @@ public class VerificationController {
         }else {
             return "Token not found";
         }
+        byToken.get().setActive(false);
         return "Resend Successfully";
     }
 

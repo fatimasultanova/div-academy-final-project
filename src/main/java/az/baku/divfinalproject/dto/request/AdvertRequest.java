@@ -15,7 +15,6 @@ public class AdvertRequest {
     private String description;
     private String advertType;
     private long propertyDetailsId;
-    private LocalDateTime createDate;
     private LocalDateTime updateDate;
     private boolean isActive;
     private double amountMonthly;

@@ -22,5 +22,6 @@ public class UserResponse {
     private String phoneNumber;
     private SubscriptionResponse subscription;
     private Set<String> roles;
-    private List<AdvertResponse> adverts;
+    private List<Long> adverts;
+    private List<Long> viewedAdverts;
 }
