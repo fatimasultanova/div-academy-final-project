@@ -19,4 +19,11 @@ public class Subscription {
     private String description;
     private long amount;
     private int requestCount;
+
+    public Subscription(String type, String description, long amount, int requestCount) {
+        this.type = type;
+        this.description = description;
+        this.amount = amount;
+        this.requestCount = requestCount;
+    }
 }

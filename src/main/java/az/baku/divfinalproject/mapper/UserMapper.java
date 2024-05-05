@@ -21,6 +21,6 @@ public interface UserMapper {
                 .collect(Collectors.toSet());
     }
 
-    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
-    User partialUpdate(@MappingTarget User user, UserRequest userRequest);
+    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE , nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS)
+    User partialUpdate(UserRequest userRequest,@MappingTarget User user);
 }

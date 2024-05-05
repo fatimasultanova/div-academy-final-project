@@ -19,6 +19,7 @@ public class PropertyDetails {
     private int numberFloors;
     private int roomFloor;
     private boolean gas;
+    private long squareM;
     private boolean elevator;
     @OneToOne
     private BuildingType buildingType;

@@ -17,4 +17,17 @@ public class AdvertType {
     @Column(length = 500)
     private String description;
     private String type;
+
+    public static AdvertType fromString(String type) {
+        if (type != null) {
+            AdvertType advertType = new AdvertType();
+            advertType.setType(type);
+            return advertType;
+        }
+        return null;
+    }
+
+    public static String fromAdvertType(AdvertType type) {
+            return type != null ? type.getType() : null;
+    }
 }

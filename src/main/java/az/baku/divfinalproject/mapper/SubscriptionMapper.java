@@ -11,6 +11,6 @@ public interface SubscriptionMapper {
 
     SubscriptionResponse toResponse(Subscription subscription);
 
-    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
-    Subscription partialUpdate(SubscriptionRequest subscriptionRequest, @MappingTarget Subscription subscription);
+    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE , nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS)
+    Subscription partialUpdate(SubscriptionRequest subscriptionRequest,@MappingTarget Subscription subscription);
 }

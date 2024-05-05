@@ -23,7 +23,7 @@ public class Advert {
     private AdvertType advertType;
     @OneToOne(cascade = {CascadeType.ALL})
     private PropertyDetails propertyDetails;
-    @Column(nullable = false)
+    @Column(nullable = false,updatable = false)
     private LocalDateTime createDate;
     private LocalDateTime updateDate;
     private boolean isActive;
@@ -32,4 +32,10 @@ public class Advert {
     private AdvertDetails advertDetails;
     @ManyToOne
     private User user;
+
+    public Advert(LocalDateTime createDate,LocalDateTime updateDate) {
+        this.createDate = LocalDateTime.now();
+        this.updateDate = LocalDateTime.now();
+        this.isActive = true;
+    }
 }

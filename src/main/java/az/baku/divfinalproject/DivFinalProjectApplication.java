@@ -8,5 +8,4 @@ public class DivFinalProjectApplication {
     public static void main(String[] args) {
         SpringApplication.run(DivFinalProjectApplication.class, args);
     }
-
 }

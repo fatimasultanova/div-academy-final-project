@@ -1,5 +1,6 @@
 package az.baku.divfinalproject.dto.request;
 
+import az.baku.divfinalproject.dto.response.AdvertResponse;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -9,9 +10,10 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Data
 public class AdvertRequest {
     private String description;
-    private long advertTypeId;
+    private String advertType;
     private long propertyDetailsId;
     private LocalDateTime createDate;
     private LocalDateTime updateDate;

@@ -35,7 +35,7 @@ public class VerificationController {
     @GetMapping("/verify-email/{token}")
     public String verify(@PathVariable String token) {
         Optional<UserVerify> byToken = userVerifyService.findByToken(token);
-        if (byToken.isPresent()) {
+        if (byToken.isPresent() && !(byToken.get().getUser().isBlockedByAdmin())) {
             UserVerify userVerify = byToken.get();
             if (userVerify.isTokenValid()) {
                 userVerify.getUser().setActive(true);
@@ -53,7 +53,7 @@ public class VerificationController {
     @GetMapping("/resend-email/{token}")
     public String resend(@PathVariable String token) {
         Optional<UserVerify> byToken = userVerifyService.findByToken(token);
-        if (byToken.isPresent()) {
+        if (byToken.isPresent() && !(byToken.get().getUser().isBlockedByAdmin())) {
             UserVerify userVerify = new UserVerify();
             User user = byToken.get().getUser();
             userVerify.setUser(byToken.get().getUser());

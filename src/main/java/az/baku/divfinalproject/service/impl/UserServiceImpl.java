@@ -95,13 +95,14 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserResponse update(long id, UserRequest request) {
         User user = userRepository.findById(id).orElseThrow(() -> new RuntimeException("Error: User is not found."));
-        return userMapper.toResponse(userRepository.save(userMapper.partialUpdate(user, request)));
+        return userMapper.toResponse(userRepository.save(userMapper.partialUpdate(request,user)));
     }
 
     @Override
     public void delete(long id) {
         User user = userRepository.findById(id).orElseThrow(() -> new RuntimeException("Error: User is not found."));
         user.setDeleted(true);
+        userRepository.save(user);
     }
 
     @Override

@@ -64,10 +64,12 @@ public class WebSecurityConfig {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth ->
                         auth.requestMatchers("/api/auth/**").permitAll()
-                                .requestMatchers("/api/test/**").permitAll()
                                 .requestMatchers("/api/users/**").permitAll()
                                 .requestMatchers("/api/user/**").permitAll()
-                                .requestMatchers("/payment-process").permitAll()
+                                .requestMatchers("/api/payment/**").permitAll()
+                                .requestMatchers("/api/adverts/**").permitAll()
+                                .requestMatchers("/api/advert-details/**").permitAll()
+                                .requestMatchers("/api/property-details/**").permitAll()
                                 .anyRequest().authenticated()
                 );
 

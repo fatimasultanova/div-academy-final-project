@@ -14,4 +14,5 @@ public class PaymentRequest {
     private long amount;
     private String currency;
     private String payment_method;
+    private String secretKey;
 }

@@ -18,6 +18,7 @@ public class UserVerify {
     @OneToOne
     private User user;
     private boolean isActive;
+    @Column(updatable = false)
     private long createTime;
     private long endTime;
 

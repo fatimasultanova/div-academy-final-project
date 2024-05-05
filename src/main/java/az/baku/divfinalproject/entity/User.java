@@ -39,6 +39,7 @@ public class User {
     private LocalDateTime createDate;
     private LocalDateTime updateDate;
     private boolean deleted;
+    private boolean blockedByAdmin;
     private boolean isActive;
     @OneToOne
     private Subscription subscription;
@@ -62,6 +63,7 @@ public class User {
         this.updateDate = LocalDateTime.now();
         this.isActive = false;
         this.deleted = false;
+        this.blockedByAdmin = false;
     }
 
     @Override

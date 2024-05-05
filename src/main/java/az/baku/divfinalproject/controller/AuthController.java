@@ -37,7 +37,9 @@ public class AuthController {
         Optional<User> byPhoneNumberOrEmail = userRepository.findByPhoneNumberOrEmail(loginRequest.getPhoneNumberOrEmail());
         if (byPhoneNumberOrEmail.isPresent()) {
             User user = byPhoneNumberOrEmail.get();
-            if (user.isActive()){
+            if (user.getPhoneNumber()!=null && !(user.isBlockedByAdmin())){
+                return authenticationServiceImpl.authenticate(loginRequest);
+            }else if (user.isActive() && !(user.isBlockedByAdmin())){
                 return authenticationServiceImpl.authenticate(loginRequest);
             }
         }

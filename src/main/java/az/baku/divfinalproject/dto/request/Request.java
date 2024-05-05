@@ -9,7 +9,7 @@ import lombok.*;
 @NoArgsConstructor
 @Builder
 @ToString
-public class UpdateRequest {
+public class Request<R> {
     private long id;
-    private UserRequest userRequest;
+    private R request;
 }
