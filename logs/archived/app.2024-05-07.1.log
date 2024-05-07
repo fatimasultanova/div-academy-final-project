@@ -1,6 +1,5 @@
-2024-05-07 19:21:50,707 ERROR [main] liquibase.changelog  ChangeSet db/changelog/v2/07-01-changelog.yaml::1715095274181-2::Fatima (generated) encountered an exception.
-2024-05-07 19:21:50,722 ERROR [main] o.s.boot.web.embedded.tomcat.TomcatStarter  Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'webSecurityConfig' defined in file [C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main\az\baku\divfinalproject\security\WebSecurityConfig.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userDetailsServiceImpl' defined in file [C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main\az\baku\divfinalproject\security\services\UserDetailsServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in az.baku.divfinalproject.repository.UserRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
-2024-05-07 19:21:50,778 ERROR [main] org.springframework.boot.SpringApplication  Application run failed
+2024-05-07 19:20:37,874 ERROR [main] o.s.boot.web.embedded.tomcat.TomcatStarter  Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'webSecurityConfig' defined in file [C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main\az\baku\divfinalproject\security\WebSecurityConfig.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userDetailsServiceImpl' defined in file [C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main\az\baku\divfinalproject\security\services\UserDetailsServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in az.baku.divfinalproject.repository.UserRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+2024-05-07 19:20:37,997 ERROR [main] org.springframework.boot.SpringApplication  Application run failed
 org.springframework.context.ApplicationContextException: Unable to start web server
 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:165)
 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:618)
@@ -121,8 +120,10 @@ Caused by: org.springframework.beans.factory.BeanCreationException: Error creati
 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
 	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
 	... 91 common frames omitted
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/v2/07-01-changelog.yaml::1715095274181-2::Fatima (generated):
-     Reason: liquibase.exception.DatabaseException: ERROR: column "active" of relation "user" contains null values [Failed SQL: (0) ALTER TABLE public."user" ALTER COLUMN  active SET NOT NULL]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.ValidationFailedException: Validation Failed:
+     1 changesets check sum
+          db/changelog/v2/05-01-changelog.yaml::1714924586191-9::Fatima (generated) was: 9:7203a117bdc9611e12e32eba54d58cdb but is now: 9:2caeaf3b0389458a5baf98525f5ee333
+
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
@@ -134,8 +135,10 @@ Caused by: org.springframework.beans.factory.BeanCreationException: Error creati
 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
 	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
 	... 103 common frames omitted
-Caused by: liquibase.exception.CommandExecutionException: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/v2/07-01-changelog.yaml::1715095274181-2::Fatima (generated):
-     Reason: liquibase.exception.DatabaseException: ERROR: column "active" of relation "user" contains null values [Failed SQL: (0) ALTER TABLE public."user" ALTER COLUMN  active SET NOT NULL]
+Caused by: liquibase.exception.CommandExecutionException: liquibase.exception.ValidationFailedException: Validation Failed:
+     1 changesets check sum
+          db/changelog/v2/05-01-changelog.yaml::1714924586191-9::Fatima (generated) was: 9:7203a117bdc9611e12e32eba54d58cdb but is now: 9:2caeaf3b0389458a5baf98525f5ee333
+
 	at liquibase.command.CommandScope.execute(CommandScope.java:237)
 	at liquibase.Liquibase.lambda$update$0(Liquibase.java:222)
 	at liquibase.Scope.lambda$child$0(Scope.java:184)
@@ -150,63 +153,11 @@ Caused by: liquibase.exception.CommandExecutionException: liquibase.exception.Li
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
 	... 112 common frames omitted
-Caused by: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/v2/07-01-changelog.yaml::1715095274181-2::Fatima (generated):
-     Reason: liquibase.exception.DatabaseException: ERROR: column "active" of relation "user" contains null values [Failed SQL: (0) ALTER TABLE public."user" ALTER COLUMN  active SET NOT NULL]
-	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:122)
-	at liquibase.command.core.AbstractUpdateCommandStep.lambda$doRun$1(AbstractUpdateCommandStep.java:105)
-	at liquibase.Scope.lambda$child$0(Scope.java:184)
-	at liquibase.Scope.child(Scope.java:193)
-	at liquibase.Scope.child(Scope.java:183)
-	at liquibase.Scope.child(Scope.java:162)
-	at liquibase.command.core.AbstractUpdateCommandStep.doRun(AbstractUpdateCommandStep.java:104)
-	at liquibase.command.core.AbstractUpdateCommandStep.lambda$run$0(AbstractUpdateCommandStep.java:63)
-	at liquibase.Scope.lambda$child$0(Scope.java:184)
-	at liquibase.Scope.child(Scope.java:193)
-	at liquibase.Scope.child(Scope.java:183)
-	at liquibase.Scope.child(Scope.java:162)
-	at liquibase.command.core.AbstractUpdateCommandStep.run(AbstractUpdateCommandStep.java:62)
-	at liquibase.command.core.UpdateCommandStep.run(UpdateCommandStep.java:106)
+Caused by: liquibase.exception.ValidationFailedException: Validation Failed:
+     1 changesets check sum
+          db/changelog/v2/05-01-changelog.yaml::1714924586191-9::Fatima (generated) was: 9:7203a117bdc9611e12e32eba54d58cdb but is now: 9:2caeaf3b0389458a5baf98525f5ee333
+
+	at liquibase.changelog.DatabaseChangeLog.validate(DatabaseChangeLog.java:353)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.run(DatabaseChangelogCommandStep.java:92)
 	at liquibase.command.CommandScope.execute(CommandScope.java:214)
 	... 124 common frames omitted
-Caused by: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/v2/07-01-changelog.yaml::1715095274181-2::Fatima (generated):
-     Reason: liquibase.exception.DatabaseException: ERROR: column "active" of relation "user" contains null values [Failed SQL: (0) ALTER TABLE public."user" ALTER COLUMN  active SET NOT NULL]
-	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:785)
-	at liquibase.changelog.visitor.UpdateVisitor.executeAcceptedChange(UpdateVisitor.java:118)
-	at liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:68)
-	at liquibase.changelog.ChangeLogIterator$2.lambda$run$0(ChangeLogIterator.java:110)
-	at liquibase.Scope.lambda$child$0(Scope.java:184)
-	at liquibase.Scope.child(Scope.java:193)
-	at liquibase.Scope.child(Scope.java:183)
-	at liquibase.Scope.child(Scope.java:162)
-	at liquibase.Scope.child(Scope.java:250)
-	at liquibase.changelog.ChangeLogIterator$2.run(ChangeLogIterator.java:100)
-	at liquibase.Scope.lambda$child$0(Scope.java:184)
-	at liquibase.Scope.child(Scope.java:193)
-	at liquibase.Scope.child(Scope.java:183)
-	at liquibase.Scope.child(Scope.java:162)
-	at liquibase.Scope.child(Scope.java:250)
-	at liquibase.Scope.child(Scope.java:254)
-	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:74)
-	... 138 common frames omitted
-Caused by: liquibase.exception.DatabaseException: ERROR: column "active" of relation "user" contains null values [Failed SQL: (0) ALTER TABLE public."user" ALTER COLUMN  active SET NOT NULL]
-	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:468)
-	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:77)
-	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:177)
-	at liquibase.database.AbstractJdbcDatabase.execute(AbstractJdbcDatabase.java:1291)
-	at liquibase.database.AbstractJdbcDatabase.executeStatements(AbstractJdbcDatabase.java:1273)
-	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:744)
-	... 154 common frames omitted
-Caused by: org.postgresql.util.PSQLException: ERROR: column "active" of relation "user" contains null values
-	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2713)
-	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2401)
-	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:368)
-	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:498)
-	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:415)
-	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:335)
-	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:321)
-	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:297)
-	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:292)
-	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
-	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
-	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:462)
-	... 159 common frames omitted

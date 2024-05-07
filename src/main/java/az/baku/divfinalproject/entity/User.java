@@ -5,9 +5,7 @@ import lombok.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -41,7 +39,7 @@ public class User {
     private LocalDateTime updateDate;
     private boolean deleted;
     private boolean blockedByAdmin;
-    private boolean isActive;
+    private boolean active;
     @OneToOne
     private Subscription subscription;
     @ManyToMany(fetch = FetchType.LAZY)
@@ -62,7 +60,7 @@ public class User {
         this.password = password;
         this.createDate = LocalDateTime.now();
         this.updateDate = LocalDateTime.now();
-        this.isActive = false;
+        this.active = false;
         this.deleted = false;
         this.blockedByAdmin = false;
     }
@@ -81,7 +79,7 @@ public class User {
                 ", createDate=" + createDate +
                 ", updateDate=" + updateDate +
                 ", deleted=" + deleted +
-                ", isActive=" + isActive +
+                ", isActive=" + active +
                 ", subscription=" + subscription.toString() +
                 ", roles=" + roles.toString() +
                 ", adverts=" + adverts.toString() +

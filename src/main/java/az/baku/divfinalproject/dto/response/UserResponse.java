@@ -3,7 +3,6 @@ package az.baku.divfinalproject.dto.response;
 import lombok.*;
 
 import java.time.LocalDate;
-import java.util.List;
 import java.util.Set;
 @Getter
 @Setter
@@ -20,6 +19,9 @@ public class UserResponse {
     private LocalDate birthDate;
     private String email;
     private String phoneNumber;
+    private boolean active;
+    private boolean blockedByAdmin;
+    private boolean deleted;
     private SubscriptionResponse subscription;
     private Set<String> roles;
     private Set<Long> adverts;
