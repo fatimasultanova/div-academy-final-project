@@ -3,12 +3,13 @@ package az.baku.divfinalproject.controller;
 import az.baku.divfinalproject.dto.request.Request;
 import az.baku.divfinalproject.dto.request.UserRequest;
 import az.baku.divfinalproject.dto.response.MessageResponse;
-import az.baku.divfinalproject.dto.response.UserResponse;
 import az.baku.divfinalproject.entity.Advert;
 import az.baku.divfinalproject.entity.User;
+import az.baku.divfinalproject.entity.UsersSubscriptionsCounting;
 import az.baku.divfinalproject.mapper.UserMapper;
 import az.baku.divfinalproject.repository.AdvertRepository;
 import az.baku.divfinalproject.repository.UserRepository;
+import az.baku.divfinalproject.repository.UsersSubscriptionsCountingRepository;
 import az.baku.divfinalproject.service.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -26,6 +27,7 @@ public class UserController {
     private final UserMapper userMapper;
     private final UserRepository repository;
     private final AdvertRepository advertRepository;
+    private final UsersSubscriptionsCountingRepository countingRepository;
 
 
     @PostMapping("/update")
@@ -41,14 +43,34 @@ public class UserController {
     }
 
     @GetMapping("/contact-information")
-    public ResponseEntity<UserResponse> getContactInformation(@RequestBody Request<Advert> request) {
+    public ResponseEntity<?> getContactInformation(@RequestBody Request<Advert> request) {
         Optional<User> user = repository.findById(request.getId());
         if (user.isPresent()) {
-            Optional<Advert> byId = advertRepository.findById(request.getRequest().getId());
-            user.get().getViewedAdverts().add(byId.get());
-            repository.save(user.get());
-            return ResponseEntity.ok(userMapper.toResponse(user.get()));
+            Optional<UsersSubscriptionsCounting> byUser = countingRepository.findByUser(user.get());
+            Optional<Advert> advert = advertRepository.findById(request.getRequest().getId());
+            if (advert.isPresent()) {
+                if (user.get().getViewedAdverts().contains(advert.get())) {
+                    return ResponseEntity.ok(userMapper.toResponse(user.get()));
+                }
+                if (byUser.isPresent()) {
+                    if (byUser.get().getCount() >= 1) {
+                            user.get().getViewedAdverts().add(advert.get());
+                            byUser.get().setCount(byUser.get().getCount() - 1);
+                            countingRepository.save(byUser.get());
+                            repository.save(user.get());
+                            return ResponseEntity.ok(userMapper.toResponse(user.get()));
+                        }
+                    }else {
+                    return ResponseEntity
+                            .badRequest()
+                            .body(new MessageResponse("Error: Subscription is finished!"));
+                }
+                } else {
+            return ResponseEntity
+                    .badRequest()
+                    .body(new MessageResponse("Error: Advert is not found!"));
+            }
         }
-        return ResponseEntity.notFound().build();
+            return ResponseEntity.notFound().build();
     }
 }

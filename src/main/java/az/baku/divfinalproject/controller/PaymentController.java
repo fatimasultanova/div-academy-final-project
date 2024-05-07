@@ -3,8 +3,10 @@ package az.baku.divfinalproject.controller;
 import az.baku.divfinalproject.dto.request.PaymentRequest;
 import az.baku.divfinalproject.entity.Subscription;
 import az.baku.divfinalproject.entity.User;
+import az.baku.divfinalproject.entity.UsersSubscriptionsCounting;
 import az.baku.divfinalproject.repository.SubscriptionRepository;
 import az.baku.divfinalproject.repository.UserRepository;
+import az.baku.divfinalproject.repository.UsersSubscriptionsCountingRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -24,6 +26,7 @@ import java.util.Optional;
 public class PaymentController {
     private final UserRepository userRepository;
     private final SubscriptionRepository subscriptionRepository;
+    private final UsersSubscriptionsCountingRepository countingRepository;
 
     @PostMapping("/subscription-payment")
     public ResponseEntity<String> createPayment(@RequestBody PaymentRequest paymentRequest) {
@@ -43,6 +46,19 @@ public class PaymentController {
 
         if (response.getStatusCode() == HttpStatus.OK) {
             activateUserSubscription(paymentRequest.getUserId(),paymentRequest.getAmount());
+            Optional<User> user = userRepository.findById(paymentRequest.getUserId());
+            Optional<UsersSubscriptionsCounting> byUser = countingRepository.findByUser(user.get());
+            if (byUser.isPresent()) {
+                Subscription subscription = subscriptionRepository.findByAmount(paymentRequest.getAmount());
+                byUser.get().setCount(subscription.getRequestCount());
+                countingRepository.save(byUser.get());
+            }else {
+                UsersSubscriptionsCounting counting = new UsersSubscriptionsCounting();
+                counting.setUser(user.get());
+                Subscription subscription = subscriptionRepository.findByAmount(paymentRequest.getAmount());
+                counting.setCount(subscription.getRequestCount());
+                countingRepository.save(counting);
+            }
             return ResponseEntity.ok("Payment processed successfully"+ "\nUser id: " + paymentRequest.getUserId());
         } else {
             return ResponseEntity.status(response.getStatusCode()).body(response.getBody());

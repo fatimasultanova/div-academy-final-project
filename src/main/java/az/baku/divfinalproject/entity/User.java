@@ -50,9 +50,9 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles = new HashSet<>();
     @OneToMany(cascade = CascadeType.REMOVE , fetch = FetchType.LAZY)
-    private List<Advert> adverts = new ArrayList<>();
+    private Set<Advert> adverts = new HashSet<>();
     @OneToMany(cascade = CascadeType.REMOVE , fetch = FetchType.LAZY)
-    private List<Advert> viewedAdverts = new ArrayList<>();
+    private Set<Advert> viewedAdverts = new HashSet<>();
 
     public User(String firstName,String middleName, String lastName,LocalDate birthDate, String password) {
         this.firstName = firstName;

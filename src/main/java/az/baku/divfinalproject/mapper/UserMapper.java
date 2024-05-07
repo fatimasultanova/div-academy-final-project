@@ -23,10 +23,10 @@ public interface UserMapper {
                 .collect(Collectors.toSet());
     }
 
-    default List<Long> viewedAdverts(List<Advert> adverts) {
+    default Set<Long> viewedAdverts(Set<Advert> adverts) {
         return adverts.stream()
                 .map(Advert::getId)
-                .collect(Collectors.toList());
+                .collect(Collectors.toSet());
     }
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE , nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS)
