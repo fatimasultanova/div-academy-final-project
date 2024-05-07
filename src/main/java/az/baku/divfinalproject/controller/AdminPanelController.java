@@ -23,4 +23,17 @@ public class AdminPanelController {
         Collection<UserResponse> all = userService.findAll();
         return ResponseEntity.ok(all);
     }
+
+    @PostMapping("/create-user-email")
+    public ResponseEntity<?> createUserEmail(@RequestBody RegisterRequest request) {
+//        UserResponse userResponse = userService.registerWithEmail(request);
+//        return ResponseEntity.ok(userResponse);
+        return ResponseEntity.ok(authController.registerUser(request));
+    }
+
+    @PostMapping("/create-user-phone")
+    public ResponseEntity<?> createUserPhone(@RequestBody RegisterRequest request) {
+        UserResponse userResponse = userService.registerWithPhoneNumber(request);
+        return ResponseEntity.ok(userResponse);
+    }
 }

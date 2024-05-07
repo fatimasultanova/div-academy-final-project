@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Builder
 @Data
+@ToString
 public class AdvertResponse{
     private long id;
     private String description;

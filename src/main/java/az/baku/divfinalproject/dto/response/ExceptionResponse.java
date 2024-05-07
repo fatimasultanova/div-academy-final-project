@@ -5,9 +5,10 @@ import lombok.*;
 import org.springframework.http.HttpStatus;
 
 @Getter
+@Setter
+@NoArgsConstructor
 @Builder
 @Data
-@NoArgsConstructor
 @ToString
 public class ExceptionResponse {
 

@@ -72,6 +72,7 @@ public class WebSecurityConfig {
                                 .requestMatchers("/api/advert-details/**").permitAll()
                                 .requestMatchers("/api/property-details/**").permitAll()
                                 .requestMatchers("/api/admin-panel/**").permitAll()
+                                .requestMatchers("/api/advert-type/**").permitAll()
                                 .anyRequest().authenticated()
                 );
 

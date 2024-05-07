@@ -68,4 +68,9 @@ public class SubscriptionServiceImpl implements CrudService<SubscriptionRequest,
         Subscription byType = subscriptionRepository.findByType(type);
         return subscriptionMapper.toResponse(byType);
     }
+
+    public SubscriptionResponse getByAmount(long amount) {
+        Subscription subscription = subscriptionRepository.findByAmount(amount);
+        return subscriptionMapper.toResponse(subscription);
+    }
 }

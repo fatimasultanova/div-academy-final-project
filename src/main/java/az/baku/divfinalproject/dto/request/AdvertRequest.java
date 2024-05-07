@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Builder
 @Data
+@ToString
 public class AdvertRequest {
     private String description;
     private String advertType;
