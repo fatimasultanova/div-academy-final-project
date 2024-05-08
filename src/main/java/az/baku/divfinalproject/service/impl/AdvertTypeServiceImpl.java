@@ -28,7 +28,7 @@ public class AdvertTypeServiceImpl implements CrudService<AdvertTypeRequest, Adv
 
     @Override
     public AdvertTypeResponse update(long id, AdvertTypeRequest request) {
-        AdvertType advertType = repository.findById(id).orElseThrow(() -> new RuntimeException("Error: Advert is not found."));
+        AdvertType advertType = repository.findById(id).orElseThrow(() -> new RuntimeException("Error: Advert Type is not found."));
         return mapper.toResponse(repository.save(mapper.partialUpdate(request,advertType)));
     }
 
@@ -39,7 +39,7 @@ public class AdvertTypeServiceImpl implements CrudService<AdvertTypeRequest, Adv
 
     @Override
     public AdvertTypeResponse getById(long id) {
-        AdvertType advertType = repository.findById(id).orElseThrow(() -> new RuntimeException("Error: Advert is not found."));
+        AdvertType advertType = repository.findById(id).orElseThrow(() -> new RuntimeException("Error: Advert Type is not found."));
         return mapper.toResponse(advertType);
     }
 

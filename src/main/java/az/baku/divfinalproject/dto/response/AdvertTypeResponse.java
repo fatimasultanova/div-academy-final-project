@@ -10,7 +10,7 @@ import lombok.*;
 @Data
 @ToString
 public class AdvertTypeResponse {
-    long id;
-    String description;
-    String type;
+    private long id;
+    private String description;
+    private String type;
 }

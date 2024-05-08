@@ -1,4 +1,4 @@
-package az.baku.divfinalproject.dto.request;
+package az.baku.divfinalproject.dto.response;
 
 import lombok.*;
 
@@ -9,7 +9,9 @@ import lombok.*;
 @Builder
 @Data
 @ToString
-public class AdvertTypeRequest {
+public class BuildingTypeResponse {
+    private long id;
     private String description;
     private String type;
+
 }

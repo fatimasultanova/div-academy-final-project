@@ -8,5 +8,5 @@ import java.util.Optional;
 
 @Repository
 public interface BuildingTypeRepository extends JpaRepository<BuildingType, Long> {
-    Optional<BuildingType> findByType(String name);
+    Optional<BuildingType> findByType(String type);
 }

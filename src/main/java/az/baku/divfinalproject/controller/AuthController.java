@@ -8,6 +8,7 @@ import az.baku.divfinalproject.security.services.AuthenticationServiceImpl;
 import az.baku.divfinalproject.dto.response.MessageResponse;
 import az.baku.divfinalproject.service.UserService;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,20 +18,12 @@ import java.util.Optional;
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api/auth")
+@RequiredArgsConstructor
 public class AuthController {
-    final
-    UserService userService;
+   private final UserService userService;
+   private final UserRepository userRepository;
+   private final AuthenticationServiceImpl authenticationServiceImpl;
 
-    final
-    UserRepository userRepository;
-
-    final AuthenticationServiceImpl authenticationServiceImpl;
-
-    public AuthController(UserRepository userRepository, UserService userService, AuthenticationServiceImpl authenticationServiceImpl) {
-        this.userRepository = userRepository;
-        this.userService = userService;
-        this.authenticationServiceImpl = authenticationServiceImpl;
-    }
 
     @PostMapping("/sign-in")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {

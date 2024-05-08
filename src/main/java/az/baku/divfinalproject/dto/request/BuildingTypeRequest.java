@@ -9,7 +9,7 @@ import lombok.*;
 @Builder
 @Data
 @ToString
-public class AdvertTypeRequest {
+public class BuildingTypeRequest {
     private String description;
     private String type;
 }
