@@ -22,15 +22,15 @@ public class PropertyTypeServiceImpl implements CrudService<PropertyTypeRequest,
 
     @Override
     public PropertyTypeResponse create(PropertyTypeRequest request) {
-        PropertyType PropertyType = mapper.toEntity(request);
-        repository.save(PropertyType);
-        return mapper.toResponse(PropertyType);
+        PropertyType propertyType = mapper.toEntity(request);
+        repository.save(propertyType);
+        return mapper.toResponse(propertyType);
     }
 
     @Override
     public PropertyTypeResponse update(long id, PropertyTypeRequest request) {
-        PropertyType PropertyType = repository.findById(id).orElseThrow(() -> new RuntimeException("Error: Property Type is not found."));
-        return mapper.toResponse(repository.save(mapper.partialUpdate(request,PropertyType)));
+        PropertyType propertyType = repository.findById(id).orElseThrow(() -> new RuntimeException("Error: Property Type is not found."));
+        return mapper.toResponse(repository.save(mapper.partialUpdate(request,propertyType)));
     }
 
     @Override
@@ -40,8 +40,8 @@ public class PropertyTypeServiceImpl implements CrudService<PropertyTypeRequest,
 
     @Override
     public PropertyTypeResponse getById(long id) {
-        PropertyType PropertyType = repository.findById(id).orElseThrow(() -> new RuntimeException("Error: Property Type is not found."));
-        return mapper.toResponse(PropertyType);
+        PropertyType propertyType = repository.findById(id).orElseThrow(() -> new RuntimeException("Error: Property Type is not found."));
+        return mapper.toResponse(propertyType);
     }
 
     @Override
