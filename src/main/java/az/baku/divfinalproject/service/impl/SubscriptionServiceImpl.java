@@ -23,28 +23,15 @@ public class SubscriptionServiceImpl implements CrudService<SubscriptionRequest,
 
     @Override
     public SubscriptionResponse create(SubscriptionRequest request) {
-        Subscription subscription = Subscription.builder()
-                .type(request.getType())
-                .description(request.getDescription())
-                .amount(request.getAmount())
-                .requestCount(request.getRequestCount())
-                .build();
+        Subscription subscription = subscriptionMapper.toEntity(request);
         subscriptionRepository.save(subscription);
         return subscriptionMapper.toResponse(subscription);
     }
 
     @Override
     public SubscriptionResponse update(long id, SubscriptionRequest request) {
-        Optional<Subscription> subscription = subscriptionRepository.findById(id);
-        if (subscription.isPresent()) {
-            subscription.get().setType(request.getType());
-            subscription.get().setDescription(request.getDescription());
-            subscription.get().setAmount(request.getAmount());
-            subscription.get().setRequestCount(request.getRequestCount());
-            subscriptionRepository.save(subscription.get());
-            return subscriptionMapper.toResponse(subscription.get());
-        }
-        return null;
+        Subscription subscription = subscriptionRepository.findById(id).orElseThrow(() -> new RuntimeException("Subscription not found with id: " + id));
+        return subscriptionMapper.toResponse(subscriptionRepository.save(subscriptionMapper.partialUpdate(request,subscription)));
     }
 
     @Override

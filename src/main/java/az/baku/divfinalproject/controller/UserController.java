@@ -1,8 +1,10 @@
 package az.baku.divfinalproject.controller;
 
+import az.baku.divfinalproject.dto.request.AdvertRequest;
 import az.baku.divfinalproject.dto.request.Request;
 import az.baku.divfinalproject.dto.request.UserRequest;
 import az.baku.divfinalproject.dto.response.MessageResponse;
+import az.baku.divfinalproject.dto.response.UserResponse;
 import az.baku.divfinalproject.entity.Advert;
 import az.baku.divfinalproject.entity.User;
 import az.baku.divfinalproject.entity.UsersSubscriptionsCounting;
@@ -29,6 +31,11 @@ public class UserController {
     private final AdvertRepository advertRepository;
     private final UsersSubscriptionsCountingRepository countingRepository;
 
+    @GetMapping("/{id}")
+    private UserResponse getById(@PathVariable long id) {
+        return userService.getById(id);
+    }
+
 
     @PostMapping("/update")
     public ResponseEntity<?> update(@Valid @RequestBody Request<UserRequest> request) {
@@ -43,7 +50,7 @@ public class UserController {
     }
 
     @GetMapping("/contact-information")
-    public ResponseEntity<?> getContactInformation(@RequestBody Request<Advert> request) {
+    public ResponseEntity<?> getContactInformation(@RequestBody Request<AdvertRequest> request) {
         Optional<User> user = repository.findById(request.getId());
         if (user.isPresent()) {
             Optional<UsersSubscriptionsCounting> byUser = countingRepository.findByUser(user.get());

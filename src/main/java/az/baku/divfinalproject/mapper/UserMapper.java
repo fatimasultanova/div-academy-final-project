@@ -1,5 +1,6 @@
 package az.baku.divfinalproject.mapper;
 
+import az.baku.divfinalproject.dto.request.RegisterRequest;
 import az.baku.divfinalproject.dto.request.UserRequest;
 import az.baku.divfinalproject.dto.response.UserResponse;
 import az.baku.divfinalproject.entity.Advert;
@@ -31,4 +32,7 @@ public interface UserMapper {
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE , nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS)
     User partialUpdate(UserRequest userRequest,@MappingTarget User user);
+
+    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE , nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS)
+    User partialUpdate(RegisterRequest request,@MappingTarget User user);
 }

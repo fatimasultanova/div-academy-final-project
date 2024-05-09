@@ -46,9 +46,9 @@ public class PropertyTypeController {
 
     @GetMapping("/type/{type}")
     public PropertyTypeResponse getPropertyTypeByType(@PathVariable("type") String type) {
-        PropertyType PropertyType = propertyTypeService.findByType(type);
-        if (PropertyType != null) {
-            return propertyTypeMapper.toResponse(PropertyType);
+        PropertyType propertyType = propertyTypeService.findByType(type);
+        if (propertyType != null) {
+            return propertyTypeMapper.toResponse(propertyType);
         } else {
             return null;
         }

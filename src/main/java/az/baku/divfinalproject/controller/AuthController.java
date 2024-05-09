@@ -2,9 +2,7 @@ package az.baku.divfinalproject.controller;
 
 import az.baku.divfinalproject.dto.request.LoginRequest;
 import az.baku.divfinalproject.dto.request.RegisterRequest;
-import az.baku.divfinalproject.entity.User;
 import az.baku.divfinalproject.repository.UserRepository;
-import az.baku.divfinalproject.security.services.AuthenticationServiceImpl;
 import az.baku.divfinalproject.dto.response.MessageResponse;
 import az.baku.divfinalproject.service.UserService;
 import jakarta.validation.Valid;
@@ -12,45 +10,25 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Optional;
-
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api/auth")
 @RequiredArgsConstructor
 public class AuthController {
-   private final UserService userService;
-   private final UserRepository userRepository;
-   private final AuthenticationServiceImpl authenticationServiceImpl;
+    private final UserService userService;
+    private final UserRepository userRepository;
 
 
     @PostMapping("/sign-in")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
-        Optional<User> byPhoneNumberOrEmail = userRepository.findByPhoneNumberOrEmail(loginRequest.getPhoneNumberOrEmail());
-        if (byPhoneNumberOrEmail.isPresent()) {
-            User user = byPhoneNumberOrEmail.get();
-            if (user.getPhoneNumber()!=null && !(user.isBlockedByAdmin())){
-                return authenticationServiceImpl.authenticate(loginRequest);
-            }else if (user.isActive() && !(user.isBlockedByAdmin())){
-                return authenticationServiceImpl.authenticate(loginRequest);
-            }
-        }
-        return ResponseEntity.badRequest().eTag("Not Verified").build();
+        return userService.authenticateUser(loginRequest);
     }
 
 
     @PostMapping("/register-email")
     public ResponseEntity<?> registerUser(@Valid @RequestBody RegisterRequest userRequest) {
-        if (userRepository.existsByEmail(userRequest.getEmail())) {
-            return ResponseEntity
-                    .badRequest()
-                    .body(new MessageResponse("Error: Email is already in use!"));
-        }
-
-        userService.registerWithEmail(userRequest);
-
-        return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
+        return userService.registerUserWithEmail(userRequest);
     }
 
 

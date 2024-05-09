@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 @Data
 @ToString
 public class AdvertRequest {
+    private long id;
     private String description;
     private String advertType;
     private long propertyDetailsId;

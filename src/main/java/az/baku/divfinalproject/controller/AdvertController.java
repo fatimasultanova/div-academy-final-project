@@ -3,11 +3,8 @@ package az.baku.divfinalproject.controller;
 import az.baku.divfinalproject.dto.request.AdvertRequest;
 import az.baku.divfinalproject.dto.request.Request;
 import az.baku.divfinalproject.dto.response.AdvertResponse;
-import az.baku.divfinalproject.dto.response.UserResponse;
 import az.baku.divfinalproject.entity.Advert;
-import az.baku.divfinalproject.mapper.AdvertMapper;
 import az.baku.divfinalproject.service.AdvertService;
-import az.baku.divfinalproject.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

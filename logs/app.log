@@ -1,9 +1,85 @@
-2024-05-07 19:21:50,707 ERROR [main] liquibase.changelog  ChangeSet db/changelog/v2/07-01-changelog.yaml::1715095274181-2::Fatima (generated) encountered an exception.
-2024-05-07 19:21:50,722 ERROR [main] o.s.boot.web.embedded.tomcat.TomcatStarter  Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'webSecurityConfig' defined in file [C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main\az\baku\divfinalproject\security\WebSecurityConfig.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userDetailsServiceImpl' defined in file [C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main\az\baku\divfinalproject\security\services\UserDetailsServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in az.baku.divfinalproject.repository.UserRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
-2024-05-07 19:21:50,778 ERROR [main] org.springframework.boot.SpringApplication  Application run failed
-org.springframework.context.ApplicationContextException: Unable to start web server
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:165)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:618)
+04:36:54.617 [main] INFO  a.b.d.DivFinalProjectApplication - Starting DivFinalProjectApplication using Java 17.0.10 with PID 2100 (C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main started by Fatima in C:\Users\Fatima\IdeaProjects\div-final-project)
+04:36:54.621 [main] DEBUG a.b.d.DivFinalProjectApplication - Running with Spring Boot v3.2.4, Spring v6.1.5
+04:36:54.623 [main] INFO  a.b.d.DivFinalProjectApplication - The following 1 profile is active: "db"
+04:37:02.143 [main] DEBUG a.b.d.security.jwt.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+04:37:04.486 [main] INFO  a.b.d.DivFinalProjectApplication - Started DivFinalProjectApplication in 10.407 seconds (process running for 11.477)
+04:38:11.418 [http-nio-8080-exec-5] INFO  a.b.d.c.VerificationController - Verification process started for token: bfeb38db-0fdc-4950-85fa-a95205ebd1ad
+04:38:11.479 [http-nio-8080-exec-5] INFO  a.b.d.c.VerificationController - Verification process completed for token: bfeb38db-0fdc-4950-85fa-a95205ebd1ad
+15:29:27.519 [main] INFO  a.b.d.DivFinalProjectApplication - Starting DivFinalProjectApplication using Java 17.0.10 with PID 18328 (C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main started by Fatima in C:\Users\Fatima\IdeaProjects\div-final-project)
+15:29:27.521 [main] DEBUG a.b.d.DivFinalProjectApplication - Running with Spring Boot v3.2.4, Spring v6.1.5
+15:29:27.522 [main] INFO  a.b.d.DivFinalProjectApplication - The following 1 profile is active: "db"
+15:29:33.036 [main] DEBUG a.b.d.security.jwt.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+15:29:34.650 [main] INFO  a.b.d.DivFinalProjectApplication - Started DivFinalProjectApplication in 7.48 seconds (process running for 8.24)
+15:29:55.982 [http-nio-8080-exec-1] INFO  a.b.d.service.impl.UserServiceImpl - Registering user with email: fatimasultanova.909@gmail.com
+15:29:56.585 [http-nio-8080-exec-1] INFO  a.b.d.service.impl.UserServiceImpl - User registered successfully with email: fatimasultanova.909@gmail.com
+15:30:12.523 [http-nio-8080-exec-6] INFO  a.b.d.s.impl.UserVerifyServiceImpl - Verification process started for token: b9860c65-1905-4c54-8819-219fb092b6dd
+15:30:12.558 [http-nio-8080-exec-6] INFO  a.b.d.s.impl.UserVerifyServiceImpl - Verification process completed for token: b9860c65-1905-4c54-8819-219fb092b6dd
+15:30:30.672 [http-nio-8080-exec-9] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user with phone number or email: fatimasultanova.909@gmail.com
+15:34:16.781 [http-nio-8080-exec-8] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user with phone number or email: fatimasultanova.909@gmail.com
+15:39:26.840 [main] INFO  a.b.d.DivFinalProjectApplication - Starting DivFinalProjectApplication using Java 17.0.10 with PID 18832 (C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main started by Fatima in C:\Users\Fatima\IdeaProjects\div-final-project)
+15:39:26.841 [main] DEBUG a.b.d.DivFinalProjectApplication - Running with Spring Boot v3.2.4, Spring v6.1.5
+15:39:26.842 [main] INFO  a.b.d.DivFinalProjectApplication - The following 1 profile is active: "db"
+15:39:31.320 [main] DEBUG a.b.d.security.jwt.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+15:39:32.700 [main] INFO  a.b.d.DivFinalProjectApplication - Started DivFinalProjectApplication in 6.2 seconds (process running for 6.841)
+15:39:43.903 [http-nio-8080-exec-2] INFO  a.b.d.service.impl.UserServiceImpl - Registering user with email: fatimasultanova.909@gmail.com
+15:39:44.474 [http-nio-8080-exec-2] INFO  a.b.d.service.impl.UserServiceImpl - User registered successfully with email: fatimasultanova.909@gmail.com
+15:39:57.999 [http-nio-8080-exec-4] INFO  a.b.d.s.impl.UserVerifyServiceImpl - Verification process started for token: b8c272ad-c304-4ebf-abbd-0994e7350462
+15:39:58.060 [http-nio-8080-exec-4] INFO  a.b.d.s.impl.UserVerifyServiceImpl - Verification process completed for token: b8c272ad-c304-4ebf-abbd-0994e7350462
+15:40:05.123 [http-nio-8080-exec-5] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: fatimasultanova.909@gmail.com
+15:40:40.192 [http-nio-8080-exec-6] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: fatimasultanova.909@gmail.com
+15:40:56.283 [http-nio-8080-exec-9] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: fatimasultanova.909@gmail.com
+15:48:58.158 [main] INFO  a.b.d.DivFinalProjectApplication - Starting DivFinalProjectApplication using Java 17.0.10 with PID 5256 (C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main started by Fatima in C:\Users\Fatima\IdeaProjects\div-final-project)
+15:48:58.160 [main] DEBUG a.b.d.DivFinalProjectApplication - Running with Spring Boot v3.2.4, Spring v6.1.5
+15:48:58.160 [main] INFO  a.b.d.DivFinalProjectApplication - The following 1 profile is active: "db"
+15:49:02.631 [main] DEBUG a.b.d.security.jwt.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+15:49:04.004 [main] INFO  a.b.d.DivFinalProjectApplication - Started DivFinalProjectApplication in 6.182 seconds (process running for 6.842)
+15:50:21.333 [http-nio-8080-exec-2] INFO  a.b.d.service.impl.UserServiceImpl - Registering user with email: fatimasultanova.909@gmail.com
+15:50:21.909 [http-nio-8080-exec-2] INFO  a.b.d.service.impl.UserServiceImpl - User registered successfully with email: fatimasultanova.909@gmail.com
+15:50:36.312 [http-nio-8080-exec-3] INFO  a.b.d.s.impl.UserVerifyServiceImpl - Verification process started for token: 5c784f83-96f0-4490-8f48-402d91dc40a8
+15:50:36.369 [http-nio-8080-exec-3] INFO  a.b.d.s.impl.UserVerifyServiceImpl - Verification process completed for token: 5c784f83-96f0-4490-8f48-402d91dc40a8
+15:50:42.755 [http-nio-8080-exec-4] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: fatimasultanova.909@gmail.com
+15:50:45.115 [http-nio-8080-exec-5] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: fatimasultanova.909@gmail.com
+15:50:49.759 [http-nio-8080-exec-6] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: fatimasultanova.909@gmail.com
+15:50:54.717 [http-nio-8080-exec-7] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: fatimasultanova.909@gmail.com
+16:01:06.515 [main] INFO  a.b.d.DivFinalProjectApplication - Starting DivFinalProjectApplication using Java 17.0.10 with PID 10192 (C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main started by Fatima in C:\Users\Fatima\IdeaProjects\div-final-project)
+16:01:06.516 [main] DEBUG a.b.d.DivFinalProjectApplication - Running with Spring Boot v3.2.4, Spring v6.1.5
+16:01:06.516 [main] INFO  a.b.d.DivFinalProjectApplication - The following 1 profile is active: "db"
+16:01:11.137 [main] DEBUG a.b.d.security.jwt.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+16:01:12.470 [main] INFO  a.b.d.DivFinalProjectApplication - Started DivFinalProjectApplication in 6.26 seconds (process running for 6.79)
+16:01:21.732 [http-nio-8080-exec-1] INFO  a.b.d.service.impl.UserServiceImpl - Registering user with email: fatimasultanova.909@gmail.com
+16:01:22.277 [http-nio-8080-exec-1] INFO  a.b.d.service.impl.UserServiceImpl - User registered successfully with email: fatimasultanova.909@gmail.com
+16:01:36.369 [http-nio-8080-exec-6] INFO  a.b.d.s.impl.UserVerifyServiceImpl - Verification process started for token: fee44f4e-4a4c-4c37-a058-3a5279e9b189
+16:01:36.452 [http-nio-8080-exec-6] INFO  a.b.d.s.impl.UserVerifyServiceImpl - Verification process completed for token: fee44f4e-4a4c-4c37-a058-3a5279e9b189
+16:01:46.477 [http-nio-8080-exec-4] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: fatimasultanova.909@gmail.com
+16:12:36.534 [main] INFO  a.b.d.DivFinalProjectApplication - Starting DivFinalProjectApplication using Java 17.0.10 with PID 1988 (C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main started by Fatima in C:\Users\Fatima\IdeaProjects\div-final-project)
+16:12:36.536 [main] DEBUG a.b.d.DivFinalProjectApplication - Running with Spring Boot v3.2.4, Spring v6.1.5
+16:12:36.537 [main] INFO  a.b.d.DivFinalProjectApplication - The following 1 profile is active: "db"
+16:12:41.052 [main] DEBUG a.b.d.security.jwt.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+16:12:42.365 [main] INFO  a.b.d.DivFinalProjectApplication - Started DivFinalProjectApplication in 6.195 seconds (process running for 6.877)
+16:12:51.458 [http-nio-8080-exec-1] INFO  a.b.d.service.impl.UserServiceImpl - Registering user with email: fatimasultanova.909@gmail.com
+16:12:51.743 [http-nio-8080-exec-1] INFO  a.b.d.service.impl.UserServiceImpl - User registered successfully with email: fatimasultanova.909@gmail.com
+16:13:05.009 [http-nio-8080-exec-3] INFO  a.b.d.s.impl.UserVerifyServiceImpl - Verification process started for token: cd475386-76d9-44a1-aad0-783f6f38a543
+16:13:05.069 [http-nio-8080-exec-3] INFO  a.b.d.s.impl.UserVerifyServiceImpl - Verification process completed for token: cd475386-76d9-44a1-aad0-783f6f38a543
+16:13:09.635 [http-nio-8080-exec-4] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: fatimasultanova.909@gmail.com
+16:21:18.045 [main] INFO  a.b.d.DivFinalProjectApplication - Starting DivFinalProjectApplication using Java 17.0.10 with PID 18220 (C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main started by Fatima in C:\Users\Fatima\IdeaProjects\div-final-project)
+16:21:18.046 [main] DEBUG a.b.d.DivFinalProjectApplication - Running with Spring Boot v3.2.4, Spring v6.1.5
+16:21:18.047 [main] INFO  a.b.d.DivFinalProjectApplication - The following 1 profile is active: "db"
+16:21:22.614 [main] DEBUG a.b.d.security.jwt.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+16:21:23.712 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'handlerExceptionResolver' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Failed to instantiate [org.springframework.web.servlet.HandlerExceptionResolver]: Factory method 'handlerExceptionResolver' threw exception with message: Ambiguous @ExceptionHandler method mapped for [class az.baku.divfinalproject.exception.ApplicationException]: {public org.springframework.http.ResponseEntity az.baku.divfinalproject.handler.GlobalHandler.handler(az.baku.divfinalproject.exception.ApplicationException,org.springframework.web.context.request.WebRequest), public org.springframework.http.ResponseEntity az.baku.divfinalproject.handler.GlobalHandler.handleAuthenticationFailedException(az.baku.divfinalproject.exception.ApplicationException,org.springframework.web.context.request.WebRequest)}
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
@@ -11,202 +87,32 @@ org.springframework.context.ApplicationContextException: Unable to start web ser
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
 	at az.baku.divfinalproject.DivFinalProjectApplication.main(DivFinalProjectApplication.java:9)
-Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
-	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:145)
-	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:105)
-	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:499)
-	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:218)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:188)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162)
-	... 8 common frames omitted
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webSecurityConfig' defined in file [C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main\az\baku\divfinalproject\security\WebSecurityConfig.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userDetailsServiceImpl' defined in file [C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main\az\baku\divfinalproject\security\services\UserDetailsServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in az.baku.divfinalproject.repository.UserRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:795)
-	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:237)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1355)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1192)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:409)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
-	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:210)
-	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:173)
-	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:168)
-	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:153)
-	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:86)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:266)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:240)
-	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:52)
-	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4866)
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
-	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332)
-	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
-	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
-	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866)
-	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:845)
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
-	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332)
-	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
-	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
-	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866)
-	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:240)
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
-	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:433)
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
-	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:921)
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
-	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:437)
-	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:126)
-	... 13 common frames omitted
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userDetailsServiceImpl' defined in file [C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main\az\baku\divfinalproject\security\services\UserDetailsServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in az.baku.divfinalproject.repository.UserRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:795)
-	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:237)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1355)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1192)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
-	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904)
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:782)
-	... 63 common frames omitted
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRepository' defined in az.baku.divfinalproject.repository.UserRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
-	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377)
-	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1685)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1434)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
-	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904)
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:782)
-	... 77 common frames omitted
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jpaSharedEM_entityManagerFactory': Cannot resolve reference to bean 'entityManagerFactory' while setting constructor argument
-	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377)
-	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)
-	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:682)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:509)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
-	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
-	... 91 common frames omitted
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/v2/07-01-changelog.yaml::1715095274181-2::Fatima (generated):
-     Reason: liquibase.exception.DatabaseException: ERROR: column "active" of relation "user" contains null values [Failed SQL: (0) ALTER TABLE public."user" ALTER COLUMN  active SET NOT NULL]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
-	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
-	... 103 common frames omitted
-Caused by: liquibase.exception.CommandExecutionException: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/v2/07-01-changelog.yaml::1715095274181-2::Fatima (generated):
-     Reason: liquibase.exception.DatabaseException: ERROR: column "active" of relation "user" contains null values [Failed SQL: (0) ALTER TABLE public."user" ALTER COLUMN  active SET NOT NULL]
-	at liquibase.command.CommandScope.execute(CommandScope.java:237)
-	at liquibase.Liquibase.lambda$update$0(Liquibase.java:222)
-	at liquibase.Scope.lambda$child$0(Scope.java:184)
-	at liquibase.Scope.child(Scope.java:193)
-	at liquibase.Scope.child(Scope.java:183)
-	at liquibase.Scope.child(Scope.java:162)
-	at liquibase.Liquibase.runInScope(Liquibase.java:1371)
-	at liquibase.Liquibase.update(Liquibase.java:211)
-	at liquibase.Liquibase.update(Liquibase.java:193)
-	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:331)
-	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:286)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
-	... 112 common frames omitted
-Caused by: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/v2/07-01-changelog.yaml::1715095274181-2::Fatima (generated):
-     Reason: liquibase.exception.DatabaseException: ERROR: column "active" of relation "user" contains null values [Failed SQL: (0) ALTER TABLE public."user" ALTER COLUMN  active SET NOT NULL]
-	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:122)
-	at liquibase.command.core.AbstractUpdateCommandStep.lambda$doRun$1(AbstractUpdateCommandStep.java:105)
-	at liquibase.Scope.lambda$child$0(Scope.java:184)
-	at liquibase.Scope.child(Scope.java:193)
-	at liquibase.Scope.child(Scope.java:183)
-	at liquibase.Scope.child(Scope.java:162)
-	at liquibase.command.core.AbstractUpdateCommandStep.doRun(AbstractUpdateCommandStep.java:104)
-	at liquibase.command.core.AbstractUpdateCommandStep.lambda$run$0(AbstractUpdateCommandStep.java:63)
-	at liquibase.Scope.lambda$child$0(Scope.java:184)
-	at liquibase.Scope.child(Scope.java:193)
-	at liquibase.Scope.child(Scope.java:183)
-	at liquibase.Scope.child(Scope.java:162)
-	at liquibase.command.core.AbstractUpdateCommandStep.run(AbstractUpdateCommandStep.java:62)
-	at liquibase.command.core.UpdateCommandStep.run(UpdateCommandStep.java:106)
-	at liquibase.command.CommandScope.execute(CommandScope.java:214)
-	... 124 common frames omitted
-Caused by: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/v2/07-01-changelog.yaml::1715095274181-2::Fatima (generated):
-     Reason: liquibase.exception.DatabaseException: ERROR: column "active" of relation "user" contains null values [Failed SQL: (0) ALTER TABLE public."user" ALTER COLUMN  active SET NOT NULL]
-	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:785)
-	at liquibase.changelog.visitor.UpdateVisitor.executeAcceptedChange(UpdateVisitor.java:118)
-	at liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:68)
-	at liquibase.changelog.ChangeLogIterator$2.lambda$run$0(ChangeLogIterator.java:110)
-	at liquibase.Scope.lambda$child$0(Scope.java:184)
-	at liquibase.Scope.child(Scope.java:193)
-	at liquibase.Scope.child(Scope.java:183)
-	at liquibase.Scope.child(Scope.java:162)
-	at liquibase.Scope.child(Scope.java:250)
-	at liquibase.changelog.ChangeLogIterator$2.run(ChangeLogIterator.java:100)
-	at liquibase.Scope.lambda$child$0(Scope.java:184)
-	at liquibase.Scope.child(Scope.java:193)
-	at liquibase.Scope.child(Scope.java:183)
-	at liquibase.Scope.child(Scope.java:162)
-	at liquibase.Scope.child(Scope.java:250)
-	at liquibase.Scope.child(Scope.java:254)
-	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:74)
-	... 138 common frames omitted
-Caused by: liquibase.exception.DatabaseException: ERROR: column "active" of relation "user" contains null values [Failed SQL: (0) ALTER TABLE public."user" ALTER COLUMN  active SET NOT NULL]
-	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:468)
-	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:77)
-	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:177)
-	at liquibase.database.AbstractJdbcDatabase.execute(AbstractJdbcDatabase.java:1291)
-	at liquibase.database.AbstractJdbcDatabase.executeStatements(AbstractJdbcDatabase.java:1273)
-	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:744)
-	... 154 common frames omitted
-Caused by: org.postgresql.util.PSQLException: ERROR: column "active" of relation "user" contains null values
-	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2713)
-	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2401)
-	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:368)
-	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:498)
-	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:415)
-	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:335)
-	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:321)
-	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:297)
-	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:292)
-	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
-	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
-	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:462)
-	... 159 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.servlet.HandlerExceptionResolver]: Factory method 'handlerExceptionResolver' threw exception with message: Ambiguous @ExceptionHandler method mapped for [class az.baku.divfinalproject.exception.ApplicationException]: {public org.springframework.http.ResponseEntity az.baku.divfinalproject.handler.GlobalHandler.handler(az.baku.divfinalproject.exception.ApplicationException,org.springframework.web.context.request.WebRequest), public org.springframework.http.ResponseEntity az.baku.divfinalproject.handler.GlobalHandler.handleAuthenticationFailedException(az.baku.divfinalproject.exception.ApplicationException,org.springframework.web.context.request.WebRequest)}
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:177)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
+	... 19 common frames omitted
+Caused by: java.lang.IllegalStateException: Ambiguous @ExceptionHandler method mapped for [class az.baku.divfinalproject.exception.ApplicationException]: {public org.springframework.http.ResponseEntity az.baku.divfinalproject.handler.GlobalHandler.handler(az.baku.divfinalproject.exception.ApplicationException,org.springframework.web.context.request.WebRequest), public org.springframework.http.ResponseEntity az.baku.divfinalproject.handler.GlobalHandler.handleAuthenticationFailedException(az.baku.divfinalproject.exception.ApplicationException,org.springframework.web.context.request.WebRequest)}
+	at org.springframework.web.method.annotation.ExceptionHandlerMethodResolver.addExceptionMapping(ExceptionHandlerMethodResolver.java:114)
+	at org.springframework.web.method.annotation.ExceptionHandlerMethodResolver.<init>(ExceptionHandlerMethodResolver.java:78)
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.initExceptionHandlerAdviceCache(ExceptionHandlerExceptionResolver.java:289)
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.afterPropertiesSet(ExceptionHandlerExceptionResolver.java:256)
+	at org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport.addDefaultHandlerExceptionResolvers(WebMvcConfigurationSupport.java:1063)
+	at org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport.handlerExceptionResolver(WebMvcConfigurationSupport.java:1005)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140)
+	... 20 common frames omitted
+16:22:39.655 [main] INFO  a.b.d.DivFinalProjectApplication - Starting DivFinalProjectApplication using Java 17.0.10 with PID 14200 (C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main started by Fatima in C:\Users\Fatima\IdeaProjects\div-final-project)
+16:22:39.656 [main] DEBUG a.b.d.DivFinalProjectApplication - Running with Spring Boot v3.2.4, Spring v6.1.5
+16:22:39.656 [main] INFO  a.b.d.DivFinalProjectApplication - The following 1 profile is active: "db"
+16:22:44.094 [main] DEBUG a.b.d.security.jwt.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+16:22:45.438 [main] INFO  a.b.d.DivFinalProjectApplication - Started DivFinalProjectApplication in 6.121 seconds (process running for 6.692)
+16:23:03.871 [http-nio-8080-exec-1] INFO  a.b.d.service.impl.UserServiceImpl - Registering user with email: fatimasultanova.909@gmail.com
+16:23:04.426 [http-nio-8080-exec-1] INFO  a.b.d.service.impl.UserServiceImpl - User registered successfully with email: fatimasultanova.909@gmail.com
+16:23:19.136 [http-nio-8080-exec-3] INFO  a.b.d.s.impl.UserVerifyServiceImpl - Verification process started for token: ef533c73-a418-402a-b8f2-378f7d13210a
+16:23:19.193 [http-nio-8080-exec-3] INFO  a.b.d.s.impl.UserVerifyServiceImpl - Verification process completed for token: ef533c73-a418-402a-b8f2-378f7d13210a
+16:23:24.155 [http-nio-8080-exec-4] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: fatimasultanova.909@gmail.com
+16:23:33.816 [http-nio-8080-exec-5] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: fatimasultanova.909@gmail.com
+16:24:47.522 [http-nio-8080-exec-8] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: fatimasultanova.909@gmail.com

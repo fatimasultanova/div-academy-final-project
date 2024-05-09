@@ -75,6 +75,7 @@ public class WebSecurityConfig {
                                 .requestMatchers("/api/advert-type/**").permitAll()
                                 .requestMatchers("/api/building-type/**").permitAll()
                                 .requestMatchers("/api/role/**").permitAll()
+                              //.requestMatchers("api/admin-panel/").hasAuthority("ROLE_ADMIN")
                                 .anyRequest().authenticated()
                 );
 

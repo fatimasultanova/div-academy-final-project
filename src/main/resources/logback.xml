@@ -1,43 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
     <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
-    <property name="LOG_FILE" value="logs/app.log"/>
 
-    <appender name="FILE-ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${LOG_FILE}</file>
-
-        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <fileNamePattern>logs/archived/app.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
-            <maxFileSize>5KB</maxFileSize>
-            <totalSizeCap>20KB</totalSizeCap>
-            <maxHistory>60</maxHistory>
-        </rollingPolicy>
-
+    <!-- Konsola log yazdırma -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>%d %p [%t] %logger{48}  %m%n</pattern>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
     </appender>
 
-    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
-        <layout class="ch.qos.logback.classic.PatternLayout">
-            <Pattern>
-                %d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n
-            </Pattern>
-        </layout>
+    <!-- Dosyaya log yazdırma ve arşivleme -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/app.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>logs/archived/app-%d{yyyy-MM-dd}-i.log</fileNamePattern>
+            <maxHistory>30</maxHistory> <!-- Arşivlenmiş dosyaların saklanacağı maksimum tarih aralığı -->
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
     </appender>
 
-    <logger name="com.company.firstspringproject" level="trace" additivity="false">
-        <appender-ref ref="FILE-ROLLING"/>
-    </logger>
-    <root level="error">
-        <appender-ref ref="FILE-ROLLING"/>
-    </root>
-
-    <logger name="com.company.firstspringproject" level="debug" additivity="false">
+    <!-- Log düzeyleri için kategoriler -->
+    <logger name="az.baku.divfinalproject" level="DEBUG" additivity="false">
+        <appender-ref ref="FILE"/>
         <appender-ref ref="CONSOLE"/>
     </logger>
-    <root level="error">
+
+    <!-- Farklı log düzeyleri için kategoriler -->
+    <!-- Örneğin: -->
+    <!-- <logger name="az.baku.divfinalproject.controller" level="INFO" additivity="false">
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="CONSOLE"/>
+    </logger> -->
+
+    <root level="ERROR">
+        <appender-ref ref="FILE"/>
         <appender-ref ref="CONSOLE"/>
     </root>
-
 </configuration>
