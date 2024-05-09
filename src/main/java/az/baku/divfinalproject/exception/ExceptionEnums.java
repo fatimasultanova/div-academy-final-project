@@ -1,13 +1,14 @@
 package az.baku.divfinalproject.exception;
 
 import lombok.Getter;
-import lombok.Setter;
 
 @Getter
 public enum ExceptionEnums {
     USER_NOT_FOUND("User not found"),
-    ACCESS_DENIED("----------Access denied-----------"),
+    ACCESS_DENIED("Access denied"),
+    USERNAME_OR_PASSWORD_IS_WRONG("Username or password is wrong"),
     ADVERT_NOT_FOUND("Advert not found"),
+    ADVERT_TYPE_NOT_FOUND("Advert type not found"),
     USER_REGISTERED("User registered"),
     USER_UPDATED("User updated"),
     USER_DELETED("User deleted"),
@@ -24,7 +25,8 @@ public enum ExceptionEnums {
     SUBSCRIPTION_SUCCEEDED("Subscription succeeded"),
     SUBSCRIPTION_CANCELLED("Subscription cancelled"),
     ACCOUNT_NOT_FOUND("Account not found"),
-    AUTHENTICATION_FAILED("Authentication failed");
+    AUTHENTICATION_FAILED("Authentication failed"),
+    PHONE_NOT_FOUND("Phone not found");
 
 
     private final String message;

@@ -3,8 +3,6 @@ package az.baku.divfinalproject.controller;
 import az.baku.divfinalproject.dto.request.BuildingTypeRequest;
 import az.baku.divfinalproject.dto.request.Request;
 import az.baku.divfinalproject.dto.response.BuildingTypeResponse;
-import az.baku.divfinalproject.entity.BuildingType;
-import az.baku.divfinalproject.mapper.BuildingTypeMapper;
 import az.baku.divfinalproject.service.impl.BuildingTypeServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -16,8 +14,6 @@ import java.util.Collection;
 @RequestMapping("/api/building-type")
 public class BuildingTypeController {
     private final BuildingTypeServiceImpl buildingTypeService;
-
-    private final BuildingTypeMapper buildingTypeMapper;
 
     @PostMapping("/create")
     public BuildingTypeResponse createBuildingType(@RequestBody BuildingTypeRequest request) {
@@ -46,11 +42,6 @@ public class BuildingTypeController {
 
     @GetMapping("/type/{type}")
     public BuildingTypeResponse getBuildingTypeByType(@PathVariable("type") String type) {
-        BuildingType buildingType = buildingTypeService.findByType(type);
-        if (buildingType != null) {
-            return buildingTypeMapper.toResponse(buildingType);
-        } else {
-            return null;
-        }
+       return buildingTypeService.getBuildingTypeByType(type);
     }
 }

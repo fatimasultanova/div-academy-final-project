@@ -56,8 +56,7 @@ public class SubscriptionServiceImpl implements CrudService<SubscriptionRequest,
         return subscriptionMapper.toResponse(byType);
     }
 
-    public SubscriptionResponse getByAmount(long amount) {
-        Subscription subscription = subscriptionRepository.findByAmount(amount);
-        return subscriptionMapper.toResponse(subscription);
+    public List<Subscription> getByAmountIsLessThan(long amount) {
+        return subscriptionRepository.findAllByAmountIsLessThan(amount);
     }
 }

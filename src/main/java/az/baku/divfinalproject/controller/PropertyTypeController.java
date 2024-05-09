@@ -3,8 +3,6 @@ package az.baku.divfinalproject.controller;
 import az.baku.divfinalproject.dto.request.PropertyTypeRequest;
 import az.baku.divfinalproject.dto.request.Request;
 import az.baku.divfinalproject.dto.response.PropertyTypeResponse;
-import az.baku.divfinalproject.entity.PropertyType;
-import az.baku.divfinalproject.mapper.PropertyTypeMapper;
 import az.baku.divfinalproject.service.impl.PropertyTypeServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -16,8 +14,6 @@ import java.util.Collection;
 @RequiredArgsConstructor
 public class PropertyTypeController {
     private final PropertyTypeServiceImpl propertyTypeService;
-
-    private final PropertyTypeMapper propertyTypeMapper;
 
     @PostMapping("/create")
     public PropertyTypeResponse createPropertyType(@RequestBody PropertyTypeRequest request) {
@@ -46,11 +42,6 @@ public class PropertyTypeController {
 
     @GetMapping("/type/{type}")
     public PropertyTypeResponse getPropertyTypeByType(@PathVariable("type") String type) {
-        PropertyType propertyType = propertyTypeService.findByType(type);
-        if (propertyType != null) {
-            return propertyTypeMapper.toResponse(propertyType);
-        } else {
-            return null;
-        }
+        return propertyTypeService.getPropertyTypeByType(type);
     }
 }

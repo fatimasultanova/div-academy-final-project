@@ -1,0 +1,339 @@
+04:36:54.617 [main] INFO  a.b.d.DivFinalProjectApplication - Starting DivFinalProjectApplication using Java 17.0.10 with PID 2100 (C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main started by Fatima in C:\Users\Fatima\IdeaProjects\div-final-project)
+04:36:54.621 [main] DEBUG a.b.d.DivFinalProjectApplication - Running with Spring Boot v3.2.4, Spring v6.1.5
+04:36:54.623 [main] INFO  a.b.d.DivFinalProjectApplication - The following 1 profile is active: "db"
+04:37:02.143 [main] DEBUG a.b.d.security.jwt.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+04:37:04.486 [main] INFO  a.b.d.DivFinalProjectApplication - Started DivFinalProjectApplication in 10.407 seconds (process running for 11.477)
+04:38:11.418 [http-nio-8080-exec-5] INFO  a.b.d.c.VerificationController - Verification process started for token: bfeb38db-0fdc-4950-85fa-a95205ebd1ad
+04:38:11.479 [http-nio-8080-exec-5] INFO  a.b.d.c.VerificationController - Verification process completed for token: bfeb38db-0fdc-4950-85fa-a95205ebd1ad
+15:29:27.519 [main] INFO  a.b.d.DivFinalProjectApplication - Starting DivFinalProjectApplication using Java 17.0.10 with PID 18328 (C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main started by Fatima in C:\Users\Fatima\IdeaProjects\div-final-project)
+15:29:27.521 [main] DEBUG a.b.d.DivFinalProjectApplication - Running with Spring Boot v3.2.4, Spring v6.1.5
+15:29:27.522 [main] INFO  a.b.d.DivFinalProjectApplication - The following 1 profile is active: "db"
+15:29:33.036 [main] DEBUG a.b.d.security.jwt.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+15:29:34.650 [main] INFO  a.b.d.DivFinalProjectApplication - Started DivFinalProjectApplication in 7.48 seconds (process running for 8.24)
+15:29:55.982 [http-nio-8080-exec-1] INFO  a.b.d.service.impl.UserServiceImpl - Registering user with email: fatimasultanova.909@gmail.com
+15:29:56.585 [http-nio-8080-exec-1] INFO  a.b.d.service.impl.UserServiceImpl - User registered successfully with email: fatimasultanova.909@gmail.com
+15:30:12.523 [http-nio-8080-exec-6] INFO  a.b.d.s.impl.UserVerifyServiceImpl - Verification process started for token: b9860c65-1905-4c54-8819-219fb092b6dd
+15:30:12.558 [http-nio-8080-exec-6] INFO  a.b.d.s.impl.UserVerifyServiceImpl - Verification process completed for token: b9860c65-1905-4c54-8819-219fb092b6dd
+15:30:30.672 [http-nio-8080-exec-9] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user with phone number or email: fatimasultanova.909@gmail.com
+15:34:16.781 [http-nio-8080-exec-8] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user with phone number or email: fatimasultanova.909@gmail.com
+15:39:26.840 [main] INFO  a.b.d.DivFinalProjectApplication - Starting DivFinalProjectApplication using Java 17.0.10 with PID 18832 (C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main started by Fatima in C:\Users\Fatima\IdeaProjects\div-final-project)
+15:39:26.841 [main] DEBUG a.b.d.DivFinalProjectApplication - Running with Spring Boot v3.2.4, Spring v6.1.5
+15:39:26.842 [main] INFO  a.b.d.DivFinalProjectApplication - The following 1 profile is active: "db"
+15:39:31.320 [main] DEBUG a.b.d.security.jwt.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+15:39:32.700 [main] INFO  a.b.d.DivFinalProjectApplication - Started DivFinalProjectApplication in 6.2 seconds (process running for 6.841)
+15:39:43.903 [http-nio-8080-exec-2] INFO  a.b.d.service.impl.UserServiceImpl - Registering user with email: fatimasultanova.909@gmail.com
+15:39:44.474 [http-nio-8080-exec-2] INFO  a.b.d.service.impl.UserServiceImpl - User registered successfully with email: fatimasultanova.909@gmail.com
+15:39:57.999 [http-nio-8080-exec-4] INFO  a.b.d.s.impl.UserVerifyServiceImpl - Verification process started for token: b8c272ad-c304-4ebf-abbd-0994e7350462
+15:39:58.060 [http-nio-8080-exec-4] INFO  a.b.d.s.impl.UserVerifyServiceImpl - Verification process completed for token: b8c272ad-c304-4ebf-abbd-0994e7350462
+15:40:05.123 [http-nio-8080-exec-5] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: fatimasultanova.909@gmail.com
+15:40:40.192 [http-nio-8080-exec-6] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: fatimasultanova.909@gmail.com
+15:40:56.283 [http-nio-8080-exec-9] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: fatimasultanova.909@gmail.com
+15:48:58.158 [main] INFO  a.b.d.DivFinalProjectApplication - Starting DivFinalProjectApplication using Java 17.0.10 with PID 5256 (C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main started by Fatima in C:\Users\Fatima\IdeaProjects\div-final-project)
+15:48:58.160 [main] DEBUG a.b.d.DivFinalProjectApplication - Running with Spring Boot v3.2.4, Spring v6.1.5
+15:48:58.160 [main] INFO  a.b.d.DivFinalProjectApplication - The following 1 profile is active: "db"
+15:49:02.631 [main] DEBUG a.b.d.security.jwt.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+15:49:04.004 [main] INFO  a.b.d.DivFinalProjectApplication - Started DivFinalProjectApplication in 6.182 seconds (process running for 6.842)
+15:50:21.333 [http-nio-8080-exec-2] INFO  a.b.d.service.impl.UserServiceImpl - Registering user with email: fatimasultanova.909@gmail.com
+15:50:21.909 [http-nio-8080-exec-2] INFO  a.b.d.service.impl.UserServiceImpl - User registered successfully with email: fatimasultanova.909@gmail.com
+15:50:36.312 [http-nio-8080-exec-3] INFO  a.b.d.s.impl.UserVerifyServiceImpl - Verification process started for token: 5c784f83-96f0-4490-8f48-402d91dc40a8
+15:50:36.369 [http-nio-8080-exec-3] INFO  a.b.d.s.impl.UserVerifyServiceImpl - Verification process completed for token: 5c784f83-96f0-4490-8f48-402d91dc40a8
+15:50:42.755 [http-nio-8080-exec-4] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: fatimasultanova.909@gmail.com
+15:50:45.115 [http-nio-8080-exec-5] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: fatimasultanova.909@gmail.com
+15:50:49.759 [http-nio-8080-exec-6] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: fatimasultanova.909@gmail.com
+15:50:54.717 [http-nio-8080-exec-7] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: fatimasultanova.909@gmail.com
+16:01:06.515 [main] INFO  a.b.d.DivFinalProjectApplication - Starting DivFinalProjectApplication using Java 17.0.10 with PID 10192 (C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main started by Fatima in C:\Users\Fatima\IdeaProjects\div-final-project)
+16:01:06.516 [main] DEBUG a.b.d.DivFinalProjectApplication - Running with Spring Boot v3.2.4, Spring v6.1.5
+16:01:06.516 [main] INFO  a.b.d.DivFinalProjectApplication - The following 1 profile is active: "db"
+16:01:11.137 [main] DEBUG a.b.d.security.jwt.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+16:01:12.470 [main] INFO  a.b.d.DivFinalProjectApplication - Started DivFinalProjectApplication in 6.26 seconds (process running for 6.79)
+16:01:21.732 [http-nio-8080-exec-1] INFO  a.b.d.service.impl.UserServiceImpl - Registering user with email: fatimasultanova.909@gmail.com
+16:01:22.277 [http-nio-8080-exec-1] INFO  a.b.d.service.impl.UserServiceImpl - User registered successfully with email: fatimasultanova.909@gmail.com
+16:01:36.369 [http-nio-8080-exec-6] INFO  a.b.d.s.impl.UserVerifyServiceImpl - Verification process started for token: fee44f4e-4a4c-4c37-a058-3a5279e9b189
+16:01:36.452 [http-nio-8080-exec-6] INFO  a.b.d.s.impl.UserVerifyServiceImpl - Verification process completed for token: fee44f4e-4a4c-4c37-a058-3a5279e9b189
+16:01:46.477 [http-nio-8080-exec-4] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: fatimasultanova.909@gmail.com
+16:12:36.534 [main] INFO  a.b.d.DivFinalProjectApplication - Starting DivFinalProjectApplication using Java 17.0.10 with PID 1988 (C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main started by Fatima in C:\Users\Fatima\IdeaProjects\div-final-project)
+16:12:36.536 [main] DEBUG a.b.d.DivFinalProjectApplication - Running with Spring Boot v3.2.4, Spring v6.1.5
+16:12:36.537 [main] INFO  a.b.d.DivFinalProjectApplication - The following 1 profile is active: "db"
+16:12:41.052 [main] DEBUG a.b.d.security.jwt.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+16:12:42.365 [main] INFO  a.b.d.DivFinalProjectApplication - Started DivFinalProjectApplication in 6.195 seconds (process running for 6.877)
+16:12:51.458 [http-nio-8080-exec-1] INFO  a.b.d.service.impl.UserServiceImpl - Registering user with email: fatimasultanova.909@gmail.com
+16:12:51.743 [http-nio-8080-exec-1] INFO  a.b.d.service.impl.UserServiceImpl - User registered successfully with email: fatimasultanova.909@gmail.com
+16:13:05.009 [http-nio-8080-exec-3] INFO  a.b.d.s.impl.UserVerifyServiceImpl - Verification process started for token: cd475386-76d9-44a1-aad0-783f6f38a543
+16:13:05.069 [http-nio-8080-exec-3] INFO  a.b.d.s.impl.UserVerifyServiceImpl - Verification process completed for token: cd475386-76d9-44a1-aad0-783f6f38a543
+16:13:09.635 [http-nio-8080-exec-4] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: fatimasultanova.909@gmail.com
+16:21:18.045 [main] INFO  a.b.d.DivFinalProjectApplication - Starting DivFinalProjectApplication using Java 17.0.10 with PID 18220 (C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main started by Fatima in C:\Users\Fatima\IdeaProjects\div-final-project)
+16:21:18.046 [main] DEBUG a.b.d.DivFinalProjectApplication - Running with Spring Boot v3.2.4, Spring v6.1.5
+16:21:18.047 [main] INFO  a.b.d.DivFinalProjectApplication - The following 1 profile is active: "db"
+16:21:22.614 [main] DEBUG a.b.d.security.jwt.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+16:21:23.712 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'handlerExceptionResolver' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Failed to instantiate [org.springframework.web.servlet.HandlerExceptionResolver]: Factory method 'handlerExceptionResolver' threw exception with message: Ambiguous @ExceptionHandler method mapped for [class az.baku.divfinalproject.exception.ApplicationException]: {public org.springframework.http.ResponseEntity az.baku.divfinalproject.handler.GlobalHandler.handler(az.baku.divfinalproject.exception.ApplicationException,org.springframework.web.context.request.WebRequest), public org.springframework.http.ResponseEntity az.baku.divfinalproject.handler.GlobalHandler.handleAuthenticationFailedException(az.baku.divfinalproject.exception.ApplicationException,org.springframework.web.context.request.WebRequest)}
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at az.baku.divfinalproject.DivFinalProjectApplication.main(DivFinalProjectApplication.java:9)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.servlet.HandlerExceptionResolver]: Factory method 'handlerExceptionResolver' threw exception with message: Ambiguous @ExceptionHandler method mapped for [class az.baku.divfinalproject.exception.ApplicationException]: {public org.springframework.http.ResponseEntity az.baku.divfinalproject.handler.GlobalHandler.handler(az.baku.divfinalproject.exception.ApplicationException,org.springframework.web.context.request.WebRequest), public org.springframework.http.ResponseEntity az.baku.divfinalproject.handler.GlobalHandler.handleAuthenticationFailedException(az.baku.divfinalproject.exception.ApplicationException,org.springframework.web.context.request.WebRequest)}
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:177)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
+	... 19 common frames omitted
+Caused by: java.lang.IllegalStateException: Ambiguous @ExceptionHandler method mapped for [class az.baku.divfinalproject.exception.ApplicationException]: {public org.springframework.http.ResponseEntity az.baku.divfinalproject.handler.GlobalHandler.handler(az.baku.divfinalproject.exception.ApplicationException,org.springframework.web.context.request.WebRequest), public org.springframework.http.ResponseEntity az.baku.divfinalproject.handler.GlobalHandler.handleAuthenticationFailedException(az.baku.divfinalproject.exception.ApplicationException,org.springframework.web.context.request.WebRequest)}
+	at org.springframework.web.method.annotation.ExceptionHandlerMethodResolver.addExceptionMapping(ExceptionHandlerMethodResolver.java:114)
+	at org.springframework.web.method.annotation.ExceptionHandlerMethodResolver.<init>(ExceptionHandlerMethodResolver.java:78)
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.initExceptionHandlerAdviceCache(ExceptionHandlerExceptionResolver.java:289)
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.afterPropertiesSet(ExceptionHandlerExceptionResolver.java:256)
+	at org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport.addDefaultHandlerExceptionResolvers(WebMvcConfigurationSupport.java:1063)
+	at org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport.handlerExceptionResolver(WebMvcConfigurationSupport.java:1005)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140)
+	... 20 common frames omitted
+16:22:39.655 [main] INFO  a.b.d.DivFinalProjectApplication - Starting DivFinalProjectApplication using Java 17.0.10 with PID 14200 (C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main started by Fatima in C:\Users\Fatima\IdeaProjects\div-final-project)
+16:22:39.656 [main] DEBUG a.b.d.DivFinalProjectApplication - Running with Spring Boot v3.2.4, Spring v6.1.5
+16:22:39.656 [main] INFO  a.b.d.DivFinalProjectApplication - The following 1 profile is active: "db"
+16:22:44.094 [main] DEBUG a.b.d.security.jwt.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+16:22:45.438 [main] INFO  a.b.d.DivFinalProjectApplication - Started DivFinalProjectApplication in 6.121 seconds (process running for 6.692)
+16:23:03.871 [http-nio-8080-exec-1] INFO  a.b.d.service.impl.UserServiceImpl - Registering user with email: fatimasultanova.909@gmail.com
+16:23:04.426 [http-nio-8080-exec-1] INFO  a.b.d.service.impl.UserServiceImpl - User registered successfully with email: fatimasultanova.909@gmail.com
+16:23:19.136 [http-nio-8080-exec-3] INFO  a.b.d.s.impl.UserVerifyServiceImpl - Verification process started for token: ef533c73-a418-402a-b8f2-378f7d13210a
+16:23:19.193 [http-nio-8080-exec-3] INFO  a.b.d.s.impl.UserVerifyServiceImpl - Verification process completed for token: ef533c73-a418-402a-b8f2-378f7d13210a
+16:23:24.155 [http-nio-8080-exec-4] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: fatimasultanova.909@gmail.com
+16:23:33.816 [http-nio-8080-exec-5] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: fatimasultanova.909@gmail.com
+16:24:47.522 [http-nio-8080-exec-8] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: fatimasultanova.909@gmail.com
+16:36:00.511 [main] INFO  a.b.d.DivFinalProjectApplication - Starting DivFinalProjectApplication using Java 17.0.10 with PID 5896 (C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main started by Fatima in C:\Users\Fatima\IdeaProjects\div-final-project)
+16:36:00.512 [main] DEBUG a.b.d.DivFinalProjectApplication - Running with Spring Boot v3.2.4, Spring v6.1.5
+16:36:00.513 [main] INFO  a.b.d.DivFinalProjectApplication - The following 1 profile is active: "db"
+16:36:05.029 [main] DEBUG a.b.d.security.jwt.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+16:36:06.374 [main] INFO  a.b.d.DivFinalProjectApplication - Started DivFinalProjectApplication in 6.171 seconds (process running for 6.765)
+16:36:20.207 [http-nio-8080-exec-2] INFO  a.b.d.service.impl.UserServiceImpl - Registering user with email: fatimasultanova.909@gmail.com
+16:36:20.519 [http-nio-8080-exec-2] INFO  a.b.d.service.impl.UserServiceImpl - User registered successfully with email: fatimasultanova.909@gmail.com
+16:36:34.473 [http-nio-8080-exec-3] INFO  a.b.d.s.impl.UserVerifyServiceImpl - Verification process started for token: e57f2a3f-8c35-4ba7-8206-8368f16b9ab3
+16:36:34.527 [http-nio-8080-exec-3] INFO  a.b.d.s.impl.UserVerifyServiceImpl - Verification process completed for token: e57f2a3f-8c35-4ba7-8206-8368f16b9ab3
+16:36:39.081 [http-nio-8080-exec-4] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: fatimasultanova.909@gmail.com
+16:36:41.157 [http-nio-8080-exec-5] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: fatimasultanova.909@gmail.com
+16:36:47.606 [http-nio-8080-exec-6] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: fatimasultanova.909@gmail.com
+16:36:52.820 [http-nio-8080-exec-7] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: fatimasultanova.909@gmail.com
+16:42:21.451 [main] INFO  a.b.d.DivFinalProjectApplication - Starting DivFinalProjectApplication using Java 17.0.10 with PID 9008 (C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main started by Fatima in C:\Users\Fatima\IdeaProjects\div-final-project)
+16:42:21.453 [main] DEBUG a.b.d.DivFinalProjectApplication - Running with Spring Boot v3.2.4, Spring v6.1.5
+16:42:21.454 [main] INFO  a.b.d.DivFinalProjectApplication - The following 1 profile is active: "db"
+16:42:26.124 [main] DEBUG a.b.d.security.jwt.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+16:42:27.199 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'handlerExceptionResolver' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Failed to instantiate [org.springframework.web.servlet.HandlerExceptionResolver]: Factory method 'handlerExceptionResolver' threw exception with message: Ambiguous @ExceptionHandler method mapped for [class az.baku.divfinalproject.exception.ApplicationException]: {public org.springframework.http.ResponseEntity az.baku.divfinalproject.handler.GlobalHandler.handler(az.baku.divfinalproject.exception.ApplicationException,org.springframework.web.context.request.WebRequest), public org.springframework.http.ResponseEntity az.baku.divfinalproject.handler.GlobalHandler.handleApplicationException(az.baku.divfinalproject.exception.ApplicationException)}
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at az.baku.divfinalproject.DivFinalProjectApplication.main(DivFinalProjectApplication.java:9)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.servlet.HandlerExceptionResolver]: Factory method 'handlerExceptionResolver' threw exception with message: Ambiguous @ExceptionHandler method mapped for [class az.baku.divfinalproject.exception.ApplicationException]: {public org.springframework.http.ResponseEntity az.baku.divfinalproject.handler.GlobalHandler.handler(az.baku.divfinalproject.exception.ApplicationException,org.springframework.web.context.request.WebRequest), public org.springframework.http.ResponseEntity az.baku.divfinalproject.handler.GlobalHandler.handleApplicationException(az.baku.divfinalproject.exception.ApplicationException)}
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:177)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
+	... 19 common frames omitted
+Caused by: java.lang.IllegalStateException: Ambiguous @ExceptionHandler method mapped for [class az.baku.divfinalproject.exception.ApplicationException]: {public org.springframework.http.ResponseEntity az.baku.divfinalproject.handler.GlobalHandler.handler(az.baku.divfinalproject.exception.ApplicationException,org.springframework.web.context.request.WebRequest), public org.springframework.http.ResponseEntity az.baku.divfinalproject.handler.GlobalHandler.handleApplicationException(az.baku.divfinalproject.exception.ApplicationException)}
+	at org.springframework.web.method.annotation.ExceptionHandlerMethodResolver.addExceptionMapping(ExceptionHandlerMethodResolver.java:114)
+	at org.springframework.web.method.annotation.ExceptionHandlerMethodResolver.<init>(ExceptionHandlerMethodResolver.java:78)
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.initExceptionHandlerAdviceCache(ExceptionHandlerExceptionResolver.java:289)
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.afterPropertiesSet(ExceptionHandlerExceptionResolver.java:256)
+	at org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport.addDefaultHandlerExceptionResolvers(WebMvcConfigurationSupport.java:1063)
+	at org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport.handlerExceptionResolver(WebMvcConfigurationSupport.java:1005)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140)
+	... 20 common frames omitted
+16:43:00.781 [main] INFO  a.b.d.DivFinalProjectApplication - Starting DivFinalProjectApplication using Java 17.0.10 with PID 8996 (C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main started by Fatima in C:\Users\Fatima\IdeaProjects\div-final-project)
+16:43:00.783 [main] DEBUG a.b.d.DivFinalProjectApplication - Running with Spring Boot v3.2.4, Spring v6.1.5
+16:43:00.783 [main] INFO  a.b.d.DivFinalProjectApplication - The following 1 profile is active: "db"
+16:43:05.274 [main] DEBUG a.b.d.security.jwt.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+16:43:06.646 [main] INFO  a.b.d.DivFinalProjectApplication - Started DivFinalProjectApplication in 6.187 seconds (process running for 6.711)
+16:43:16.149 [http-nio-8080-exec-2] INFO  a.b.d.service.impl.UserServiceImpl - Registering user with email: fatimasultanova.909@gmail.com
+16:43:16.505 [http-nio-8080-exec-2] INFO  a.b.d.service.impl.UserServiceImpl - User registered successfully with email: fatimasultanova.909@gmail.com
+16:43:30.141 [http-nio-8080-exec-4] INFO  a.b.d.s.impl.UserVerifyServiceImpl - Verification process started for token: 9f261896-8594-4f8d-bd3a-be721edfd00e
+16:43:30.199 [http-nio-8080-exec-4] INFO  a.b.d.s.impl.UserVerifyServiceImpl - Verification process completed for token: 9f261896-8594-4f8d-bd3a-be721edfd00e
+16:43:37.196 [http-nio-8080-exec-1] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: fatimasultanova.909@gmail.com
+16:43:40.120 [http-nio-8080-exec-6] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: fatimasultanova.909@gmail.com
+16:43:50.980 [http-nio-8080-exec-7] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: fatimasultanova.909@gmail.com
+16:43:55.336 [http-nio-8080-exec-8] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: fatimasultanova.909@gmail.com
+16:44:00.890 [http-nio-8080-exec-9] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: fatimasultanova.909@gmail.com
+16:46:52.682 [main] INFO  a.b.d.DivFinalProjectApplication - Starting DivFinalProjectApplication using Java 17.0.10 with PID 12588 (C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main started by Fatima in C:\Users\Fatima\IdeaProjects\div-final-project)
+16:46:52.683 [main] DEBUG a.b.d.DivFinalProjectApplication - Running with Spring Boot v3.2.4, Spring v6.1.5
+16:46:52.684 [main] INFO  a.b.d.DivFinalProjectApplication - The following 1 profile is active: "db"
+16:46:57.014 [main] DEBUG a.b.d.security.jwt.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+16:46:58.324 [main] INFO  a.b.d.DivFinalProjectApplication - Started DivFinalProjectApplication in 5.968 seconds (process running for 6.744)
+16:47:14.276 [http-nio-8080-exec-2] INFO  a.b.d.service.impl.UserServiceImpl - Registering user with email: fatimasultanova.909@gmail.com
+16:47:14.812 [http-nio-8080-exec-2] INFO  a.b.d.service.impl.UserServiceImpl - User registered successfully with email: fatimasultanova.909@gmail.com
+16:47:29.974 [http-nio-8080-exec-3] INFO  a.b.d.s.impl.UserVerifyServiceImpl - Verification process started for token: 0e95726c-9a2e-4abe-95d0-2f884ca45dec
+16:47:30.008 [http-nio-8080-exec-3] INFO  a.b.d.s.impl.UserVerifyServiceImpl - Verification process completed for token: 0e95726c-9a2e-4abe-95d0-2f884ca45dec
+16:47:34.174 [http-nio-8080-exec-4] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: fatimasultanova.909@gmail.com
+16:47:34.390 [http-nio-8080-exec-4] ERROR a.b.d.service.impl.UserServiceImpl - User with phone number or email: fatimasultanova.909@gmail.com not found or not eligible for authentication
+16:57:38.200 [main] INFO  a.b.d.DivFinalProjectApplication - Starting DivFinalProjectApplication using Java 17.0.10 with PID 8364 (C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main started by Fatima in C:\Users\Fatima\IdeaProjects\div-final-project)
+16:57:38.201 [main] DEBUG a.b.d.DivFinalProjectApplication - Running with Spring Boot v3.2.4, Spring v6.1.5
+16:57:38.202 [main] INFO  a.b.d.DivFinalProjectApplication - The following 1 profile is active: "db"
+16:57:42.533 [main] DEBUG a.b.d.security.jwt.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+16:57:43.825 [main] INFO  a.b.d.DivFinalProjectApplication - Started DivFinalProjectApplication in 5.951 seconds (process running for 6.662)
+16:58:18.893 [http-nio-8080-exec-4] INFO  a.b.d.service.impl.UserServiceImpl - Registering user with email: fatimasultanova.909@gmail.com
+16:58:19.179 [http-nio-8080-exec-4] INFO  a.b.d.service.impl.UserServiceImpl - User registered successfully with email: fatimasultanova.909@gmail.com
+16:58:33.204 [http-nio-8080-exec-2] INFO  a.b.d.s.impl.UserVerifyServiceImpl - Verification process started for token: 6d0a142c-6226-4250-b4ee-29f25c6e7f56
+16:58:33.233 [http-nio-8080-exec-2] INFO  a.b.d.s.impl.UserVerifyServiceImpl - Verification process completed for token: 6d0a142c-6226-4250-b4ee-29f25c6e7f56
+16:58:38.590 [http-nio-8080-exec-3] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: fatimasultanova.909@gmail.com
+17:11:49.114 [http-nio-8080-exec-7] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: fatimasultanova.909@gmail.com
+17:11:59.502 [http-nio-8080-exec-8] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: fatimasultanovaa.909@gmail.com
+17:11:59.506 [http-nio-8080-exec-8] ERROR a.b.d.service.impl.UserServiceImpl - User with phone number or email: fatimasultanovaa.909@gmail.com not found or not eligible for authentication
+17:12:08.058 [http-nio-8080-exec-10] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: fatimasultanova.909@gmail.com
+17:12:16.185 [http-nio-8080-exec-1] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: fatimasultanova.909@gmail.com
+17:12:58.901 [main] INFO  a.b.d.DivFinalProjectApplication - Starting DivFinalProjectApplication using Java 17.0.10 with PID 22600 (C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main started by Fatima in C:\Users\Fatima\IdeaProjects\div-final-project)
+17:12:58.903 [main] DEBUG a.b.d.DivFinalProjectApplication - Running with Spring Boot v3.2.4, Spring v6.1.5
+17:12:58.903 [main] INFO  a.b.d.DivFinalProjectApplication - The following 1 profile is active: "db"
+17:13:03.255 [main] DEBUG a.b.d.security.jwt.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+17:13:04.625 [main] INFO  a.b.d.DivFinalProjectApplication - Started DivFinalProjectApplication in 6.085 seconds (process running for 6.756)
+17:13:18.182 [http-nio-8080-exec-1] INFO  a.b.d.service.impl.UserServiceImpl - Registering user with email: fatimasultanova.909@gmail.com
+17:13:18.728 [http-nio-8080-exec-1] INFO  a.b.d.service.impl.UserServiceImpl - User registered successfully with email: fatimasultanova.909@gmail.com
+17:13:30.945 [http-nio-8080-exec-2] INFO  a.b.d.s.impl.UserVerifyServiceImpl - Verification process started for token: 7d1d5edd-2ed8-4abd-be6b-994671f9bcb9
+17:13:31.002 [http-nio-8080-exec-2] INFO  a.b.d.s.impl.UserVerifyServiceImpl - Verification process completed for token: 7d1d5edd-2ed8-4abd-be6b-994671f9bcb9
+17:13:36.635 [http-nio-8080-exec-3] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: fatimasultanova.909@gmail.com
+17:16:18.167 [http-nio-8080-exec-4] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: Error: User is not found.] with root cause
+java.lang.RuntimeException: Error: User is not found.
+	at az.baku.divfinalproject.service.impl.UserServiceImpl.lambda$getById$3(UserServiceImpl.java:121)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at az.baku.divfinalproject.service.impl.UserServiceImpl.getById(UserServiceImpl.java:121)
+	at az.baku.divfinalproject.service.impl.UserServiceImpl.getById(UserServiceImpl.java:32)
+	at az.baku.divfinalproject.controller.UserController.getById(UserController.java:36)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:925)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:830)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at az.baku.divfinalproject.security.jwt.AuthTokenFilter.doFilterInternal(AuthTokenFilter.java:48)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+17:18:36.576 [main] INFO  a.b.d.DivFinalProjectApplication - Starting DivFinalProjectApplication using Java 17.0.10 with PID 6188 (C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main started by Fatima in C:\Users\Fatima\IdeaProjects\div-final-project)
+17:18:36.578 [main] DEBUG a.b.d.DivFinalProjectApplication - Running with Spring Boot v3.2.4, Spring v6.1.5
+17:18:36.579 [main] INFO  a.b.d.DivFinalProjectApplication - The following 1 profile is active: "db"
+17:18:40.903 [main] DEBUG a.b.d.security.jwt.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+17:18:42.229 [main] INFO  a.b.d.DivFinalProjectApplication - Started DivFinalProjectApplication in 6.022 seconds (process running for 6.655)

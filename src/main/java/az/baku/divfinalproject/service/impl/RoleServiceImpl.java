@@ -7,6 +7,8 @@ import az.baku.divfinalproject.mapper.RoleMapper;
 import az.baku.divfinalproject.repository.RoleRepository;
 import az.baku.divfinalproject.service.CrudService;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
@@ -17,6 +19,7 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor
 public class RoleServiceImpl implements CrudService<RoleRequest, RoleResponse> {
+    private static final Logger log = LoggerFactory.getLogger(RoleServiceImpl.class);
     private final RoleRepository roleRepository;
     private final RoleMapper roleMapper;
 
@@ -52,9 +55,16 @@ public class RoleServiceImpl implements CrudService<RoleRequest, RoleResponse> {
 
     public Role findByName(String name) {
         Optional<Role> byName = roleRepository.findByName(name);
-        if (byName.isPresent()) {
-            return byName.get();
+        return byName.orElse(null);
+    }
+
+    public RoleResponse getRoleByName(String name) {
+        Role role = findByName(name);
+        if (role != null) {
+            return roleMapper.toResponse(role);
+        } else {
+            log.error("Role not found with name: {}" , name);
+            throw new RuntimeException("Role not found with name: " + name);
         }
-        return null;
     }
 }

@@ -3,8 +3,6 @@ package az.baku.divfinalproject.controller;
 import az.baku.divfinalproject.dto.request.RoleRequest;
 import az.baku.divfinalproject.dto.request.Request;
 import az.baku.divfinalproject.dto.response.RoleResponse;
-import az.baku.divfinalproject.entity.Role;
-import az.baku.divfinalproject.mapper.RoleMapper;
 import az.baku.divfinalproject.service.impl.RoleServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +14,6 @@ import java.util.Collection;
 @RequiredArgsConstructor
 public class RoleController {
     private final RoleServiceImpl roleService;
-    private final RoleMapper roleMapper;
 
     @PostMapping("/create")
     public RoleResponse createRole(@RequestBody RoleRequest request) {
@@ -45,12 +42,6 @@ public class RoleController {
 
     @GetMapping("/role/{name}")
     public RoleResponse getRoleByName(@PathVariable("name") String name) {
-        Role role = roleService.findByName(name);
-        if (role != null) {
-            return roleMapper.toResponse(role);
-        } else {
-            return null;
-        }
+        return roleService.getRoleByName(name);
     }
-
 }

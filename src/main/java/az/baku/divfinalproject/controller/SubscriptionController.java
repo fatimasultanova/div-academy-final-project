@@ -3,7 +3,6 @@ package az.baku.divfinalproject.controller;
 import az.baku.divfinalproject.dto.request.Request;
 import az.baku.divfinalproject.dto.request.SubscriptionRequest;
 import az.baku.divfinalproject.dto.response.SubscriptionResponse;
-import az.baku.divfinalproject.mapper.SubscriptionMapper;
 import az.baku.divfinalproject.service.impl.SubscriptionServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +14,6 @@ import java.util.Collection;
 @RequiredArgsConstructor
 public class SubscriptionController {
     private final SubscriptionServiceImpl subscriptionService;
-    private final SubscriptionMapper mapper;
 
     @PostMapping("/create")
     public SubscriptionResponse createRole(@RequestBody SubscriptionRequest request) {

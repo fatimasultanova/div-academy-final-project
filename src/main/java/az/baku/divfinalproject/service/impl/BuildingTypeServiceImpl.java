@@ -7,6 +7,8 @@ import az.baku.divfinalproject.mapper.BuildingTypeMapper;
 import az.baku.divfinalproject.repository.BuildingTypeRepository;
 import az.baku.divfinalproject.service.CrudService;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
@@ -17,6 +19,7 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor
 public class BuildingTypeServiceImpl implements CrudService<BuildingTypeRequest, BuildingTypeResponse> {
+    private static final Logger log = LoggerFactory.getLogger(BuildingTypeServiceImpl.class);
     private final BuildingTypeRepository repository;
     private final BuildingTypeMapper mapper;
 
@@ -52,9 +55,16 @@ public class BuildingTypeServiceImpl implements CrudService<BuildingTypeRequest,
 
     public BuildingType findByType(String type) {
         Optional<BuildingType> byType = repository.findByType(type);
-        if (byType.isPresent()) {
-            return byType.get();
+        return byType.orElse(null);
+    }
+
+    public BuildingTypeResponse getBuildingTypeByType(String type) {
+        BuildingType buildingType = findByType(type);
+        if (buildingType != null) {
+            return mapper.toResponse(buildingType);
+        } else {
+            log.error("Building Type is not found: {}", type);
+            throw new RuntimeException("Error: Building Type is not found.");
         }
-        return null;
     }
 }

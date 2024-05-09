@@ -1,9 +1,6 @@
 package az.baku.divfinalproject.service;
 
-import az.baku.divfinalproject.dto.request.LoginRequest;
-import az.baku.divfinalproject.dto.request.RegisterRequest;
-import az.baku.divfinalproject.dto.request.Request;
-import az.baku.divfinalproject.dto.request.UserRequest;
+import az.baku.divfinalproject.dto.request.*;
 
 import az.baku.divfinalproject.dto.response.UserResponse;
 import az.baku.divfinalproject.entity.User;
@@ -14,8 +11,6 @@ public interface UserService extends CrudService<UserRequest, UserResponse> {
     UserResponse createWithPhoneNumber(RegisterRequest registerRequest);
     UserResponse getUserByEmail(String email);
     UserResponse getUserByPhoneNumber(String phoneNumber);
-    UserResponse getUserByEmailAndPassword(String email, String password);
-    UserResponse getUserByPhoneNumberAndPassword(String phoneNumber, String password);
     ResponseEntity<?> deleteUserByAdmin(Request<UserRequest> request);
     ResponseEntity<?> blockUserByAdmin(Request<UserRequest> request);
     ResponseEntity<?> cancelUserSubscriptionByAdmin(Request<UserRequest> request);
@@ -24,6 +19,11 @@ public interface UserService extends CrudService<UserRequest, UserResponse> {
     ResponseEntity<?> authenticateUser(LoginRequest loginRequest);
     ResponseEntity<?> registerUserWithEmail(RegisterRequest userRequest);
     ResponseEntity<?> registerWithPhoneNumber(RegisterRequest signUpRequest);
+    ResponseEntity<?> getContactInformation(Request<AdvertRequest> request);
+    ResponseEntity<?> updateEmail(Request<LoginRequest> updateRequest);
+    ResponseEntity<?> updatePhone(Request<LoginRequest> updateRequest);
+    ResponseEntity<?> updatePassword(Request<PasswordRequest> request);
+    ResponseEntity<?> setUserAdmin(Request<LoginRequest> request);
 
 
 

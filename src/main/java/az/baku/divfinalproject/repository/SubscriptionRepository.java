@@ -12,4 +12,5 @@ import java.util.Optional;
 public interface SubscriptionRepository extends JpaRepository<Subscription, Long> {
    Subscription findByType(String type);
    Subscription findByAmount(long amount);
+   List<Subscription> findAllByAmountIsLessThan(long amount);
 }

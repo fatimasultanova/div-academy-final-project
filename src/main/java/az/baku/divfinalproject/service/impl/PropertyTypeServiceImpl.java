@@ -7,6 +7,8 @@ import az.baku.divfinalproject.mapper.PropertyTypeMapper;
 import az.baku.divfinalproject.repository.PropertyTypeRepository;
 import az.baku.divfinalproject.service.CrudService;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
@@ -17,6 +19,7 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor
 public class PropertyTypeServiceImpl implements CrudService<PropertyTypeRequest, PropertyTypeResponse> {
+    private static final Logger log = LoggerFactory.getLogger(PropertyTypeServiceImpl.class);
     private final PropertyTypeRepository repository;
     private final PropertyTypeMapper mapper;
 
@@ -52,9 +55,16 @@ public class PropertyTypeServiceImpl implements CrudService<PropertyTypeRequest,
 
     public PropertyType findByType(String type) {
         Optional<PropertyType> byType = repository.findByType(type);
-        if (byType.isPresent()) {
-            return byType.get();
+        return byType.orElse(null);
+    }
+
+    public PropertyTypeResponse getPropertyTypeByType(String type) {
+        PropertyType propertyType = findByType(type);
+        if (propertyType != null) {
+            return mapper.toResponse(propertyType);
+        } else {
+            log.error("PropertyType is not found: {}", type);
+            throw new RuntimeException("PropertyType is not found");
         }
-        return null;
     }
 }

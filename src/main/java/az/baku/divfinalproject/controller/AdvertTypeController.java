@@ -3,8 +3,6 @@ package az.baku.divfinalproject.controller;
 import az.baku.divfinalproject.dto.request.AdvertTypeRequest;
 import az.baku.divfinalproject.dto.request.Request;
 import az.baku.divfinalproject.dto.response.AdvertTypeResponse;
-import az.baku.divfinalproject.entity.AdvertType;
-import az.baku.divfinalproject.mapper.AdvertTypeMapper;
 import az.baku.divfinalproject.service.impl.AdvertTypeServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +14,6 @@ import java.util.Collection;
 @RequiredArgsConstructor
 public class AdvertTypeController {
     private final AdvertTypeServiceImpl advertTypeService;
-    private final AdvertTypeMapper advertTypeMapper;
 
     @PostMapping("/create")
     public AdvertTypeResponse createAdvertType(@RequestBody AdvertTypeRequest request) {
@@ -45,11 +42,6 @@ public class AdvertTypeController {
 
     @GetMapping("/type/{type}")
     public AdvertTypeResponse getAdvertTypeByType(@PathVariable("type") String type) {
-        AdvertType advertType = advertTypeService.findByType(type);
-        if (advertType != null) {
-            return advertTypeMapper.toResponse(advertType);
-        } else {
-            return null;
-        }
+        return advertTypeService.getAdvertTypeByType(type);
     }
 }
