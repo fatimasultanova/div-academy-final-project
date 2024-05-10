@@ -43,17 +43,17 @@ public class AdvertDetailsController {
     }
 
     @GetMapping("/searching-count/{searchingCount}")
-    public List<AdvertDetails> getAdvertDetailsBySearchingCount(@PathVariable int searchingCount) {
+    public List<AdvertDetailsResponse> getAdvertDetailsBySearchingCount(@PathVariable int searchingCount) {
         return advertDetailsService.findBySearchingCount(searchingCount);
     }
 
     @GetMapping("/living-count/{livingCount}")
-    public List<AdvertDetails> getAdvertDetailsByLivingCount(@PathVariable int livingCount) {
+    public List<AdvertDetailsResponse> getAdvertDetailsByLivingCount(@PathVariable int livingCount) {
         return advertDetailsService.findByLivingCount(livingCount);
     }
 
     @GetMapping("/gender/{gender}")
-    public List<AdvertDetails> getAdvertDetailsByGender(@PathVariable String gender) {
+    public List<AdvertDetailsResponse> getAdvertDetailsByGender(@PathVariable String gender) {
         return advertDetailsService.findByGender(gender);
     }
 }

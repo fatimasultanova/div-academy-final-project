@@ -26,7 +26,8 @@ public enum ExceptionEnums {
     SUBSCRIPTION_CANCELLED("Subscription cancelled"),
     ACCOUNT_NOT_FOUND("Account not found"),
     AUTHENTICATION_FAILED("Authentication failed"),
-    PHONE_NOT_FOUND("Phone not found");
+    PHONE_NOT_FOUND("Phone not found"),
+    METHOD_ARGUMENT_NOT_VALID("MethodArgument not valid");
 
 
     private final String message;

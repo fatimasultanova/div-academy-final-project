@@ -2,6 +2,9 @@ spring:
   profiles:
     include:
       - db
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
   rabbitmq:
     host: localhost
     port: 5672

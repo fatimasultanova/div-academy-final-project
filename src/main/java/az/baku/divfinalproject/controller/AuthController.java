@@ -2,6 +2,7 @@ package az.baku.divfinalproject.controller;
 
 import az.baku.divfinalproject.dto.request.LoginRequest;
 import az.baku.divfinalproject.dto.request.RegisterRequest;
+import az.baku.divfinalproject.handler.GlobalHandler;
 import az.baku.divfinalproject.service.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

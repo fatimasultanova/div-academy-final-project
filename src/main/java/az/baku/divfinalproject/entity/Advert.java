@@ -1,7 +1,10 @@
 package az.baku.divfinalproject.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
@@ -10,7 +13,6 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @Builder
-@ToString
 @Table(schema = "public", name = "advert")
 public class Advert {
     @Id
@@ -36,5 +38,16 @@ public class Advert {
         this.createDate = LocalDateTime.now();
         this.updateDate = LocalDateTime.now();
         this.isActive = true;
+    }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + "(" +
+                "id = " + id + ", " +
+                "description = " + description + ", " +
+                "advertType = " + advertType + ", " +
+                "createDate = " + createDate + ", " +
+                "amountMonthly = " + amountMonthly + ", " +
+                "updateDate = " + updateDate + ")";
     }
 }

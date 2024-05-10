@@ -5,15 +5,15 @@ import lombok.*;
 
 @Getter
 @Setter
-@Data
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @ToString
 public class LoginRequest {
-	@NotBlank
+	@NotBlank(message = "Not Blank")
 	private String phoneNumberOrEmail;
 
-	@NotBlank
+	@NotBlank(message = "Not Blank")
 	private String password;
 }

@@ -1,0 +1,49 @@
+databaseChangeLog:
+  - changeSet:
+      id: add_roles_to_table
+      author: fatima
+      changes:
+        - sql:
+            sql: |
+              INSERT INTO role (name) VALUES ('ROLE_USER');
+              INSERT INTO role (name) VALUES ('ROLE_ADMIN');
+              INSERT INTO role (name) VALUES ('ROLE_MODERATOR');
+  - changeSet:
+      id: add_advert_type_to_table
+      author: fatima
+      changes:
+        - sql:
+            sql: |
+              INSERT INTO advert_type (type) VALUES
+                          ('Rent'),
+                          ('Sale'),
+                          ('Looking for a roommate');
+  - changeSet:
+      id: add_building_type_to_table
+      author: fatima
+      changes:
+        - sql:
+            sql: |
+              INSERT INTO building_type (type) VALUES ('New building');
+              INSERT INTO building_type (type) VALUES ('Old building');
+
+  - changeSet:
+      id: add_subscription_to_table
+      author: fatima
+      changes:
+        - sql:
+            sql: |
+              INSERT INTO subscription (type, description, amount, request_count)
+              VALUES
+                  ('Starter', '3 elanın sahibinin nömrəsinə baxa bilərsiniz', 85, 3),
+                  ('Master', '12 elanın sahibinin nömrəsinə baxa bilərsiniz', 150, 12),
+                  ('Legend', '30 elanın sahibinin nömrəsinə baxa bilərsiniz', 250, 30);
+  - changeSet:
+      id: add_property_type_to_table
+      author: fatima
+      changes:
+        - sql:
+            sql: |
+              INSERT INTO property_type (type) VALUES ('Apartment');
+              INSERT INTO property_type (type) VALUES ('Office');
+              INSERT INTO property_type (type) VALUES ('Courtyard house');
