@@ -12,6 +12,7 @@ import java.util.Collection;
 @RestController
 @RequestMapping("/api/role")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "*", maxAge = 3600)
 public class RoleController {
     private final RoleServiceImpl roleService;
 

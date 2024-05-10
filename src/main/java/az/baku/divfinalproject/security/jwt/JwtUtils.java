@@ -1,11 +1,15 @@
 package az.baku.divfinalproject.security.jwt;
 
 
+import az.baku.divfinalproject.dto.response.ExceptionResponse;
+import az.baku.divfinalproject.exception.ApplicationException;
+import az.baku.divfinalproject.exception.ExceptionEnums;
 import az.baku.divfinalproject.security.services.UserDetailsImpl;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Component;
@@ -57,8 +61,7 @@ public class JwtUtils {
             Jwts.parserBuilder().setSigningKey(key()).build().parseClaimsJws(authToken);
             return true;
         } catch (MalformedJwtException | IllegalArgumentException | UnsupportedJwtException | ExpiredJwtException e) {
-            System.out.println("Invalid JWT token");
+            throw new ApplicationException(new ExceptionResponse(ExceptionEnums.INVALID_JWT_TOKEN.getMessage(), HttpStatus.BAD_REQUEST));
         }
-        return false;
     }
 }

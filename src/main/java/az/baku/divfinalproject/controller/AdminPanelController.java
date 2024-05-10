@@ -23,6 +23,7 @@ import java.util.List;
 @RequestMapping("/api/admin-panel")
 @RequiredArgsConstructor
 @Secured("ROLE_ADMIN")
+@CrossOrigin(origins = "*", maxAge = 3600)
 public class AdminPanelController {
     private final UserService userService;
     private final AdvertService advertService;
@@ -35,7 +36,10 @@ public class AdminPanelController {
     //@PreAuthorize()
     public ResponseEntity<?> getAllUsers() {
         Collection<UserResponse> all = userService.findAll();
-        return all.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(all);
+        if (all.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(all);
     }
 
     @PostMapping("/activate-user")

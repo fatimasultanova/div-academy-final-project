@@ -25,6 +25,15 @@ public class WebSecurityConfig {
 
     private final AuthEntryPointJwt unauthorizedHandler;
 
+    private static final String[] AUTH_WHITELIST = {
+            // -- swagger ui
+            "/v2/api-docs",
+            "/v3/api-docs",
+            "/swagger-resources/**",
+            "/swagger-ui/**",
+            "/v3/api-docs/**"
+    };
+
     public WebSecurityConfig(UserDetailsServiceImpl userDetailsService, AuthEntryPointJwt unauthorizedHandler) {
         this.userDetailsService = userDetailsService;
         this.unauthorizedHandler = unauthorizedHandler;
@@ -71,11 +80,13 @@ public class WebSecurityConfig {
                                 .requestMatchers("/api/adverts/**").permitAll()
                                 .requestMatchers("/api/advert-details/**").permitAll()
                                 .requestMatchers("/api/property-details/**").permitAll()
-                                .requestMatchers("/api/admin-panel/**").permitAll()
+                                //.requestMatchers("/api/admin-panel/**").permitAll()
                                 .requestMatchers("/api/advert-type/**").permitAll()
                                 .requestMatchers("/api/building-type/**").permitAll()
                                 .requestMatchers("/api/role/**").permitAll()
-                              //.requestMatchers("api/admin-panel/").hasAuthority("ROLE_ADMIN")
+                                .requestMatchers(AUTH_WHITELIST).permitAll()
+                                .requestMatchers("swagger-ui/**").permitAll()
+                                .requestMatchers("api/admin-panel/**").hasAuthority("ROLE_ADMIN")
                                 .anyRequest().authenticated()
                 );
 

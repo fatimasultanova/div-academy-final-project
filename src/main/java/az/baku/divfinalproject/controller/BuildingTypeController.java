@@ -12,6 +12,7 @@ import java.util.Collection;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/building-type")
+@CrossOrigin(origins = "*", maxAge = 3600)
 public class BuildingTypeController {
     private final BuildingTypeServiceImpl buildingTypeService;
 

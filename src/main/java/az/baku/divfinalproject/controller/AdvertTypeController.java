@@ -12,6 +12,7 @@ import java.util.Collection;
 @RestController
 @RequestMapping("/api/advert-type")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "*", maxAge = 3600)
 public class AdvertTypeController {
     private final AdvertTypeServiceImpl advertTypeService;
 

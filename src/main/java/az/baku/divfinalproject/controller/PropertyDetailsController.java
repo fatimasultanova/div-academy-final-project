@@ -14,6 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/property-details")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "*", maxAge = 3600)
 public class PropertyDetailsController {
 
     private final PropertyDetailsServiceImpl propertyDetailsService;

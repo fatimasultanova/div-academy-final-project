@@ -12,6 +12,7 @@ import java.util.Collection;
 @RestController
 @RequestMapping("/api/property-type")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "*", maxAge = 3600)
 public class PropertyTypeController {
     private final PropertyTypeServiceImpl propertyTypeService;
 

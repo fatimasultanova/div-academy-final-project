@@ -12,6 +12,7 @@ import java.util.Collection;
 @RestController
 @RequestMapping("/api/subscription")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "*", maxAge = 3600)
 public class SubscriptionController {
     private final SubscriptionServiceImpl subscriptionService;
 

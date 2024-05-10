@@ -35,6 +35,12 @@ public class GlobalHandler extends DefaultErrorAttributes {
         return new ResponseEntity<>(exceptionResponse, exceptionResponse.getHttpStatus());
     }
 
+    @ExceptionHandler(RuntimeException.class)
+    public ResponseEntity<ExceptionResponse> handleRuntimeException(RuntimeException ex) {
+        ExceptionResponse exceptionResponse = new ExceptionResponse(ex.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
+        return ResponseEntity.internalServerError().body(exceptionResponse);
+    }
+
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(value = HttpStatus.BAD_REQUEST)
     @ResponseBody

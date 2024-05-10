@@ -27,7 +27,8 @@ public enum ExceptionEnums {
     ACCOUNT_NOT_FOUND("Account not found"),
     AUTHENTICATION_FAILED("Authentication failed"),
     PHONE_NOT_FOUND("Phone not found"),
-    METHOD_ARGUMENT_NOT_VALID("MethodArgument not valid");
+    METHOD_ARGUMENT_NOT_VALID("MethodArgument not valid"),
+    INVALID_JWT_TOKEN("Invalid JWT token");
 
 
     private final String message;

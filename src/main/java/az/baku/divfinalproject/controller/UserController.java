@@ -16,7 +16,7 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping
-    public ResponseEntity<?> getUserById(Request<UserRequest> request) {
+    public ResponseEntity<?> getUserById(@RequestBody Request<UserRequest> request) {
         return ResponseEntity.ok(userService.getById(request.getId()));
     }
 
