@@ -42,12 +42,12 @@ public class AdminPanelController {
         return ResponseEntity.ok(all);
     }
 
-    @PostMapping("/activate-user")
+    @PatchMapping("/user")
     public ResponseEntity<?> activateUserPhone(@RequestBody Request<UserRequest> request) {
         return userService.activateUserByAdmin(request);
     }
 
-    @PostMapping("/update-user")
+    @PutMapping("/user")
     public ResponseEntity<?> update(@Valid @RequestBody Request<RegisterRequest> request) {
        return userService.updateUserByAdmin(request);
     }
@@ -57,12 +57,12 @@ public class AdminPanelController {
         return userService.blockUserByAdmin(request);
     }
 
-    @PutMapping("/delete-user")
+    @DeleteMapping("/user")
     public ResponseEntity<?> deleteUser(@Valid @RequestBody Request<UserRequest> request) {
        return userService.deleteUserByAdmin(request);
     }
 
-    @PutMapping("/cancel-user-subscription")
+    @PatchMapping("/user-subscription")
     public ResponseEntity<?> cancelUserSubscription(@Valid @RequestBody Request<UserRequest> request) {
         return userService.cancelUserSubscriptionByAdmin(request);
     }
@@ -73,12 +73,12 @@ public class AdminPanelController {
         return all.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(all);
     }
 
-    @PostMapping("/update-advert")
+    @PutMapping("/advert")
     public ResponseEntity<?> updateAdvert(@Valid @RequestBody Request<AdvertRequest> request) {
         return ResponseEntity.ok(advertService.update(request.getId(), request.getRequest()));
     }
 
-    @PutMapping("/delete-advert")
+    @DeleteMapping("/advert")
     public ResponseEntity<?> deleteAdvert(@Valid @RequestBody Request<AdvertRequest> request) {
         advertService.delete(request.getId());
         return ResponseEntity.ok("Advert deleted! ");

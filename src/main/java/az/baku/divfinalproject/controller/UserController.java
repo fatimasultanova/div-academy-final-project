@@ -20,13 +20,13 @@ public class UserController {
         return ResponseEntity.ok(userService.getById(request.getId()));
     }
 
-    @PostMapping("/update")
+    @PutMapping()
     public ResponseEntity<?> update(@Valid @RequestBody Request<UserRequest> request) {
         userService.update(request.getId(), request.getRequest());
         return ResponseEntity.ok(new MessageResponse("User updated successfully!"));
     }
 
-    @PostMapping("/delete")
+    @DeleteMapping()
     public ResponseEntity<?> deleteUser(@Valid @RequestBody Request<UserRequest> request) {
         userService.delete(request.getId());
         return ResponseEntity.ok(new MessageResponse("User deleted successfully!"));
@@ -37,17 +37,17 @@ public class UserController {
         return userService.getContactInformation(request);
     }
 
-    @PutMapping("/update-email")
+    @PutMapping("/email")
     public ResponseEntity<?> updateEmail(@RequestBody Request<LoginRequest> request) {
         return userService.updateEmail(request);
     }
 
-    @PutMapping("/update-phone")
+    @PutMapping("/phone")
     public ResponseEntity<?> updatePhone(@RequestBody Request<LoginRequest> request) {
         return userService.updatePhone(request);
     }
 
-    @PutMapping
+    @PutMapping("password")
     public ResponseEntity<?> updatePassword(@RequestBody Request<PasswordRequest> request) {
         return userService.updatePassword(request);
     }

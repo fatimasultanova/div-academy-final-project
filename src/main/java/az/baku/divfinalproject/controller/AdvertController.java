@@ -20,7 +20,7 @@ public class AdvertController {
     private final AdvertService advertService;
 
 
-    @PostMapping("/creation")
+    @PostMapping("/advert")
     public AdvertResponse createAdvert(@RequestBody AdvertRequest request) {
         return advertService.create(request);
     }
@@ -55,12 +55,12 @@ public class AdvertController {
         return advertService.findAllByAdvertTypeId(request.getId());
     }
 
-    @PutMapping("/update")
+    @PutMapping("/advert")
     public AdvertResponse updateAdvert(@RequestBody Request<AdvertRequest> request) {
         return advertService.update(request.getId(), request.getRequest());
     }
 
-    @DeleteMapping("/deletion")
+    @DeleteMapping("/advert")
     public void deleteAdvert(@RequestBody Request<AdvertRequest> request) {
         advertService.delete(request.getId());
     }

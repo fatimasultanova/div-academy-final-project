@@ -28,31 +28,42 @@ public class AdvertTypeServiceImpl implements CrudService<AdvertTypeRequest, Adv
 
     @Override
     public AdvertTypeResponse create(AdvertTypeRequest request) {
+        logger.info("Create Advert Type process starting");
         AdvertType advertType = mapper.toEntity(request);
         repository.save(advertType);
+        logger.info("Create Advert Type process finished");
         return mapper.toResponse(advertType);
     }
 
     @Override
     public AdvertTypeResponse update(long id, AdvertTypeRequest request) {
-        AdvertType advertType = repository.findById(id).orElseThrow(() -> new RuntimeException("Error: Advert Type is not found."));
-        return mapper.toResponse(repository.save(mapper.partialUpdate(request,advertType)));
+        logger.info("Update Advert Type process starting for ID: {}", id);
+        AdvertType advertType = repository.findById(id).orElseThrow(() -> new ApplicationException(new ExceptionResponse(ExceptionEnums.ADVERT_TYPE_NOT_FOUND.getMessage(), HttpStatus.NOT_FOUND)));
+        AdvertType updatedAdvertType = repository.save(mapper.partialUpdate(request, advertType));
+        logger.info("Update Advert Type process finished for ID: {}", id);
+        return mapper.toResponse(updatedAdvertType);
     }
 
     @Override
     public void delete(long id) {
+        logger.info("Delete Advert Type process starting for ID: {}", id);
         repository.deleteById(id);
+        logger.info("Delete Advert Type process finished for ID: {}", id);
     }
 
     @Override
     public AdvertTypeResponse getById(long id) {
-        AdvertType advertType = repository.findById(id).orElseThrow(() -> new RuntimeException("Error: Advert Type is not found."));
+        logger.info("Get Advert Type process starting for ID: {}", id);
+        AdvertType advertType = repository.findById(id).orElseThrow(() -> new ApplicationException(new ExceptionResponse(ExceptionEnums.ADVERT_TYPE_NOT_FOUND.getMessage(), HttpStatus.NOT_FOUND)));
+        logger.info("Get Advert Type process finished for ID: {}", id);
         return mapper.toResponse(advertType);
     }
 
     @Override
     public Collection<AdvertTypeResponse> findAll() {
+        logger.info("Find all Advert Types process starting");
         List<AdvertType> all = repository.findAll();
+        logger.info("Find all Advert Types process finished");
         return all.stream().map(mapper::toResponse).collect(Collectors.toList());
     }
 
@@ -61,11 +72,13 @@ public class AdvertTypeServiceImpl implements CrudService<AdvertTypeRequest, Adv
     }
 
     public AdvertTypeResponse getAdvertTypeByType(String type) {
+        logger.info("Get Advert Type by Type process starting for Type: {}", type);
         AdvertType advertType = findByType(type);
         if (advertType != null) {
+            logger.info("Get Advert Type by Type process finished for Type: {}", type);
             return mapper.toResponse(advertType);
         } else {
-            logger.error("Advert Type is not found");
+            logger.error("Advert Type is not found for Type: {}", type);
             throw new ApplicationException(new ExceptionResponse(ExceptionEnums.ADVERT_TYPE_NOT_FOUND.getMessage(), HttpStatus.NOT_FOUND));
         }
     }

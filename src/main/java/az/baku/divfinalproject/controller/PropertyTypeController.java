@@ -16,22 +16,22 @@ import java.util.Collection;
 public class PropertyTypeController {
     private final PropertyTypeServiceImpl propertyTypeService;
 
-    @PostMapping("/create")
+    @PostMapping()
     public PropertyTypeResponse createPropertyType(@RequestBody PropertyTypeRequest request) {
         return propertyTypeService.create(request);
     }
 
-    @PostMapping("/update")
+    @PutMapping()
     public PropertyTypeResponse updatePropertyType(@RequestBody Request<PropertyTypeRequest> request) {
         return propertyTypeService.update(request.getId(), request.getRequest());
     }
 
-    @GetMapping("/get-property-type")
+    @GetMapping()
     public PropertyTypeResponse getPropertyTypeById(@RequestBody Request<PropertyTypeRequest> request) {
         return propertyTypeService.getById(request.getId());
     }
 
-    @DeleteMapping("/delete")
+    @DeleteMapping()
     public void deletePropertyType(@RequestBody Request<PropertyTypeRequest> request) {
         propertyTypeService.delete(request.getId());
     }

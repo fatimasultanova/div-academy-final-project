@@ -8,6 +8,7 @@ public enum ExceptionEnums {
     ACCESS_DENIED("Access denied"),
     USERNAME_OR_PASSWORD_IS_WRONG("Username or password is wrong"),
     ADVERT_NOT_FOUND("Advert not found"),
+    ADVERT_DETAILS_NOT_FOUND("Advert details not found"),
     ADVERT_TYPE_NOT_FOUND("Advert type not found"),
     USER_REGISTERED("User registered"),
     USER_UPDATED("User updated"),
@@ -28,7 +29,13 @@ public enum ExceptionEnums {
     AUTHENTICATION_FAILED("Authentication failed"),
     PHONE_NOT_FOUND("Phone not found"),
     METHOD_ARGUMENT_NOT_VALID("MethodArgument not valid"),
-    INVALID_JWT_TOKEN("Invalid JWT token");
+    INVALID_JWT_TOKEN("Invalid JWT token"),
+    BUILDING_TYPE_NOT_FOUND("Building type not found"),
+    PROPERTY_DETAILS_NOT_FOUND("Property Details not found"),
+    PROPERTY_TYPE_NOT_FOUND("Property Type not found"),
+    PROPERTY_NOT_FOUND("Property not found"),
+    ROLE_NOT_FOUND("Role not found"),
+    SUBSCRIPTION_NOT_FOUND("Subscription not found");
 
 
     private final String message;

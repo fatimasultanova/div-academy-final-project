@@ -21,6 +21,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -47,34 +48,44 @@ public class UserServiceImpl implements UserService {
 
 
     public UserResponse createWithEmail(RegisterRequest request) {
-        User user = createdUser(request);
-        user.setEmail(request.getEmail());
+        try {
+            User user = createdUser(request);
+            user.setEmail(request.getEmail());
 
-        UserVerify userVerify = new UserVerify();
-        userVerify.setUser(user);
+            UserVerify userVerify = new UserVerify();
+            userVerify.setUser(user);
 
-        User saved = userRepository.save(user);
+            User saved = userRepository.save(user);
 
-        userVerifyRepository.save(userVerify);
+            userVerifyRepository.save(userVerify);
 
-        rabbitTemplate.convertAndSend(emailExchange,
-                emailRoutingKey,
-                EmailDTO.builder()
-                        .subject("Verify your email")
-                        .body("localhost:8080/api/user/verify-email/" + userVerify.getToken())
-                        .to(request.getEmail())
-                        .build());
+            rabbitTemplate.convertAndSend(emailExchange,
+                    emailRoutingKey,
+                    EmailDTO.builder()
+                            .subject("Verify your email")
+                            .body("localhost:8080/api/user/verify-email/" + userVerify.getToken())
+                            .to(request.getEmail())
+                            .build());
 
-        return userMapper.toResponse(saved);
+            return userMapper.toResponse(saved);
+        }catch (Exception e){
+            logger.error("Error creating user with email: {}", e.getMessage());
+            throw new ApplicationException(new ExceptionResponse("Error creating user with email", HttpStatus.INTERNAL_SERVER_ERROR));
+        }
     }
 
 
     public UserResponse createWithPhoneNumber(RegisterRequest request) {
-        User user = createdUser(request);
-        user.setPhoneNumber(request.getPhoneNumber());
+        try {
+            User user = createdUser(request);
+            user.setPhoneNumber(request.getPhoneNumber());
 
-        User saved = userRepository.save(user);
-        return userMapper.toResponse(saved);
+            User saved = userRepository.save(user);
+            return userMapper.toResponse(saved);
+        }catch (Exception e){
+            logger.error("Error creating user with phone number: {}", e.getMessage());
+            throw new ApplicationException(new ExceptionResponse("Error creating user with phone number", HttpStatus.INTERNAL_SERVER_ERROR));
+        }
     }
 
     private User createdUser(RegisterRequest request) {
@@ -85,7 +96,7 @@ public class UserServiceImpl implements UserService {
                 encoder.encode(request.getPassword()));
 
         Role userRole = roleRepository.findByName("ROLE_USER")
-                .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+                .orElseThrow(() -> new ApplicationException(new ExceptionResponse(ExceptionEnums.ROLE_NOT_FOUND.getMessage(),HttpStatus.NOT_FOUND)));
         user.getRoles().add(userRole);
         user.setRoles(user.getRoles());
         return user;
@@ -100,40 +111,57 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserResponse update(long id, UserRequest request) {
-        User user = userRepository.findById(id).orElseThrow(() -> new RuntimeException("Error: User is not found."));
-        return userMapper.toResponse(userRepository.save(userMapper.partialUpdate(request, user)));
+        try {
+            User user = userRepository.findById(id).orElseThrow(() -> new ApplicationException(new ExceptionResponse("Error: User is not found.", HttpStatus.NOT_FOUND)));
+            user.setUpdateDate(LocalDateTime.now());
+            return userMapper.toResponse(userRepository.save(userMapper.partialUpdate(request, user)));
+        } catch (ApplicationException e) {
+            logger.error("Error updating user with id {}: {}", id, e.getMessage());
+            throw e;
+        } catch (Exception e) {
+            logger.error("Internal server error updating user with id {}: {}", id, e.getMessage());
+            throw new ApplicationException(new ExceptionResponse("Error updating user", HttpStatus.INTERNAL_SERVER_ERROR));
+        }
     }
 
     @Override
     public void delete(long id) {
-        User user = userRepository.findById(id).orElseThrow(() -> new RuntimeException("Error: User is not found."));
-        user.setDeleted(true);
-        userRepository.save(user);
+        try {
+            User user = userRepository.findById(id).orElseThrow(() -> new ApplicationException(new ExceptionResponse("Error: User is not found.", HttpStatus.NOT_FOUND)));
+            user.setDeleted(true);
+            userRepository.save(user);
+        } catch (ApplicationException e) {
+            logger.error("Error deleting user with id {}: {}", id, e.getMessage());
+            throw e;
+        } catch (Exception e) {
+            logger.error("Internal server error deleting user with id {}: {}", id, e.getMessage());
+            throw new ApplicationException(new ExceptionResponse("Error deleting user", HttpStatus.INTERNAL_SERVER_ERROR));
+        }
     }
 
     @Override
     public UserResponse getById(long id) {
-        User user = userRepository.findById(id).orElseThrow(() -> new RuntimeException("Error: User is not found."));
-        return userMapper.toResponse(user);
+        try {
+            User user = userRepository.findById(id).orElseThrow(() -> new ApplicationException(new ExceptionResponse("Error: User is not found.", HttpStatus.NOT_FOUND)));
+            return userMapper.toResponse(user);
+        } catch (ApplicationException e) {
+            logger.error("Error fetching user with id {}: {}", id, e.getMessage());
+            throw e;
+        } catch (Exception e) {
+            logger.error("Internal server error fetching user with id {}: {}", id, e.getMessage());
+            throw new ApplicationException(new ExceptionResponse("Error fetching user", HttpStatus.INTERNAL_SERVER_ERROR));
+        }
     }
 
     @Override
     public Collection<UserResponse> findAll() {
-        List<User> users = userRepository.findAll();
-        return users.stream().map(userMapper::toResponse).collect(Collectors.toList());
-    }
-
-
-    @Override
-    public UserResponse getUserByEmail(String email) {
-        User user = userRepository.findByEmail(email).orElseThrow(() -> new RuntimeException("Error: User is not found."));
-        return userMapper.toResponse(user);
-    }
-
-    @Override
-    public UserResponse getUserByPhoneNumber(String phoneNumber) {
-        User user = userRepository.findByPhoneNumber(phoneNumber).orElseThrow(() -> new RuntimeException("Error: User is not found."));
-        return userMapper.toResponse(user);
+        try {
+            List<User> users = userRepository.findAll();
+            return users.stream().map(userMapper::toResponse).collect(Collectors.toList());
+        } catch (Exception e) {
+            logger.error("Internal server error fetching all users: {}", e.getMessage());
+            throw new ApplicationException(new ExceptionResponse("Error fetching all users", HttpStatus.INTERNAL_SERVER_ERROR));
+        }
     }
 
     private String mapRolesToString(Set<Role> roles) {
@@ -143,71 +171,125 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public ResponseEntity<?> deleteUserByAdmin(Request<UserRequest> request) {
-        Optional<User> userOptional = userRepository.findById(request.getId());
-        if (userOptional.isPresent()) {
-            User user = userOptional.get();
-            if (user.isDeleted()) {
-                user.setDeleted(false);
-                userRepository.save(user);
-                return new ResponseEntity<>("User returned successfully!", HttpStatus.OK);
-            } else {
-                user.setDeleted(true);
-                userRepository.save(user);
-                return new ResponseEntity<>("User deleted successfully!", HttpStatus.OK);
-            }
+    public UserResponse getUserByEmail(String email) {
+        try {
+            User user = userRepository.findByEmail(email).orElseThrow(() -> new ApplicationException(new ExceptionResponse("Error: User is not found.", HttpStatus.NOT_FOUND)));
+            return userMapper.toResponse(user);
+        } catch (ApplicationException e) {
+            logger.error("Error fetching user by email {}: {}", email, e.getMessage());
+            throw e;
+        } catch (Exception e) {
+            logger.error("Internal server error fetching user by email {}: {}", email, e.getMessage());
+            throw new ApplicationException(new ExceptionResponse("Error fetching user by email", HttpStatus.INTERNAL_SERVER_ERROR));
         }
-        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
 
     @Override
-    public ResponseEntity<?> blockUserByAdmin(Request<UserRequest> request) {
-        Optional<User> user = userRepository.findById(request.getId());
-        if (user.isPresent()) {
-            if (user.get().isBlockedByAdmin()) {
-                user.get().setBlockedByAdmin(false);
-                userRepository.save(user.get());
-                return new ResponseEntity<>("User unblocked successfully!", HttpStatus.OK);
-            } else {
-                user.get().setBlockedByAdmin(true);
-                userRepository.save(user.get());
-                return new ResponseEntity<>("User blocked successfully!", HttpStatus.OK);
-            }
+    public UserResponse getUserByPhoneNumber(String phoneNumber) {
+        try {
+            User user = userRepository.findByPhoneNumber(phoneNumber).orElseThrow(() -> new ApplicationException(new ExceptionResponse("Error: User is not found.", HttpStatus.NOT_FOUND)));
+            return userMapper.toResponse(user);
+        } catch (ApplicationException e) {
+            logger.error("Error fetching user by phone number {}: {}", phoneNumber, e.getMessage());
+            throw e;
+        } catch (Exception e) {
+            logger.error("Internal server error fetching user by phone number {}: {}", phoneNumber, e.getMessage());
+            throw new ApplicationException(new ExceptionResponse("Error fetching user by phone number", HttpStatus.INTERNAL_SERVER_ERROR));
         }
-        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
 
     @Override
-    public ResponseEntity<?> cancelUserSubscriptionByAdmin(Request<UserRequest> request) {
-        Optional<User> user = userRepository.findById(request.getId());
-        if (user.isPresent()) {
-            user.get().setSubscription(null);
-            userRepository.save(user.get());
-            return new ResponseEntity<>("User`s subscription canceled successfully!", HttpStatus.OK);
+    public ResponseEntity<String> deleteUserByAdmin(Request<UserRequest> request) {
+        try {
+            Optional<User> userOptional = userRepository.findById(request.getId());
+            if (userOptional.isPresent()) {
+                User user = userOptional.get();
+                if (user.isDeleted()) {
+                    user.setDeleted(false);
+                    userRepository.save(user);
+                    return ResponseEntity.ok("User returned successfully!");
+                } else {
+                    user.setDeleted(true);
+                    userRepository.save(user);
+                    return ResponseEntity.ok("User deleted successfully!");
+                }
+            }
+            return ResponseEntity.badRequest().body("Invalid user ID");
+        } catch (Exception e) {
+            logger.error("Internal server error deleting user by admin: {}", e.getMessage());
+            throw new ApplicationException(new ExceptionResponse("Error deleting user by admin", HttpStatus.INTERNAL_SERVER_ERROR));
         }
-        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
+
+    @Override
+    public ResponseEntity<String> blockUserByAdmin(Request<UserRequest> request) {
+        try {
+            Optional<User> user = userRepository.findById(request.getId());
+            if (user.isPresent()) {
+                if (user.get().isBlockedByAdmin()) {
+                    user.get().setBlockedByAdmin(false);
+                    userRepository.save(user.get());
+                    return ResponseEntity.ok("User unblocked successfully!");
+                } else {
+                    user.get().setBlockedByAdmin(true);
+                    userRepository.save(user.get());
+                    return ResponseEntity.ok("User blocked successfully!");
+                }
+            }
+            return ResponseEntity.badRequest().body("Invalid user ID");
+        } catch (Exception e) {
+            logger.error("Internal server error blocking user by admin: {}", e.getMessage());
+            throw new ApplicationException(new ExceptionResponse("Error blocking user by admin", HttpStatus.INTERNAL_SERVER_ERROR));
+        }
+    }
+
+    @Override
+    public ResponseEntity<String> cancelUserSubscriptionByAdmin(Request<UserRequest> request) {
+        try {
+            Optional<User> user = userRepository.findById(request.getId());
+            if (user.isPresent()) {
+                user.get().setSubscription(null);
+                userRepository.save(user.get());
+                return ResponseEntity.ok("User's subscription canceled successfully!");
+            }
+            return ResponseEntity.badRequest().body("Invalid user ID");
+        } catch (Exception e) {
+            logger.error("Internal server error canceling user subscription by admin: {}", e.getMessage());
+            throw new ApplicationException(new ExceptionResponse("Error canceling user subscription by admin", HttpStatus.INTERNAL_SERVER_ERROR));
+        }
+    }
+
 
     @Override
     public ResponseEntity<?> updateUserByAdmin(Request<RegisterRequest> request) {
-        Optional<User> user = userRepository.findById(request.getId());
-        if (user.isPresent()) {
-            userMapper.partialUpdate(request.getRequest(), user.get());
-            userRepository.save(user.get());
-            return ResponseEntity.ok(new MessageResponse("User updated successfully!"));
+        try {
+            Optional<User> user = userRepository.findById(request.getId());
+            if (user.isPresent()) {
+                userMapper.partialUpdate(request.getRequest(), user.get());
+                userRepository.save(user.get());
+                return ResponseEntity.ok(new MessageResponse("User updated successfully!"));
+            }
+            return ResponseEntity.badRequest().body(new MessageResponse("User not updated!"));
+        } catch (Exception e) {
+            logger.error("Internal server error updating user by admin: {}", e.getMessage());
+            throw new ApplicationException(new ExceptionResponse("Error updating user by admin", HttpStatus.INTERNAL_SERVER_ERROR));
         }
-        return new ResponseEntity<>("User not updated!", HttpStatus.BAD_REQUEST);
     }
 
     @Override
     public ResponseEntity<?> activateUserByAdmin(Request<UserRequest> request) {
-        Optional<User> user = userRepository.findById(request.getId());
-        if (user.isPresent()) {
-            user.get().setActive(true);
-            userRepository.save(user.get());
-            return ResponseEntity.ok(userMapper.toResponse(user.get()));
+        try {
+            Optional<User> user = userRepository.findById(request.getId());
+            if (user.isPresent()) {
+                user.get().setActive(true);
+                userRepository.save(user.get());
+                return ResponseEntity.ok(userMapper.toResponse(user.get()));
+            }
+            return ResponseEntity.badRequest().body(new MessageResponse("User not activated!"));
+        } catch (Exception e) {
+            logger.error("Internal server error activating user by admin: {}", e.getMessage());
+            throw new ApplicationException(new ExceptionResponse("Error activating user by admin", HttpStatus.INTERNAL_SERVER_ERROR));
         }
-        return new ResponseEntity<>("User not activate!", HttpStatus.BAD_REQUEST);
     }
 
     @Override
@@ -380,7 +462,7 @@ public class UserServiceImpl implements UserService {
                     logger.warn("New passwords do not match");
                     return ResponseEntity.badRequest().body("New passwords do not match");
                 }
-            }else {
+            } else {
                 logger.warn("Password is not correct");
                 throw new ApplicationException(new ExceptionResponse(ExceptionEnums.PASSWORD_INCORRECT.getMessage(), HttpStatus.BAD_REQUEST));
             }

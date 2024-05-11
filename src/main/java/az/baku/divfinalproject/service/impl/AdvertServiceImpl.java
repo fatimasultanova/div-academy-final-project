@@ -19,9 +19,12 @@ import az.baku.divfinalproject.repository.RoleRepository;
 import az.baku.divfinalproject.repository.UserRepository;
 import az.baku.divfinalproject.service.AdvertService;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
@@ -30,6 +33,7 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor
 public class AdvertServiceImpl implements AdvertService {
+    private final Logger logger = LoggerFactory.getLogger(AdvertServiceImpl.class);
     private final AdvertRepository advertRepository;
     private final UserRepository userRepository;
     private final AdvertMapper advertMapper;
@@ -41,6 +45,7 @@ public class AdvertServiceImpl implements AdvertService {
     @Override
     public AdvertResponse create(AdvertRequest request) {
         Advert advert = new Advert();
+        logger.info("Advert create process starting");
         AdvertType advertType = advertTypeRepository.findByType(request.getAdvertType());
         advert.setAdvertType(advertType);
         advert.setDescription(request.getDescription());
@@ -49,56 +54,73 @@ public class AdvertServiceImpl implements AdvertService {
         if (user.isPresent()) {
             if (user.get().getPhoneNumber() != null) {
                 advert.setUser(user.get());
-            }else {
-                throw new ApplicationException(new ExceptionResponse(ExceptionEnums.PAYMENT_SUCCEEDED.getMessage(), HttpStatus.NOT_FOUND));
+            } else {
+                throw new ApplicationException(new ExceptionResponse(ExceptionEnums.PHONE_NOT_FOUND.getMessage(), HttpStatus.NOT_FOUND));
             }
+
+            Advert saved = advertRepository.save(advert);
+            logger.info("Advert created: {}", saved.getId());
+            return advertMapper.toResponse(saved);
         }
-        Advert saved = advertRepository.save(advert);
-        return advertMapper.toResponse(saved);
+        throw new ApplicationException(new ExceptionResponse(ExceptionEnums.USER_NOT_FOUND.getMessage(), HttpStatus.NOT_FOUND));
     }
 
     @Override
     public AdvertResponse update(long id, AdvertRequest request) {
-        Advert advert = advertRepository.findById(id).orElseThrow(() -> new RuntimeException("Error: Advert is not found."));
+        logger.info("Update Advert process starting for ID: {}", id);
+        Advert advert = advertRepository.findById(id).orElseThrow(() -> new ApplicationException(new ExceptionResponse(ExceptionEnums.ADVERT_NOT_FOUND.getMessage(), HttpStatus.NOT_FOUND)));
+        advert.setUpdateDate(LocalDateTime.now());
+        logger.info("Update Advert process finished for ID: {}", id);
         return advertMapper.toResponse(advertRepository.save(advertMapper.partialUpdate(request,advert)));
     }
 
     @Override
     public void delete(long id) {
-        Advert advert = advertRepository.findById(id).orElseThrow(() -> new RuntimeException("Error: Advert is not found."));
+        logger.info("Delete Advert process starting for ID: {}", id);
+        Advert advert = advertRepository.findById(id).orElseThrow(() -> new ApplicationException(new ExceptionResponse(ExceptionEnums.ADVERT_NOT_FOUND.getMessage(), HttpStatus.NOT_FOUND)));
         advert.setActive(false);
         advertRepository.save(advert);
+        logger.info("Delete Advert process finished for ID: {}", id);
     }
 
     @Override
     public AdvertResponse getById(long id) {
-        Advert advert = advertRepository.findById(id).orElseThrow(() -> new RuntimeException("Error: Advert is not found."));
+        logger.info("Get Advert process starting for ID: {}", id);
+        Advert advert = advertRepository.findById(id).orElseThrow(() -> new ApplicationException(new ExceptionResponse(ExceptionEnums.ADVERT_NOT_FOUND.getMessage(), HttpStatus.NOT_FOUND)));
+        logger.info("Get Advert process finished for ID: {}", id);
         return advertMapper.toResponse(advert);
     }
 
     @Override
     public Collection<AdvertResponse> findAll() {
+        logger.info("Find all Adverts process starting");
         List<Advert> all = advertRepository.findAll();
+        logger.info("Find all Adverts process finished");
         return all.stream().map(advertMapper::toResponse).collect(Collectors.toList());
     }
 
     @Override
     public List<AdvertResponse> getAdverts(long userId) {
+        logger.info("Get Adverts process starting by user ID: {}", userId);
         List<Advert> byUserId = advertRepository.findAllByUserId(userId);
+        logger.info("Get Adverts process finished by user ID: {}", userId);
         return byUserId.stream().map(advertMapper::toResponse).collect(Collectors.toList());
     }
 
     @Override
     public List<Advert> findAllByAmountMonthlyIsLessThanEqual(double amount) {
+        logger.info("Find all Adverts process starting by monthly amount: {}", amount);
         return advertRepository.findAllByAmountMonthlyIsLessThanEqual(amount);
     }
 
     @Override
     public List<Advert> findAllByAdvertTypeId(long advertTypeId) {
+        logger.info("Find all Adverts process starting by advert type: {}", advertTypeId);
         return advertRepository.findAllByAdvertTypeId(advertTypeId);
     }
 
     public UserResponse getContactInformation(Request<AdvertRequest> request) {
+        logger.info("Get Contact Information process starting for Request: {}", request.getId());
         Optional<User> user = userRepository.findById(request.getId());
         if (user.isPresent()) {
             UserResponse response = userMapper.toResponse(user.get());
@@ -107,14 +129,15 @@ public class AdvertServiceImpl implements AdvertService {
                     Advert advert = byId.get();
                     Optional<Role> roleAdmin = roleRepository.findByName("ROLE_ADMIN");
                     if (user.get().getViewedAdverts().contains(advert) || user.get().getRoles().contains(roleAdmin.get())) {
+                        logger.info("Get Contact Information process finished successfully for Request: {} to {}", request.getId(),request.getRequest().getId());
                         return response;
                     }
                 }
                 response.setPhoneNumber("+xxxxxxxxxxxx");
+            logger.info("Get Contact Information process finished for Request: {} to {}", request.getId(), request.getRequest().getId());
             return response;
         }
+        logger.error("User not found for ID: {}", request.getId());
         throw new ApplicationException(new ExceptionResponse(ExceptionEnums.USER_NOT_FOUND.getMessage(), HttpStatus.NOT_FOUND));
     }
-
-
 }

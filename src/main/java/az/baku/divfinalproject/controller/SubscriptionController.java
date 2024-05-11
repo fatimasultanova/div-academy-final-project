@@ -16,22 +16,22 @@ import java.util.Collection;
 public class SubscriptionController {
     private final SubscriptionServiceImpl subscriptionService;
 
-    @PostMapping("/create")
+    @PostMapping()
     public SubscriptionResponse createRole(@RequestBody SubscriptionRequest request) {
         return subscriptionService.create(request);
     }
 
-    @PostMapping("/update")
+    @PutMapping()
     public SubscriptionResponse updateRole(@RequestBody Request<SubscriptionRequest> request) {
         return subscriptionService.update(request.getId(), request.getRequest());
     }
 
-    @GetMapping("/get-subscription")
+    @GetMapping()
     public SubscriptionResponse getSubsById(@RequestBody Request<SubscriptionRequest> request) {
         return subscriptionService.getById(request.getId());
     }
 
-    @DeleteMapping("/delete")
+    @DeleteMapping()
     public void deleteRole(@RequestBody Request<SubscriptionRequest> request) {
         subscriptionService.delete(request.getId());
     }

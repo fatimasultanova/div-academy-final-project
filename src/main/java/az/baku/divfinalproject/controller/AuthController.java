@@ -21,12 +21,12 @@ public class AuthController {
         return userService.authenticateUser(loginRequest);
     }
 
-    @PostMapping("/register-email")
+    @PostMapping("/registration-email")
     public ResponseEntity<?> registerUser(@Valid @RequestBody RegisterRequest userRequest) {
         return userService.registerUserWithEmail(userRequest);
     }
 
-    @PostMapping("/register-phoneNumber")
+    @PostMapping("/registration-phoneNumber")
     public ResponseEntity<?> registerWithPhoneNumber(@Valid @RequestBody RegisterRequest signUpRequest) {
         return userService.registerWithPhoneNumber(signUpRequest);
     }

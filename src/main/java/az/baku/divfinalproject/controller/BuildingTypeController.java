@@ -16,22 +16,22 @@ import java.util.Collection;
 public class BuildingTypeController {
     private final BuildingTypeServiceImpl buildingTypeService;
 
-    @PostMapping("/create")
+    @PostMapping()
     public BuildingTypeResponse createBuildingType(@RequestBody BuildingTypeRequest request) {
         return buildingTypeService.create(request);
     }
 
-    @PostMapping("/update")
+    @PutMapping()
     public BuildingTypeResponse updateBuildingType(@RequestBody Request<BuildingTypeRequest> request) {
         return buildingTypeService.update(request.getId(), request.getRequest());
     }
 
-    @GetMapping("/get-building-type")
+    @GetMapping()
     public BuildingTypeResponse getBuildingTypeById(@RequestBody Request<BuildingTypeRequest> request) {
         return buildingTypeService.getById(request.getId());
     }
 
-    @DeleteMapping("/delete")
+    @DeleteMapping()
     public void deleteBuildingType(@RequestBody Request<BuildingTypeRequest> request) {
         buildingTypeService.delete(request.getId());
     }

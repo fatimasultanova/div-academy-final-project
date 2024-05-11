@@ -2,38 +2,27 @@
 <configuration>
     <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
 
-    <!-- Konsola log yazdırma -->
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
     </appender>
 
-    <!-- Dosyaya log yazdırma ve arşivleme -->
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>logs/app.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <fileNamePattern>logs/archived/app-%d{yyyy-MM-dd}-i.log</fileNamePattern>
-            <maxHistory>30</maxHistory> <!-- Arşivlenmiş dosyaların saklanacağı maksimum tarih aralığı -->
+            <maxHistory>30</maxHistory>
         </rollingPolicy>
         <encoder>
             <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
     </appender>
 
-    <!-- Log düzeyleri için kategoriler -->
     <logger name="az.baku.divfinalproject" level="DEBUG" additivity="false">
         <appender-ref ref="FILE"/>
         <appender-ref ref="CONSOLE"/>
     </logger>
-
-    <!-- Farklı log düzeyleri için kategoriler -->
-    <!-- Örneğin: -->
-    <!-- <logger name="az.baku.divfinalproject.controller" level="INFO" additivity="false">
-        <appender-ref ref="FILE"/>
-        <appender-ref ref="CONSOLE"/>
-    </logger> -->
-
     <root level="ERROR">
         <appender-ref ref="FILE"/>
         <appender-ref ref="CONSOLE"/>

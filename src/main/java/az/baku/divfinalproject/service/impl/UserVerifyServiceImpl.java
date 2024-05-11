@@ -1,8 +1,10 @@
 package az.baku.divfinalproject.service.impl;
 
-import az.baku.divfinalproject.controller.VerificationController;
 import az.baku.divfinalproject.dto.request.EmailDTO;
+import az.baku.divfinalproject.dto.response.ExceptionResponse;
 import az.baku.divfinalproject.entity.UserVerify;
+import az.baku.divfinalproject.exception.ApplicationException;
+import az.baku.divfinalproject.exception.ExceptionEnums;
 import az.baku.divfinalproject.repository.UserRepository;
 import az.baku.divfinalproject.repository.UserVerifyRepository;
 import lombok.RequiredArgsConstructor;
@@ -10,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import az.baku.divfinalproject.entity.User;
 
@@ -30,7 +33,6 @@ public class UserVerifyServiceImpl {
     private String emailRoutingKey;
 
 
-
     public Optional<UserVerify> findByToken(String token) {
         return userVerifyRepository.findByToken(token);
     }
@@ -49,10 +51,10 @@ public class UserVerifyServiceImpl {
                 user.setActive(true);
                 userRepository.save(user);
             } else {
-                return "Token expired";
+                throw new ApplicationException(new ExceptionResponse(ExceptionEnums.TOKEN_EXPIRED.getMessage(), HttpStatus.BAD_REQUEST));
             }
         } else {
-            return "Token not found";
+            throw new ApplicationException(new ExceptionResponse(ExceptionEnums.TOKEN_NOT_FOUND.getMessage(), HttpStatus.NOT_FOUND));
         }
         byToken.get().setActive(false);
         userVerifyRepository.save(byToken.get());
@@ -76,7 +78,7 @@ public class UserVerifyServiceImpl {
                             .to(user.getEmail())
                             .build());
         } else {
-            return "Token not found";
+            throw new ApplicationException(new ExceptionResponse(ExceptionEnums.TOKEN_NOT_FOUND.getMessage(), HttpStatus.NOT_FOUND));
         }
         byToken.get().setActive(false);
         userVerifyRepository.save(byToken.get());

@@ -20,12 +20,12 @@ public class PropertyDetailsController {
     private final PropertyDetailsServiceImpl propertyDetailsService;
 
 
-    @PostMapping("/create")
+    @PostMapping()
     public PropertyDetailsResponse createPropertyDetails(@RequestBody PropertyDetailsRequest request) {
         return propertyDetailsService.create(request);
     }
 
-    @GetMapping("/get-details")
+    @GetMapping()
     public PropertyDetailsResponse getPropertyDetailsById(@RequestBody Request<PropertyDetailsRequest> request) {
         return propertyDetailsService.getById(request.getId());
     }
@@ -35,12 +35,12 @@ public class PropertyDetailsController {
         return propertyDetailsService.findAll();
     }
 
-    @PutMapping("/update")
+    @PutMapping()
     public PropertyDetailsResponse updatePropertyDetails(@RequestBody Request<PropertyDetailsRequest> request) {
         return propertyDetailsService.update(request.getId(), request.getRequest());
     }
 
-    @DeleteMapping("/delete")
+    @DeleteMapping()
     public void deletePropertyDetails(@RequestBody Request<PropertyDetailsRequest> request) {
         propertyDetailsService.delete(request.getId());
     }

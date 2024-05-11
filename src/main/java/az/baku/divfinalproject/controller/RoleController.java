@@ -16,22 +16,22 @@ import java.util.Collection;
 public class RoleController {
     private final RoleServiceImpl roleService;
 
-    @PostMapping("/create")
+    @PostMapping()
     public RoleResponse createRole(@RequestBody RoleRequest request) {
         return roleService.create(request);
     }
 
-    @PostMapping("/update")
+    @PutMapping()
     public RoleResponse updateRole(@RequestBody Request<RoleRequest> request) {
         return roleService.update(request.getId(), request.getRequest());
     }
 
-    @GetMapping("/get-role")
+    @GetMapping()
     public RoleResponse getRoleById(@RequestBody Request<RoleRequest> request) {
         return roleService.getById(request.getId());
     }
 
-    @DeleteMapping("/delete")
+    @DeleteMapping()
     public void deleteRole(@RequestBody Request<RoleRequest> request) {
         roleService.delete(request.getId());
     }
