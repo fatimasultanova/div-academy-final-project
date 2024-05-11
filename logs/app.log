@@ -1264,3 +1264,8 @@ Identify and stop the process that's listening on port 8080 or configure this ap
 07:14:06.299 [main] INFO  a.b.d.DivFinalProjectApplication - The following 1 profile is active: "db"
 07:14:17.826 [main] DEBUG a.b.d.security.jwt.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
 07:14:22.274 [main] INFO  a.b.d.DivFinalProjectApplication - Started DivFinalProjectApplication in 16.925 seconds (process running for 18.481)
+07:18:04.231 [main] INFO  a.b.d.DivFinalProjectApplication - Starting DivFinalProjectApplication using Java 17.0.10 with PID 26240 (C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main started by Fatima in C:\Users\Fatima\IdeaProjects\div-final-project)
+07:18:04.236 [main] DEBUG a.b.d.DivFinalProjectApplication - Running with Spring Boot v3.2.4, Spring v6.1.5
+07:18:04.239 [main] INFO  a.b.d.DivFinalProjectApplication - The following 1 profile is active: "db"
+07:18:20.497 [main] DEBUG a.b.d.security.jwt.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+07:18:25.112 [main] INFO  a.b.d.DivFinalProjectApplication - Started DivFinalProjectApplication in 21.879 seconds (process running for 24.159)

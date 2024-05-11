@@ -16,22 +16,22 @@ import java.util.Collection;
 public class AdvertTypeController {
     private final AdvertTypeServiceImpl advertTypeService;
 
-    @PostMapping("/advert-type")
+    @PostMapping()
     public AdvertTypeResponse createAdvertType(@RequestBody AdvertTypeRequest request) {
         return advertTypeService.create(request);
     }
 
-    @PutMapping("/advert-type")
+    @PutMapping()
     public AdvertTypeResponse updateAdvertType(@RequestBody Request<AdvertTypeRequest> request) {
         return advertTypeService.update(request.getId(), request.getRequest());
     }
 
-    @GetMapping("/advert-type")
+    @GetMapping()
     public AdvertTypeResponse getAdvertTypeById(@RequestBody Request<AdvertTypeRequest> request) {
         return advertTypeService.getById(request.getId());
     }
 
-    @DeleteMapping("/advert-type")
+    @DeleteMapping()
     public void deleteAdvertType(@RequestBody Request<AdvertTypeRequest> request) {
         advertTypeService.delete(request.getId());
     }

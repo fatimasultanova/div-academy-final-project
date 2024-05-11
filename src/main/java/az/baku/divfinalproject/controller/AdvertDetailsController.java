@@ -18,7 +18,7 @@ import java.util.List;
 public class AdvertDetailsController {
     private final AdvertDetailsServiceImpl advertDetailsService;
 
-    @GetMapping("/advert-details")
+    @GetMapping()
     public AdvertDetailsResponse getAdvertDetailsById(@RequestBody Request<AdvertDetailsRequest> request) {
         return advertDetailsService.getById(request.getId());
     }
@@ -28,17 +28,17 @@ public class AdvertDetailsController {
         return advertDetailsService.findAll();
     }
 
-    @PostMapping("/create")
+    @PostMapping()
     public AdvertDetailsResponse createAdvertDetails(@RequestBody AdvertDetailsRequest request) {
         return advertDetailsService.create(request);
     }
 
-    @PutMapping("/advert-details")
+    @PutMapping()
     public AdvertDetailsResponse updateAdvertDetails(@RequestBody Request<AdvertDetailsRequest> request) {
         return advertDetailsService.update(request.getId(), request.getRequest());
     }
 
-    @DeleteMapping("/advert-details")
+    @DeleteMapping()
     public void deleteAdvertDetails(@RequestBody Request<AdvertDetailsRequest> request) {
         advertDetailsService.delete(request.getId());
     }
