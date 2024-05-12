@@ -28,6 +28,6 @@ public class AdvertType {
     }
 
     public static String fromAdvertType(AdvertType type) {
-            return type != null ? type.getType() : null;
+        return type != null ? type.getType() : null;
     }
 }

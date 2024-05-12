@@ -2,6 +2,7 @@ package az.baku.divfinalproject.controller;
 
 import az.baku.divfinalproject.dto.request.*;
 import az.baku.divfinalproject.dto.response.MessageResponse;
+import az.baku.divfinalproject.dto.response.UserResponse;
 import az.baku.divfinalproject.service.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -17,7 +18,8 @@ public class UserController {
 
     @GetMapping
     public ResponseEntity<?> getUserById(@RequestBody Request<UserRequest> request) {
-        return ResponseEntity.ok(userService.getById(request.getId()));
+        UserResponse byId = userService.getById(request.getId());
+        return ResponseEntity.ok(byId);
     }
 
     @PutMapping()

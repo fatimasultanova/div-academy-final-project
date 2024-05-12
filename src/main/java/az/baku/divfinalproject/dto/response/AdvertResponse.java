@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 public class AdvertResponse{
     private long id;
     private String description;
-    private long advertTypeId;
+    private String advertType;
     private long propertyDetailsId;
     private LocalDateTime createDate;
     private LocalDateTime updateDate;

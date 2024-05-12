@@ -5,6 +5,7 @@ import az.baku.divfinalproject.security.jwt.AuthTokenFilter;
 import az.baku.divfinalproject.security.services.UserDetailsServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
@@ -72,27 +73,27 @@ public class WebSecurityConfig {
                 .exceptionHandling(exception -> exception.authenticationEntryPoint(unauthorizedHandler))
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth ->
-                        auth.requestMatchers("/api/auth/**").permitAll()
-                                .requestMatchers("/api/adverts").permitAll()
-                                .requestMatchers("/api/advert-details").permitAll()
-                                .requestMatchers("/api/role").permitAll()
-                                .requestMatchers("/api/user").permitAll()
-                                .requestMatchers("/api/subscription").permitAll()
-                                .requestMatchers("/api/users").permitAll()
-                                .requestMatchers("/api/users/**").hasAuthority("Role")
-                                .requestMatchers("api/users/contact-information").permitAll()
-                                .requestMatchers("/api/user/**").permitAll()
-                                .requestMatchers("/api/payment/**").permitAll()
-                                .requestMatchers("/api/adverts/**").permitAll()
-                                .requestMatchers("/api/advert-details/**").permitAll()
-                                .requestMatchers("/api/property-details/**").permitAll()
-                                //.requestMatchers("/api/admin-panel/**").permitAll()
-                                .requestMatchers("/api/advert-type/**").permitAll()
-                                .requestMatchers("/api/building-type/**").permitAll()
-                                .requestMatchers("/api/role/**").permitAll()
+                        auth.requestMatchers("/api/admin-panel/**").hasAuthority("ROLE_ADMIN")
+                                .requestMatchers("/api/adverts/**").authenticated()
+                                .requestMatchers("/api/adverts/user").hasAuthority("ROLE_ADMIN")
+                                .requestMatchers(HttpMethod.GET,"/api/advert-details/**").authenticated()
+                                .requestMatchers("/api/advert-details/**").hasAuthority("ROLE_ADMIN")
+                                .requestMatchers(HttpMethod.GET,"/api/advert-type/**").authenticated()
+                                .requestMatchers("/api/advert-type/**").hasAuthority("ROLE_ADMIN")
+                                .requestMatchers("/api/auth/**").permitAll()
+                                .requestMatchers(HttpMethod.GET,"/api/building-type/**").authenticated()
+                                .requestMatchers("/api/building-type/**").hasAuthority("ROLE_ADMIN")
+                                .requestMatchers("/api/payment/**").authenticated()
+                                .requestMatchers("/api/users/**").authenticated()
+                                .requestMatchers(HttpMethod.GET,"/api/property-details/**").authenticated()
+                                .requestMatchers("/api/property-details/**").hasAuthority("ROLE_ADMIN")
+                                .requestMatchers(HttpMethod.GET, "/api/property-type/**").authenticated()
+                                .requestMatchers("/api/property-type/**").hasAuthority("ROLE_ADMIN")
+                                .requestMatchers("/api/role/**").hasAuthority("ROLE_ADMIN")
+                                .requestMatchers(HttpMethod.GET,"/api/subscription").authenticated()
+                                .requestMatchers("/api/subscription").hasAuthority("ROLE_ADMIN")
                                 .requestMatchers(AUTH_WHITELIST).permitAll()
-                                .requestMatchers("swagger-ui/**").permitAll()
-                                .requestMatchers("api/admin-panel/**").hasAuthority("ROLE_ADMIN")
+                                .requestMatchers("/api/verification/**").permitAll()
                                 .anyRequest().authenticated()
                 );
 

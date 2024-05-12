@@ -8,7 +8,6 @@ import az.baku.divfinalproject.entity.Role;
 import az.baku.divfinalproject.entity.User;
 import org.mapstruct.*;
 
-import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 

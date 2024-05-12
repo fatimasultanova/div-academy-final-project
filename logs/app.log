@@ -1269,3 +1269,161 @@ Identify and stop the process that's listening on port 8080 or configure this ap
 07:18:04.239 [main] INFO  a.b.d.DivFinalProjectApplication - The following 1 profile is active: "db"
 07:18:20.497 [main] DEBUG a.b.d.security.jwt.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
 07:18:25.112 [main] INFO  a.b.d.DivFinalProjectApplication - Started DivFinalProjectApplication in 21.879 seconds (process running for 24.159)
+07:20:15.921 [main] INFO  a.b.d.DivFinalProjectApplication - Starting DivFinalProjectApplication using Java 17.0.10 with PID 22132 (C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main started by Fatima in C:\Users\Fatima\IdeaProjects\div-final-project)
+07:20:15.925 [main] DEBUG a.b.d.DivFinalProjectApplication - Running with Spring Boot v3.2.4, Spring v6.1.5
+07:20:15.927 [main] INFO  a.b.d.DivFinalProjectApplication - The following 1 profile is active: "db"
+07:20:17.950 [main] INFO  a.b.d.DivFinalProjectApplication - Starting DivFinalProjectApplication using Java 17.0.10 with PID 11972 (C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main started by Fatima in C:\Users\Fatima\IdeaProjects\div-final-project)
+07:20:17.954 [main] DEBUG a.b.d.DivFinalProjectApplication - Running with Spring Boot v3.2.4, Spring v6.1.5
+07:20:17.955 [main] INFO  a.b.d.DivFinalProjectApplication - The following 1 profile is active: "db"
+07:20:28.530 [main] DEBUG a.b.d.security.jwt.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+07:20:30.389 [main] DEBUG a.b.d.security.jwt.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+07:20:33.012 [main] INFO  a.b.d.DivFinalProjectApplication - Started DivFinalProjectApplication in 18.062 seconds (process running for 19.609)
+07:20:35.459 [main] INFO  a.b.d.DivFinalProjectApplication - Started DivFinalProjectApplication in 18.373 seconds (process running for 20.084)
+08:48:56.977 [main] INFO  a.b.d.DivFinalProjectApplication - Starting DivFinalProjectApplication using Java 17.0.10 with PID 2596 (C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main started by Fatima in C:\Users\Fatima\IdeaProjects\div-final-project)
+08:48:56.979 [main] DEBUG a.b.d.DivFinalProjectApplication - Running with Spring Boot v3.2.4, Spring v6.1.5
+08:48:56.979 [main] INFO  a.b.d.DivFinalProjectApplication - The following 1 profile is active: "db"
+08:49:05.029 [main] DEBUG a.b.d.security.jwt.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+08:49:07.929 [main] INFO  a.b.d.DivFinalProjectApplication - Started DivFinalProjectApplication in 11.376 seconds (process running for 12.359)
+08:56:02.616 [main] INFO  a.b.d.DivFinalProjectApplication - Starting DivFinalProjectApplication using Java 17.0.10 with PID 21024 (C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main started by Fatima in C:\Users\Fatima\IdeaProjects\div-final-project)
+08:56:02.617 [main] DEBUG a.b.d.DivFinalProjectApplication - Running with Spring Boot v3.2.4, Spring v6.1.5
+08:56:02.618 [main] INFO  a.b.d.DivFinalProjectApplication - The following 1 profile is active: "db"
+08:56:08.366 [main] DEBUG a.b.d.security.jwt.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+08:56:10.926 [main] INFO  a.b.d.DivFinalProjectApplication - Started DivFinalProjectApplication in 8.645 seconds (process running for 9.241)
+08:57:57.934 [http-nio-8080-exec-1] INFO  a.b.d.service.impl.UserServiceImpl - Registering user with email: string@gmail.com
+08:57:58.496 [http-nio-8080-exec-1] INFO  a.b.d.service.impl.UserServiceImpl - User registered successfully with email: string@gmail.com
+09:00:21.608 [main] INFO  a.b.d.DivFinalProjectApplication - Starting DivFinalProjectApplication using Java 17.0.10 with PID 10828 (C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main started by Fatima in C:\Users\Fatima\IdeaProjects\div-final-project)
+09:00:21.611 [main] DEBUG a.b.d.DivFinalProjectApplication - Running with Spring Boot v3.2.4, Spring v6.1.5
+09:00:21.613 [main] INFO  a.b.d.DivFinalProjectApplication - The following 1 profile is active: "db"
+09:00:26.357 [main] DEBUG a.b.d.security.jwt.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+09:00:28.368 [main] INFO  a.b.d.DivFinalProjectApplication - Started DivFinalProjectApplication in 7.163 seconds (process running for 7.837)
+09:01:07.189 [http-nio-8080-exec-9] INFO  a.b.d.service.impl.UserServiceImpl - Registering user with email: string@gmail.com
+09:01:07.466 [http-nio-8080-exec-9] INFO  a.b.d.service.impl.UserServiceImpl - User registered successfully with email: string@gmail.com
+09:04:43.646 [main] INFO  a.b.d.DivFinalProjectApplication - Starting DivFinalProjectApplication using Java 17.0.10 with PID 6000 (C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main started by Fatima in C:\Users\Fatima\IdeaProjects\div-final-project)
+09:04:43.647 [main] DEBUG a.b.d.DivFinalProjectApplication - Running with Spring Boot v3.2.4, Spring v6.1.5
+09:04:43.648 [main] INFO  a.b.d.DivFinalProjectApplication - The following 1 profile is active: "db"
+09:04:48.193 [main] DEBUG a.b.d.security.jwt.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+09:04:49.989 [main] INFO  a.b.d.DivFinalProjectApplication - Started DivFinalProjectApplication in 6.654 seconds (process running for 7.193)
+09:20:01.344 [http-nio-8080-exec-1] INFO  a.b.d.s.impl.UserVerifyServiceImpl - Verification process started for token: b27b0d1d-8069-446b-87a8-1cb4dc6d2010
+09:20:28.685 [http-nio-8080-exec-2] INFO  a.b.d.s.impl.UserVerifyServiceImpl - Resend process started for token: b27b0d1d-8069-446b-87a8-1cb4dc6d2010
+09:20:28.773 [http-nio-8080-exec-2] INFO  a.b.d.s.impl.UserVerifyServiceImpl - Resend process completed for token: b27b0d1d-8069-446b-87a8-1cb4dc6d2010
+09:20:47.674 [http-nio-8080-exec-3] INFO  a.b.d.s.impl.UserVerifyServiceImpl - Verification process started for token: 432a363e-0914-4b2b-9243-9fd61a01ea03
+09:20:47.686 [http-nio-8080-exec-3] INFO  a.b.d.s.impl.UserVerifyServiceImpl - Verification process completed for token: 432a363e-0914-4b2b-9243-9fd61a01ea03
+09:21:12.589 [http-nio-8080-exec-4] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: string
+09:21:12.601 [http-nio-8080-exec-4] ERROR a.b.d.service.impl.UserServiceImpl - User with phone number or email: string not found or not eligible for authentication
+09:21:28.599 [http-nio-8080-exec-5] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: string@gmail.com
+09:24:57.962 [http-nio-8080-exec-9] INFO  a.b.d.service.impl.PaymentService - Subscription activated for user 2
+09:24:57.979 [http-nio-8080-exec-9] INFO  a.b.d.service.impl.PaymentService - Payment processed successfully for user id: 2
+09:32:24.023 [main] INFO  a.b.d.DivFinalProjectApplication - Starting DivFinalProjectApplication using Java 17.0.10 with PID 7132 (C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main started by Fatima in C:\Users\Fatima\IdeaProjects\div-final-project)
+09:32:24.024 [main] DEBUG a.b.d.DivFinalProjectApplication - Running with Spring Boot v3.2.4, Spring v6.1.5
+09:32:24.025 [main] INFO  a.b.d.DivFinalProjectApplication - The following 1 profile is active: "db"
+09:32:28.718 [main] DEBUG a.b.d.security.jwt.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+09:32:30.546 [main] INFO  a.b.d.DivFinalProjectApplication - Started DivFinalProjectApplication in 6.862 seconds (process running for 7.511)
+09:33:57.405 [http-nio-8080-exec-6] ERROR a.b.d.service.impl.UserServiceImpl - Error fetching user with id 3: Error: User is not found.
+13:03:01.841 [main] INFO  a.b.d.DivFinalProjectApplication - Starting DivFinalProjectApplication using Java 17.0.10 with PID 11708 (C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main started by Fatima in C:\Users\Fatima\IdeaProjects\div-final-project)
+13:03:01.843 [main] DEBUG a.b.d.DivFinalProjectApplication - Running with Spring Boot v3.2.4, Spring v6.1.5
+13:03:01.844 [main] INFO  a.b.d.DivFinalProjectApplication - The following 1 profile is active: "db"
+13:03:09.831 [main] DEBUG a.b.d.security.jwt.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+13:03:13.321 [main] INFO  a.b.d.DivFinalProjectApplication - Started DivFinalProjectApplication in 12.043 seconds (process running for 13.015)
+13:05:08.450 [http-nio-8080-exec-4] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: string@gmail.com
+13:10:48.086 [http-nio-8080-exec-5] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: stringgmail.com
+13:10:48.089 [http-nio-8080-exec-5] ERROR a.b.d.service.impl.UserServiceImpl - User with phone number or email: stringgmail.com not found or not eligible for authentication
+13:10:56.849 [http-nio-8080-exec-10] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: string@gmail.com
+13:12:53.057 [http-nio-8080-exec-8] INFO  a.b.d.s.impl.AdvertTypeServiceImpl - Get Advert Type process starting for ID: 1
+13:12:53.085 [http-nio-8080-exec-8] INFO  a.b.d.s.impl.AdvertTypeServiceImpl - Get Advert Type process finished for ID: 1
+13:16:26.268 [main] INFO  a.b.d.DivFinalProjectApplication - Starting DivFinalProjectApplication using Java 17.0.10 with PID 22920 (C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main started by Fatima in C:\Users\Fatima\IdeaProjects\div-final-project)
+13:16:26.271 [main] DEBUG a.b.d.DivFinalProjectApplication - Running with Spring Boot v3.2.4, Spring v6.1.5
+13:16:26.272 [main] INFO  a.b.d.DivFinalProjectApplication - The following 1 profile is active: "db"
+13:16:30.866 [main] DEBUG a.b.d.security.jwt.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+13:16:32.826 [main] INFO  a.b.d.DivFinalProjectApplication - Started DivFinalProjectApplication in 6.952 seconds (process running for 7.597)
+13:18:01.247 [main] INFO  a.b.d.DivFinalProjectApplication - Starting DivFinalProjectApplication using Java 17.0.10 with PID 24388 (C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main started by Fatima in C:\Users\Fatima\IdeaProjects\div-final-project)
+13:18:01.248 [main] DEBUG a.b.d.DivFinalProjectApplication - Running with Spring Boot v3.2.4, Spring v6.1.5
+13:18:01.249 [main] INFO  a.b.d.DivFinalProjectApplication - The following 1 profile is active: "db"
+13:18:05.850 [main] DEBUG a.b.d.security.jwt.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+13:18:07.821 [main] INFO  a.b.d.DivFinalProjectApplication - Started DivFinalProjectApplication in 6.873 seconds (process running for 7.454)
+13:18:14.279 [http-nio-8080-exec-2] INFO  a.b.d.s.impl.AdvertTypeServiceImpl - Get Advert Type process starting for ID: 1
+13:18:14.290 [http-nio-8080-exec-2] INFO  a.b.d.s.impl.AdvertTypeServiceImpl - Get Advert Type process finished for ID: 1
+13:19:00.537 [http-nio-8080-exec-4] INFO  a.b.d.s.impl.AdvertTypeServiceImpl - Get Advert Type process starting for ID: 1
+13:19:00.539 [http-nio-8080-exec-4] INFO  a.b.d.s.impl.AdvertTypeServiceImpl - Get Advert Type process finished for ID: 1
+13:20:17.076 [main] INFO  a.b.d.DivFinalProjectApplication - Starting DivFinalProjectApplication using Java 17.0.10 with PID 25932 (C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main started by Fatima in C:\Users\Fatima\IdeaProjects\div-final-project)
+13:20:17.078 [main] DEBUG a.b.d.DivFinalProjectApplication - Running with Spring Boot v3.2.4, Spring v6.1.5
+13:20:17.079 [main] INFO  a.b.d.DivFinalProjectApplication - The following 1 profile is active: "db"
+13:20:21.833 [main] DEBUG a.b.d.security.jwt.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+13:20:23.282 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'filterChain' defined in class path resource [az/baku/divfinalproject/security/WebSecurityConfig.class]: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'filterChain' threw exception with message: ROLE_ADMIN should not start with ROLE_ since ROLE_ is automatically prepended when using hasAnyRole. Consider using hasAnyAuthority instead.
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at az.baku.divfinalproject.DivFinalProjectApplication.main(DivFinalProjectApplication.java:9)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'filterChain' threw exception with message: ROLE_ADMIN should not start with ROLE_ since ROLE_ is automatically prepended when using hasAnyRole. Consider using hasAnyAuthority instead.
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:177)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
+	... 19 common frames omitted
+Caused by: java.lang.IllegalArgumentException: ROLE_ADMIN should not start with ROLE_ since ROLE_ is automatically prepended when using hasAnyRole. Consider using hasAnyAuthority instead.
+	at org.springframework.util.Assert.isTrue(Assert.java:129)
+	at org.springframework.security.authorization.AuthorityAuthorizationManager.toNamedRolesArray(AuthorityAuthorizationManager.java:128)
+	at org.springframework.security.authorization.AuthorityAuthorizationManager.hasAnyRole(AuthorityAuthorizationManager.java:108)
+	at org.springframework.security.config.annotation.web.configurers.AuthorizeHttpRequestsConfigurer$AuthorizedUrl.hasRole(AuthorizeHttpRequestsConfigurer.java:291)
+	at az.baku.divfinalproject.security.WebSecurityConfig.lambda$filterChain$2(WebSecurityConfig.java:80)
+	at org.springframework.security.config.annotation.web.builders.HttpSecurity.authorizeHttpRequests(HttpSecurity.java:1467)
+	at az.baku.divfinalproject.security.WebSecurityConfig.filterChain(WebSecurityConfig.java:75)
+	at az.baku.divfinalproject.security.WebSecurityConfig$$SpringCGLIB$$0.CGLIB$filterChain$0(<generated>)
+	at az.baku.divfinalproject.security.WebSecurityConfig$$SpringCGLIB$$FastClass$$1.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:258)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at az.baku.divfinalproject.security.WebSecurityConfig$$SpringCGLIB$$0.filterChain(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140)
+	... 20 common frames omitted
+13:20:53.482 [main] INFO  a.b.d.DivFinalProjectApplication - Starting DivFinalProjectApplication using Java 17.0.10 with PID 22516 (C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main started by Fatima in C:\Users\Fatima\IdeaProjects\div-final-project)
+13:20:53.483 [main] DEBUG a.b.d.DivFinalProjectApplication - Running with Spring Boot v3.2.4, Spring v6.1.5
+13:20:53.484 [main] INFO  a.b.d.DivFinalProjectApplication - The following 1 profile is active: "db"
+13:20:58.053 [main] DEBUG a.b.d.security.jwt.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+13:20:59.929 [main] INFO  a.b.d.DivFinalProjectApplication - Started DivFinalProjectApplication in 6.817 seconds (process running for 7.448)
+13:24:01.657 [main] INFO  a.b.d.DivFinalProjectApplication - Starting DivFinalProjectApplication using Java 17.0.10 with PID 11880 (C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main started by Fatima in C:\Users\Fatima\IdeaProjects\div-final-project)
+13:24:01.658 [main] DEBUG a.b.d.DivFinalProjectApplication - Running with Spring Boot v3.2.4, Spring v6.1.5
+13:24:01.659 [main] INFO  a.b.d.DivFinalProjectApplication - The following 1 profile is active: "db"
+13:24:06.423 [main] DEBUG a.b.d.security.jwt.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+13:24:08.456 [main] INFO  a.b.d.DivFinalProjectApplication - Started DivFinalProjectApplication in 7.103 seconds (process running for 7.667)
+13:24:14.515 [http-nio-8080-exec-2] INFO  a.b.d.s.impl.AdvertTypeServiceImpl - Get Advert Type process starting for ID: 1
+13:24:14.538 [http-nio-8080-exec-2] INFO  a.b.d.s.impl.AdvertTypeServiceImpl - Get Advert Type process finished for ID: 1
+13:24:37.907 [http-nio-8080-exec-3] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: test@gmail.com
+13:25:49.451 [http-nio-8080-exec-5] INFO  a.b.d.s.impl.AdvertTypeServiceImpl - Get Advert Type process starting for ID: 1
+13:25:49.455 [http-nio-8080-exec-5] INFO  a.b.d.s.impl.AdvertTypeServiceImpl - Get Advert Type process finished for ID: 1
+13:26:01.240 [http-nio-8080-exec-9] INFO  a.b.d.s.impl.AdvertTypeServiceImpl - Delete Advert Type process starting for ID: 100
+13:26:01.245 [http-nio-8080-exec-9] INFO  a.b.d.s.impl.AdvertTypeServiceImpl - Delete Advert Type process finished for ID: 100
+13:37:14.475 [main] INFO  a.b.d.DivFinalProjectApplication - Starting DivFinalProjectApplication using Java 17.0.10 with PID 10972 (C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main started by Fatima in C:\Users\Fatima\IdeaProjects\div-final-project)
+13:37:14.478 [main] DEBUG a.b.d.DivFinalProjectApplication - Running with Spring Boot v3.2.4, Spring v6.1.5
+13:37:14.479 [main] INFO  a.b.d.DivFinalProjectApplication - The following 1 profile is active: "db"
+13:37:21.343 [main] DEBUG a.b.d.security.jwt.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+13:37:23.252 [main] INFO  a.b.d.DivFinalProjectApplication - Started DivFinalProjectApplication in 9.288 seconds (process running for 10.42)
+14:36:37.813 [main] INFO  a.b.d.DivFinalProjectApplication - Starting DivFinalProjectApplication using Java 17.0.10 with PID 3040 (C:\Users\Fatima\IdeaProjects\div-final-project\build\classes\java\main started by Fatima in C:\Users\Fatima\IdeaProjects\div-final-project)
+14:36:37.814 [main] DEBUG a.b.d.DivFinalProjectApplication - Running with Spring Boot v3.2.4, Spring v6.1.5
+14:36:37.815 [main] INFO  a.b.d.DivFinalProjectApplication - The following 1 profile is active: "db"
+14:36:42.621 [main] DEBUG a.b.d.security.jwt.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+14:36:44.617 [main] INFO  a.b.d.DivFinalProjectApplication - Started DivFinalProjectApplication in 7.136 seconds (process running for 7.66)
+14:38:35.014 [http-nio-8080-exec-4] INFO  a.b.d.service.impl.UserServiceImpl - Registering user with email: fatimasultanova.909@gmail.com
+14:38:35.569 [http-nio-8080-exec-4] INFO  a.b.d.service.impl.UserServiceImpl - User registered successfully with email: fatimasultanova.909@gmail.com
+14:39:54.350 [http-nio-8080-exec-7] INFO  a.b.d.s.impl.UserVerifyServiceImpl - Verification process started for token: d3158d51-e1ec-4b7d-b38a-634d16a20e92
+14:39:54.406 [http-nio-8080-exec-7] INFO  a.b.d.s.impl.UserVerifyServiceImpl - Verification process completed for token: d3158d51-e1ec-4b7d-b38a-634d16a20e92
+14:40:44.312 [http-nio-8080-exec-8] INFO  a.b.d.service.impl.UserServiceImpl - Authenticating user process stared with phone number or email: fatimasultanova.909@gmail.com
+14:41:16.157 [http-nio-8080-exec-9] INFO  a.b.d.s.impl.SubscriptionServiceImpl - Find all Subscriptions process starting
+14:41:16.168 [http-nio-8080-exec-9] INFO  a.b.d.s.impl.SubscriptionServiceImpl - Find all Subscriptions process finished

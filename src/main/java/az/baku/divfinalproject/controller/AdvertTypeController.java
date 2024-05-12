@@ -27,7 +27,7 @@ public class AdvertTypeController {
     }
 
     @GetMapping()
-    public AdvertTypeResponse getAdvertTypeById(@RequestBody Request<AdvertTypeRequest> request) {
+    public AdvertTypeResponse getAdvertTypeById(@RequestBody  Request<AdvertTypeRequest> request) {
         return advertTypeService.getById(request.getId());
     }
 

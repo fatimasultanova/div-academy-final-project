@@ -5,6 +5,7 @@ import az.baku.divfinalproject.dto.request.Request;
 import az.baku.divfinalproject.dto.response.PropertyTypeResponse;
 import az.baku.divfinalproject.service.impl.PropertyTypeServiceImpl;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;

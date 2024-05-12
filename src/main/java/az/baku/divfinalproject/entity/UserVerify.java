@@ -26,7 +26,7 @@ public class UserVerify {
         this.token = UUID.randomUUID().toString();
         this.isActive = true;
         this.createTime = System.currentTimeMillis();
-        this.endTime = 1 * 60 * 1000;
+        this.endTime = 2 * 60 * 1000;
     }
 
     public boolean isTokenValid() {
